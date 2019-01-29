@@ -1,0 +1,41 @@
+server {
+    listen       80;
+    server_name  127.0.0.1;
+
+    server_tokens off;
+
+    proxy_set_header    X-Real-IP          $remote_addr;
+    proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
+
+    location / {
+        set_real_ip_from 172.16.0.0/12;
+        real_ip_header X-Forwarded-For;
+        real_ip_recursive  on;
+
+        allow 143.97.2.35;
+        allow 208.98.244.89;
+        allow 74.202.66.134;
+        allow 189.17.148.135;
+        allow 52.67.94.160;
+        allow 34.194.195.175;
+        allow 34.251.173.88;
+        allow 4.31.5.5;
+        allow 95.34.36.107; # eoaksnes
+        deny all;
+
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    location = /favicon.ico {
+        return 204;
+        access_log     off;
+        log_not_found  off;
+    }
+}

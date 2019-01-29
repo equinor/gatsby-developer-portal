@@ -1,55 +1,59 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
+import kebabCase from "lodash/kebabCase";
+import {Helmet} from "react-helmet";
+import {Link, graphql} from "gatsby";
+import Layout from '../components/Layout'
 
-// Utilities
-import kebabCase from "lodash/kebabCase"
+const TagPage = ({pageContext, data, location}) => {
+    const {
+        group
+    } = data.allMarkdownRemark;
 
-// Components
-import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
+    const {
+        title,
+        menuLinks
+    } = data.site.siteMetadata;
 
-const TagPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => (
-  <div>
-    <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-)
+    return (
+        <Layout
+            location={location}
+            title={title}
+            menuLinks={menuLinks}>
+            <Helmet title={title}/>
+            <div>
+                <h4>Tags</h4>
+                <ul>
+                    {group.map(tag => (
+                        <li key={tag.fieldValue}>
+                            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                                {tag.fieldValue} ({tag.totalCount})
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </Layout>
+    );
+};
 
 TagPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
-        }).isRequired
-      ),
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            group: PropTypes.arrayOf(
+                PropTypes.shape({
+                    fieldValue: PropTypes.string.isRequired,
+                    totalCount: PropTypes.number.isRequired,
+                }).isRequired
+            ),
+        }),
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                title: PropTypes.string.isRequired,
+            }),
+        }),
     }),
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }),
-    }),
-  }),
-}
+};
 
 export default TagPage
 
@@ -58,6 +62,11 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        menuLinks {
+          name
+          link
+          url
+        }
       }
     }
     allMarkdownRemark(
@@ -69,4 +78,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

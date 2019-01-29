@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  client:
+    command: gatsby develop --host 0.0.0.0 --port 8000
+    build:
+      target: dependencies
+      args:
+        NPM_TOKEN: "${NPM_TOKEN}"
+    volumes:
+      - "./src:/app/src"
+      - "./content:/app/content"
+      - "./gatsby-config.js:/app/gatsby-config.js"
+      - "./gatsby-node.js:/app/gatsby-node.js"
+      - "./gatsby-browser.js:/app/gatsby-browser.js"
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "8000:8000"

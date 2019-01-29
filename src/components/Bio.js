@@ -1,63 +1,83 @@
-import React from 'react'
-import {StaticQuery, graphql} from 'gatsby'
-import Image from 'gatsby-image'
-import styled from 'styled-components';
+import React, {Component} from 'react';
+import kebabCase from 'lodash/kebabCase';
+import styled from "styled-components";
+import Image from "gatsby-image";
 
 const Wrapper = styled.div`
   display: flex;
   margin-bottom: 0;
+  flex-direction: row;
 `;
 
-const AuthorContent = styled.p`
+const AuthorContent = styled.div`
   display: flex;
   margin-right: 10px;
-`;
+  flex-direction: column;
+ `;
 
-const Avatar = styled(Image)`
+const Avatar = styled.img`
   margin-bottom: 0;
   margin-right: 10px;
-  width: 50px;
+  width: 40px;  
+  height: 40px;
   border-radius: 100%;
 `;
 
-function Bio({authors}) {
-    const listOfAuthors = authors.map(author => {
-        return (<StaticQuery
-                query={bioQuery}
-                render={data => {
-                    return (
-                        <AuthorContent>
-                            <Avatar
-                                fixed={data.avatar.childImageSharp.fixed}
-                                alt={author}
-                                imgStyle={{
-                                    borderRadius: `50%`,
-                                }}
-                            />
-                            <p>
-                                <strong>{author}</strong>
-                            </p>
-                        </AuthorContent>
-                    )
-                }}
-            />
-        )
-    });
-    return (<Wrapper>
-        {listOfAuthors}
-    </Wrapper>);
+class Authors extends Component {
+    render() {
+        const {
+            authors,
+        } = this.props;
+
+        const list = authors.map((author, index) => {
+            return <Bio key={`${author}-${index}`} author={author}/>
+        });
+
+        return <Wrapper>{list}</Wrapper>
+    }
 }
 
-const bioQuery = graphql`
-  query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-      childImageSharp {
-        fixed(width: 50, height: 50) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+export {Authors}
+
+class Bio extends Component {
+
+    render() {
+        const {
+            author,
+        } = this.props;
+
+        const {
+            name,
+            image,
+        } = author;
+
+        return (
+            <Wrapper>
+                <Avatar src={image}
+                        alt={name}
+                        imgStyle={{
+                            borderRadius: `50%`,
+                        }}
+                />
+                <AuthorContent>
+                    <div className='bio-name'>
+                        {`${name}`}
+                    </div>
+                    {false &&
+                    <div className='bio-email'>
+                        <a href={`mailto:${email}`}>
+                            {email}
+                        </a>
+                    </div>}
+                    {false &&
+                    <div className='bio-bio'>
+                        {bio}
+                    </div>
+                    }
+                </AuthorContent>
+            </Wrapper>
+        )
     }
-  }
-`;
+}
 
 export default Bio

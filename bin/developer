@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "$DEVELOPER_RUN_HOME/docker-compose.$ENVIRONMENT.yml"
+
+docker-compose -p "DEVELOPER_$ENVIRONMENT" -f "$DEVELOPER_RUN_HOME/docker-compose.yml" -f "$DEVELOPER_RUN_HOME/docker-compose.$ENVIRONMENT.yml" $@

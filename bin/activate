@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+export DEVELOPER_RUN_BIN="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DEVELOPER_RUN_HOME=$(echo ${DEVELOPER_RUN_BIN} | rev | cut -d"/" -f2- | rev)
+
+export PATH="$DEVELOPER_RUN_BIN:$PATH"
+echo ${DEVELOPER_RUN_BIN} added to \$PATH
+
+export CI_REGISTRY=${CI_REGISTRY:=developerregistry.azurecr.io}
+export ENVIRONMENT=${ENVIRONMENT:=local}
+
+echo "Running in ${ENVIRONMENT} environment"
+
+exec "${@:-$SHELL}"

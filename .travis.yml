@@ -1,15 +1,36 @@
+# Forces travis to use VM insted container, required to be able to build containers.
+
+sudo: required
+
+dist: trusty
+
 language: node_js
 
-os:
-  - linux
-  - osx
+services:
+  - docker
 
-node_js:
-  - 'node'
-  - 'lts/*'
-  - '7'
-  - '8'
+env:
+  global:
+    - IMAGE_NAME=developeracr.azurecr.io/client
 
-script:
-  - npm install
-  - npm run lint
+before_install:
+  - docker --version
+  - echo "ENV GIT_SHA ${TRAVIS_COMMIT}" >> Dockerfile
+
+install:
+  - docker pull "$IMAGE_NAME" || true
+  - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" --build-arg NPM_TOKEN="$NPM_TOKEN" --build-arg GITHUB_PERSONAL_TOKEN="$GITHUB_PERSONAL_TOKEN" .
+
+before_deploy:
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS" developeracr.azurecr.io
+  - git_sha="$(git rev-parse --short HEAD)"
+  - if [ ! -z "$TRAVIS_TAG" ]; then export IMAGE_TAG=$TRAVIS_TAG; else export IMAGE_TAG=$TRAVIS_BRANCH; fi ;
+  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:$IMAGE_TAG"
+  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}-$IMAGE_TAG:${git_sha}"
+
+deploy:
+  provider: script
+  script: docker push "${IMAGE_NAME}:$IMAGE_TAG" && docker push "${IMAGE_NAME}-$IMAGE_TAG:${git_sha}"
+  on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^master|develop$

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  client:
+    restart: unless-stopped
+    build:
+      context:  ./
+      dockerfile: Dockerfile

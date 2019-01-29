@@ -5,7 +5,6 @@ import SearchEngineOptimization from '../components/SearchEngineOptimization'
 import Tags from '../components/TagListing';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import NodeListing from '../components/NodeListing';
-import Card from '../ui/components/Card';
 
 class Index extends React.Component {
     render() {
@@ -20,31 +19,29 @@ class Index extends React.Component {
             menuLinks
         } = data.site.siteMetadata;
 
-        const docs = data.allMarkdownRemark.edges;
+        const posts = data.allMarkdownRemark.edges;
         const tags = data.allMarkdownRemark.group;
 
         return (
             <Layout
                 location={location}
-                title={title}
+                title={`${title}`}
                 subTitle={subTitle}
                 menuLinks={menuLinks}>
                 <SearchEngineOptimization
-                    title="All docs"
+                    title="All blogs"
                     keywords={[
-                        "docs"
+                        "blog"
                     ]}
                 />
-                <Grid>
-                    <Row>
-                        <Col xs={12} md={8}>
-                            <NodeListing nodes={docs}/>
-                        </Col>
-                        <Col xs={12} md={4}>
-                            <Tags tags={tags}/>
-                        </Col>
-                    </Row>
-                </Grid>
+                <Row>
+                    <Col xs={12} md={8}>
+                        <NodeListing nodes={posts}/>
+                    </Col>
+                    <Col xs={12} md={4}>
+                        <Tags tags={tags}/>
+                    </Col>
+                </Row>
             </Layout>
         )
     }
@@ -66,9 +63,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: { collection: { eq: "docs" } } }
-      sort: {
-       fields: [frontmatter___date], order: DESC
+      filter: { fields: { collection: { eq: "blog" } } }
+      sort: { 
+       fields: [frontmatter___date], order: DESC 
       }) {
       group(field: frontmatter___tags) {
         fieldValue
@@ -80,10 +77,16 @@ export const pageQuery = graphql`
           fields {
             slug
             collection
+            authors {
+              name
+              image
+            }
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
-          }
+            authors
+          }          
         }
       }
     }

@@ -1,46 +1,86 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby's blog starter
+  developer.equinor.com
 </h1>
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[![Build Status](https://travis-ci.com/equinor/developer.svg?token=wb81zbmzUsHbzHFyWC7U&branch=master)](https://travis-ci.com/equinor/developer)
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Adding content
 
-## 🚀 Quick start
+## Document
 
-1.  **Create a Gatsby site.**
+Add a new directory and index.md file under /content/docs.
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+The index.md file should have this structure:
 
-    ```sh
-    # create a new Gatsby site using the blog starter
-    npx gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
-    ```
+```
+---
+title: TITLE
+tags: 
+  - TAG 1
+  - TAG 2
+---
+
+Write your document content here...
+```
+
+## Blog post
+
+Add a new directory and index.md file under /content/blog.
+
+The index.md file should have this structure:
+
+```
+---
+title: TITLE
+date: 2019-01-01
+tags: 
+  - TAG 1
+  - TAG 2
+authors: 
+  - GITHUB USERNAME 1
+  - GITHUB USERNAME 2
+---
+
+Write your blog post here...
+```
+
+## Development
+
+https://developer-equinor-dev.azurewebsites.net (develop branch)
 
 1.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
-
     ```sh
-    cd my-blog-starter/
-    gatsby develop
+    git clone git@github.com:equinor/developer.git
+    cd developer/
+    cp env.template .env (populate values)
+    ./bin/activate 
+    developer build
+    developer up  
     ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
+    
+    Your site is now running at `http://localhost:8000`.
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    
+    ```
+    For the environment variable NPM_TOKEN you need to login to npm.equinor.com 
+    and then copy the generated token from your .npmrc file.     
+    ```
+    See https://sdp.equinor.com/npm-repo for how to login to the NPM registry. 
+    
+2.  **Test production build.**
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+```
+export ENVIRONMENT=production
+./bin/activate 
+developer build
+developer up  
+```
 
-## 🧐 What's inside?
+This will run all stages in the Dockerfile and produce a static web application served with Nginx running at `http://localhost`.
+
+### What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
@@ -74,7 +114,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+9.  **`LICENSE`**: Licensed under the MIT license.
 
 10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
@@ -82,16 +122,4 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🎓 Learning Gatsby
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
-
-<!-- AUTO-GENERATED-CONTENT:END -->

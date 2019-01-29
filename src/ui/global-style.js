@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Style from './style';
-import {createGlobalStyle} from "styled-components"
+import {createGlobalStyle} from "styled-components";
 
 // Global styles and resets
 const GlobalStyle = createGlobalStyle`
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {        
     color: ${Style.colors.black80};
-    font-family: "Equinor-Regular", Consolas, monospace;
+    font-family: Equinor;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 34px;
@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: "Equinor-Regular", Consolas, monospace;
+    font-family: Equinor;
   }
   
   p {
@@ -104,6 +104,10 @@ const GlobalStyle = createGlobalStyle`
     background: hsla(0,0%,0%,0.2);
     border: none;
     height: 1px;
+  }
+  
+  .gatsby-highlight {
+    font-size: 14px;
   }
 `;
 
