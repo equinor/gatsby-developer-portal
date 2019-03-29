@@ -70,3 +70,7 @@ yarn-error.log
 azure/.azure_env
 .azure_env
 .secrets
+
+#IntelliJ
+.idea
+developer.iml
