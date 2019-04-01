@@ -34,11 +34,9 @@ class Index extends React.Component {
                         "blog"
                     ]}
                 />
-                <Row>
-                    <Col xs={12} md={12}>
-                        <Tags tags={tags}/>
-                    </Col>
-                </Row>
+
+                <Tags tags={tags}/>
+
                 <Row>
                     <BlogListing nodes={posts}/>
                 </Row>
