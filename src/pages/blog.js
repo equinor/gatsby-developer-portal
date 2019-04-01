@@ -38,7 +38,9 @@ class Index extends React.Component {
                 <Tags tags={tags}/>
 
                 <Row>
-                    <BlogListing nodes={posts}/>
+                    <Col xs={12} md={10} mdOffset={1}>
+                        <BlogListing nodes={posts}/>
+                    </Col>
                 </Row>
             </Layout>
         )

@@ -7,9 +7,6 @@ import Style from "../ui/style";
 
 const Container = styled.div`
   margin-bottom: 60px;
-  padding: 40px;
-  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1), 0 20px 20px 0 rgba(0,0,0,0.05);
-  margin: 15px;
 `;
 
 const Tags = styled.div`
@@ -50,27 +47,37 @@ const BlogListing = ({nodes}) =>
         });
 
         return (
-            <Col xs={12} md={6}>
+
                 <Container key={node.fields.slug}>
-                    <Tags>
-                        /{tags}
-                    </Tags>
-
-                    {/* Image */}
-
-                    <Title>
+                <Col xs={12} md={6} mdOffset={3}>
+                <Title>
                         <Link to={`${node.fields.collection}${node.fields.slug}`}>
                             {title}
                         </Link>
                     </Title>
 
-                    <Excerpt dangerouslySetInnerHTML={{__html: node.excerpt}}/>
+                    <div>
+                        {/* Image */}
 
-                    {node.fields.authors && <Authors authors={node.fields.authors}/>}
-                    <small>{node.frontmatter.date}</small>
+                        <Excerpt dangerouslySetInnerHTML={{__html: node.excerpt}}/>
+                    </div>
 
+
+                    <Row>
+                        <Col xs={12} md={6}>
+                            {node.fields.authors && <Authors authors={node.fields.authors}/>}
+                            <small>{node.frontmatter.date}</small>
+                        </Col>
+                        <Col xs={12} md={6}>
+                            <Tags>
+                                /{tags}
+                            </Tags>
+                        </Col>
+                    </Row>
+                    </Col>
+                    <hr />
                 </Container>
-            </Col>
+
         )
     });
 
