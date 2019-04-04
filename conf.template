@@ -12,17 +12,6 @@ server {
         real_ip_header X-Forwarded-For;
         real_ip_recursive  on;
 
-        allow 143.97.2.35;
-        allow 208.98.244.89;
-        allow 74.202.66.134;
-        allow 189.17.148.135;
-        allow 52.67.94.160;
-        allow 34.194.195.175;
-        allow 34.251.173.88;
-        allow 4.31.5.5;
-        allow 95.34.36.107; # eoaksnes
-        deny all;
-
         root   /usr/share/nginx/html;
         index  index.html index.htm;
         try_files $uri $uri/ /index.html;
