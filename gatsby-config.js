@@ -10,8 +10,8 @@ module.exports = {
         },
         menuLinks: [
             {
-                name: "Docs",
-                link: "/"
+                name: "Toolbox",
+                link: "/toolbox"
             },
             {
                 name: "Blog",
@@ -46,9 +46,16 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/content/assets`,
-                name: `assets`,
+                path: `${__dirname}/content/assets/`,
+                name: `images`,
             },
+        },
+        {
+            resolve: "gatsby-plugin-react-svg",
+            options: {
+                path: `${__dirname}/src/assets/icons/`,
+                name: 'icons'
+            }
         },
         {
             resolve: `gatsby-transformer-remark`,
