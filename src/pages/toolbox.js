@@ -7,6 +7,7 @@ import { Categories } from '../ui/components/Categories'
 import { HighlightedDocumentItem } from '../ui/components/HighlightedDocumentItem'
 import style from '../ui/style'
 import useDimensions from 'react-use-dimensions'
+import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 
 const { colors } = style
 
@@ -17,28 +18,20 @@ const HighlightedDocuments = props => {
   //set negative margin to flow into the headers background box.
   const marginTop = -(size.height / 2) || 0
   return (
-    <div
-      ref={ref}
-      style={{
-        display: 'flex',
-        position: 'relative',
-        width,
-        justifyContent: 'space-between',
-        margin: `${marginTop}px auto 0`,
-      }}
-    >
-      {items.map((title, index) => {
-        let marginLeft = index > 0 ? 30 : 0
-        return (
-          <HighlightedDocumentItem
-            key={title}
-            marginLeft={marginLeft}
-            key={title}
-            title={title}
-          />
-        )
-      })}
-    </div>
+    <Grid style={{width}}>
+      <Row style={{marginTop}}>
+        {items.map((title, index) => {
+          return (
+            <Col ref={ref} key={index+title} md={3} xs={6} style={{marginBottom: 20}}>
+              <HighlightedDocumentItem
+                key={title}
+                title={title}
+              />
+            </Col>
+          )
+        })}
+      </Row>
+    </Grid>
   )
 }
 
@@ -64,13 +57,11 @@ const Header = props => {
     padding-bottom: 150px;
   `
   return (
-    <div>
-      <HeaderBox>
-        <HeaderWrapper>
-          <HeaderTitle>{props.title}</HeaderTitle>
-        </HeaderWrapper>
-      </HeaderBox>
-    </div>
+    <HeaderBox>
+      <HeaderWrapper>
+        <HeaderTitle>{props.title}</HeaderTitle>
+      </HeaderWrapper>
+    </HeaderBox>
   )
 }
 
@@ -130,6 +121,7 @@ export default props => {
      Toolbox.width: reset nested div which now has a full page width.
   */
   const [toolboxRef, toolboxSize] = useDimensions()
+  const [pageRef, layoutSize] = useDimensions()
   return (
     <Layout
       location={location}
@@ -146,16 +138,15 @@ export default props => {
             marginLeft: -toolboxSize.left || 0,
           }}
         >
-          <div>
-            <Header title="Toolbox" highlightedItems={highlightedItems} />
-          </div>
+          <Header title="Toolbox" highlightedItems={highlightedItems} />
           <HighlightedDocuments
+            width={layoutSize.width}
             items={highlightedItems}
-            width={toolboxSize.width}
           />
         </div>
-
-        <Categories categories={categories} />
+        <Grid ref={pageRef} style={{width: '100%', marginBottom: 100}}>
+          <Categories categories={categories} />
+        </Grid>
       </div>
     </Layout>
   )

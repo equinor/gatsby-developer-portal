@@ -5,16 +5,10 @@ import OpenSourceIcon from '../../assets/icons/OpenSource.svg'
 import TechIcon from '../../assets/icons/Tech.svg'
 import SecurityIcon from '../../assets/icons/Security.svg'
 import DesignIcon from '../../assets/icons/Design.svg'
+import {Col, Row} from 'react-styled-flexboxgrid';
 
 const Categories = props => {
   const { categories } = props
-
-  const CategoryStyle = styled.div`
-    display: inline-flex;
-    width: 30%;
-    margin: 45px 0;
-    text-align: left;
-  `
 
   const CategoryTitle = styled.div`
     width: 44px;
@@ -27,14 +21,6 @@ const Categories = props => {
     margin-bottom: 15px;
   `
 
-  const CategoriesStyle = styled.div`
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 105px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  `
 
   const iconStyle = {
     margin: 0,
@@ -45,19 +31,15 @@ const Categories = props => {
   const categoryComponents = categories.map((category, index) => {
     const Icon = getIcon(category.type)
     return (
-      <CategoryStyle key={index + category.type}>
-        <div>
-          <div>
+      <Col md={4} sm={6} xs={12} key={index+category.type} style={{marginTop: 50}}>
             <Icon style={iconStyle} />
-          </div>
-          <CategoryTitle>{category.title}</CategoryTitle>
-          <div>{category.description}</div>
-        </div>
-      </CategoryStyle>
+            <CategoryTitle>{category.title}</CategoryTitle>
+            <div>{category.description}</div>
+      </Col>
     )
   })
 
-  return <CategoriesStyle>{categoryComponents}</CategoriesStyle>
+  return <Row>{categoryComponents}</Row>
 }
 
 export { Categories }
