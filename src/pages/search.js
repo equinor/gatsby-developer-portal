@@ -35,7 +35,8 @@ const Results = (props) => {
   return (
     <div>
       {results.map((page) => {
-        return <div key={page.title}>{page.title}</div>
+        //@todo use page.collection to customize result.
+        return <div key={page.title}>{page.title} - <span style={{fontWeight: 'bold'}}>{page.collection}</span></div>
       })}
     </div>
   );
@@ -70,7 +71,7 @@ function getSearchResults(query, lng) {
   
   return results
   // .filter(result => {
-  //   console.log(result.score);
+  //   console.log(result);
   //   return result.score > 0.1;
   // })
     .map(({ ref }) => lunrIndex.store[ref])
