@@ -7,6 +7,10 @@ const Wrapper = styled.div`
   display: flex;
   margin-bottom: 0;
   flex-direction: row;
+  @media (max-width: 576px) {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 `;
 
 const AuthorContent = styled.div`
@@ -18,7 +22,7 @@ const AuthorContent = styled.div`
 const Avatar = styled.img`
   margin-bottom: 0;
   margin-right: 10px;
-  width: 40px;  
+  width: 40px;
   height: 40px;
   border-radius: 100%;
 `;

@@ -6,7 +6,7 @@ import {Grid, Col, Row} from 'react-styled-flexboxgrid';
 import Style from "../ui/style";
 
 const Container = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 `;
 
 const Tags = styled.div`
@@ -19,6 +19,13 @@ const Tag = styled.span`
     line-height: 14px;
     color: ${Style.colors.mossGreen};
     text-transform: uppercase;
+
+    span {
+        font-size: 25px;
+        color: black;
+        font-weight: 200;
+        padding: 0 2px 0 10px;
+    }
 `;
 
 const Title = styled.h3`
@@ -37,20 +44,42 @@ const Excerpt = styled.p`
     margin-bottom: 40px;
 `;
 
+const Divider = styled.div `
+    border-bottom: 1px solid #f2f2f2;
+    margin: 20px 0;
+`;
+
+const TimeDate = styled.div `
+    font-size: ${Style.typography.sm};
+    color: ${Style.colors.lightGray};
+`;
+
+
 
 const BlogListing = ({nodes}) =>
     nodes.map(({node}) => {
         const title = node.frontmatter.title || node.fields.slug;
 
         const tags = node.frontmatter.tags.map((tag, index) => {
-            return <Tag key={`${tag}-${index}`}> {tag} </Tag>
+            return <Tag key={`${tag}-${index}`}> <span>/</span> {tag} </Tag>
         });
 
         return (
+            <Container key={node.fields.slug}>
+                <Col xs={12} md={10} mdOffset={1}>
+                    <div
+                        style={{
+                            display: 'flex'
+                        }}
+                    >
+                        <TimeDate>{node.frontmatter.date}</TimeDate>
 
-                <Container key={node.fields.slug}>
-                <Col xs={12} md={6} mdOffset={3}>
-                <Title>
+                        <Tags>
+                            {tags}
+                        </Tags>
+                    </div>
+
+                    <Title>
                         <Link to={`${node.fields.collection}${node.fields.slug}`}>
                             {title}
                         </Link>
@@ -63,21 +92,11 @@ const BlogListing = ({nodes}) =>
                     </div>
 
 
-                    <Row>
-                        <Col xs={12} md={6}>
-                            {node.fields.authors && <Authors authors={node.fields.authors}/>}
-                            <small>{node.frontmatter.date}</small>
-                        </Col>
-                        <Col xs={12} md={6}>
-                            <Tags>
-                                /{tags}
-                            </Tags>
-                        </Col>
-                    </Row>
-                    </Col>
-                    <hr />
-                </Container>
+                    {node.fields.authors && <Authors authors={node.fields.authors}/>}
 
+                </Col>
+                <Divider />
+            </Container>
         )
     });
 
