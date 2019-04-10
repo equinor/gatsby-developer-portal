@@ -6,6 +6,8 @@
 
 ## Adding content
 
+**NOTE to contributors: Everything is open here! Anyone can read the repository and test and prod web site.**
+
 ## Document
 
 Add a new directory and index.md file under /content/docs.
