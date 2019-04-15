@@ -106,7 +106,8 @@ module.exports = {
             options: {
                 siteId: '2',
                 matomoUrl: 'https://matomo.sdpaks.equinor.com',
-                siteUrl: 'https://developer.equinor.com'
+                siteUrl: 'https://developer.equinor.com',
+                disableCookies: true
             }
         }
     ],
