@@ -77,11 +77,11 @@ const ExternalLink = styled.a`
 
 const SeachIconStyled = () => {
   const SeachIconRect = styled(Link)`
-    align-self: cent•er;
+    align-self: center;
     display: inline-flex;
     height: 30px;
     width: 30px;
-    border: 1px solid #FF1243;
+    border: 1px solid ${Style.colors.energyRed};
     border-radius: 3px;
     background-color: #FFFFFF;
   `;
