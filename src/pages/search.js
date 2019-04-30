@@ -63,7 +63,9 @@ export default (props) => {
 }
 
 function getSearchResults(query, lng) {
-  if (!query || !window.__LUNR__) return []
+  if (!query || typeof window === 'undefined' || !window.__LUNR__) {
+    return [];
+  }
   const lunrIndex = window.__LUNR__[lng]
   
   const searchQuery = `${query.trim()}~1`;
