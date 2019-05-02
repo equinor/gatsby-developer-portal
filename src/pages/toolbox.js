@@ -121,7 +121,8 @@ export default props => {
      Toolbox.width: reset nested div which now has a full page width.
   */
   const [toolboxRef, toolboxSize] = useDimensions()
-  const [pageRef, layoutSize] = useDimensions()
+  const [pageRef, pageSize] = useDimensions()
+  
   return (
     <Layout
       location={location}
@@ -131,22 +132,31 @@ export default props => {
     >
       <SearchEngineOptimization title="All docs" keywords={['docs']} />
       <div ref={toolboxRef}>
-        <div
-          style={{
-            position: 'relative',
-            width: '100vw',
-            marginLeft: -toolboxSize.left || 0,
-          }}
-        >
-          <Header title="Toolbox" highlightedItems={highlightedItems} />
-          <HighlightedDocuments
-            width={layoutSize.width}
-            items={highlightedItems}
-          />
-        </div>
-        <Grid ref={pageRef} style={{width: '100%', marginBottom: 100}}>
-          <Categories categories={categories} />
-        </Grid>
+        {
+          //hack to avoid flickering (caused by full background header) before pageSize is measured.
+          pageSize.width &&
+          <div
+            style={{
+              position: 'relative',
+              width: '100vw',
+              marginLeft: -toolboxSize.left || 0,
+            }}
+          >
+            <Header title="Toolbox" highlightedItems={highlightedItems} />
+            <HighlightedDocuments
+              width={pageSize.width}
+              items={highlightedItems}
+            />
+          <Grid style={{width: pageSize.width, marginBottom: 100}}>
+            <Categories categories={categories} />
+          </Grid>
+          </div>
+        }
+        {
+          //hack to push footer out of sight during first render.
+          !pageSize.width && <div style={{height: '100vh'}}></div>
+        }
+        <div ref={pageRef} style={{width: '100%'}}></div>
       </div>
     </Layout>
   )

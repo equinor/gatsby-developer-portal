@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'gatsby'
 import styled from "styled-components";
 import Style from "../ui/style";
+import SearchIcon from '../assets/icons/search-filled.svg';
 
 const Nav = styled.nav`
   display: flex;
@@ -74,6 +75,30 @@ const ExternalLink = styled.a`
   `};
 `;
 
+const SeachIconStyled = () => {
+  const SeachIconRect = styled(Link)`
+    align-self: center;
+    display: inline-flex;
+    height: 30px;
+    width: 30px;
+    border: 1px solid ${Style.colors.energyRed};
+    border-radius: 3px;
+    background-color: #FFFFFF;
+  `;
+  
+  return (
+      <SeachIconRect to="/search">
+        <SearchIcon style={{
+          margin: 'auto',
+          height: 23,
+          width: 16,
+          color: Style.colors.energyRed
+        }}/>
+      </SeachIconRect>
+  );
+};
+
+
 const Navigation = ({menuLinks, location}) => (
     <Nav>
         <NavList>
@@ -81,6 +106,9 @@ const Navigation = ({menuLinks, location}) => (
                 menuLinks.map(link => {
                     const isActive = link.link === location.pathname;
                     const isLink = link.link;
+                    if (link.name === 'Search') {
+                      return <SeachIconStyled key={link.name} />
+                    }
                     if (isLink) {
                         return (
                             <NavLink
