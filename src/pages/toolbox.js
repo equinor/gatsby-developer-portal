@@ -13,16 +13,12 @@ const { colors } = style
 
 const HighlightedDocuments = props => {
   const { items, width } = props
-  const [ref, size] = useDimensions()
-
-  //set negative margin to flow into the headers background box.
-  const marginTop = -(size.height / 2) || 0
   return (
-    <Grid style={{width}}>
-      <Row style={{marginTop}}>
+    <Grid style={{ width}}>
+      <Row style={{ width: '100%', transform: `translate(0, -50%)` }}>
         {items.map((title, index) => {
           return (
-            <Col ref={ref} key={index+title} md={3} xs={6} style={{marginBottom: 20}}>
+            <Col key={index + title} md={3} xs={6}>
               <HighlightedDocumentItem
                 key={title}
                 title={title}
