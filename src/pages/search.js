@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
+import { Authors } from "../components/Bio";
+import Tags from "../components/TagListing";
 
 const SearchInputStyle = styled.input`
   font-weight: 500;
@@ -20,6 +22,7 @@ const SearchInput = ({ value, onChange }) => {
   return (
     <form>
       <SearchInputStyle
+        autoFocus
         type="text"
         value={value}
         onChange={e => onChange(e.target.value)}
@@ -28,19 +31,52 @@ const SearchInput = ({ value, onChange }) => {
   );
 };
 
-const Results = props => {
-  const { query } = props;
+const Result = ({ post }) => {
+  const ResultTitle = styled.div`
+    height: 36px;
+    width: 621px;
+    color: #333333;
+    font-family: Equinor;
+    font-size: 30px;
+    letter-spacing: -0.08px;
+    line-height: 36px;
+  `;
+  const node = post[0].node;
+  const {
+    frontmatter: { title, date, tags },
+    fields: { authors, collection, slug },
+  } = node;
+  const href = `/${collection}/${slug}`;
+  const tag = tags && tags.length > 0 && tags[0].toUpperCase();
+  return (
+    <div key={title} style={{ padding: "10px 0" }}>
+      <div>
+        {date} / {tag}
+      </div>
+      <Link to={href}>
+        <ResultTitle>{title}</ResultTitle>
+      </Link>
+      <div>
+        <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+      </div>
+      <div style={{ margin: "15px 0" }}>
+        <Authors authors={authors} />
+      </div>
+      <hr />
+    </div>
+  );
+};
+
+const Results = ({ query, posts }) => {
   const results = getSearchResults(query, "en");
   return (
     <div>
       {results.map(page => {
-        //@todo use page.collection to customize result.
-        return (
-          <div key={page.title}>
-            {page.title} -{" "}
-            <span style={{ fontWeight: "bold" }}>{page.collection}</span>
-          </div>
-        );
+        const post = posts.filter(p => p.node.frontmatter.title === page.title);
+        if (!post) {
+          return;
+        }
+        return <Result key={page.title} post={post} />;
       })}
     </div>
   );
@@ -49,7 +85,10 @@ const Results = props => {
 export default props => {
   const { data, location } = props;
   const { title, subTitle, menuLinks } = data.site.siteMetadata;
-  const [query, setQuery] = useState("*");
+  const posts = data.allMarkdownRemark.edges;
+  const tags = data.allMarkdownRemark.group;
+
+  const [query, setQuery] = useState("");
 
   return (
     <Layout
@@ -60,21 +99,25 @@ export default props => {
     >
       <div style={{ marginTop: 30, marginBottom: 150 }}>
         <SearchInput value={query} onChange={setQuery} />
-        <Results query={query}>query</Results>
+        <Tags tags={tags} />
+        <Results query={query} posts={posts} />
       </div>
     </Layout>
   );
 };
 
 function getSearchResults(query, lng) {
-  if (!query || typeof window === "undefined" || !window.__LUNR__) {
+  if (typeof window === "undefined" || !window.__LUNR__) {
     return [];
   }
   const lunrIndex = window.__LUNR__[lng];
 
+  if (!query) {
+    query = "**";
+  }
+
   const searchQuery = `${query.trim()}~1`;
   const results = lunrIndex.index.search(searchQuery);
-
   return (
     results
       // .filter(result => {
@@ -95,6 +138,31 @@ export const pageQuery = graphql`
           name
           link
           url
+        }
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+            collection
+            authors {
+              name
+              image
+            }
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            authors
+            tags
+          }
         }
       }
     }
