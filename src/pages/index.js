@@ -1,56 +1,45 @@
-import React from 'react'
-import {graphql} from 'gatsby'
-import Layout from '../components/Layout'
-import SearchEngineOptimization from '../components/SearchEngineOptimization'
-import Tags from '../components/TagListing';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
-import NodeListing from '../components/NodeListing';
-import Card from '../ui/components/Card';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import SearchEngineOptimization from "../components/SearchEngineOptimization";
+import Tags from "../components/TagListing";
+import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import NodeListing from "../components/NodeListing";
+import Card from "../ui/components/Card";
 
 class Index extends React.Component {
-    render() {
-        const {
-            data,
-            location
-        } = this.props;
+  render() {
+    const { data, location } = this.props;
 
-        const {
-            title,
-            subTitle,
-            menuLinks
-        } = data.site.siteMetadata;
+    const { title, subTitle, menuLinks } = data.site.siteMetadata;
 
-        const docs = data.allMarkdownRemark.edges;
-        const tags = data.allMarkdownRemark.group;
+    const docs = data.allMarkdownRemark.edges;
+    const tags = data.allMarkdownRemark.group;
 
-        return (
-            <Layout
-                location={location}
-                title={title}
-                subTitle={subTitle}
-                menuLinks={menuLinks}>
-                <SearchEngineOptimization
-                    title="All docs"
-                    keywords={[
-                        "docs"
-                    ]}
-                />
-                <Grid>
-                    <Row>
-                        <Col xs={12} md={8}>
-                            <NodeListing nodes={docs}/>
-                        </Col>
-                        <Col xs={12} md={4}>
-                            <Tags tags={tags}/>
-                        </Col>
-                    </Row>
-                </Grid>
-            </Layout>
-        )
-    }
+    return (
+      <Layout
+        location={location}
+        title={title}
+        subTitle={subTitle}
+        menuLinks={menuLinks}
+      >
+        <SearchEngineOptimization title="All docs" keywords={["docs"]} />
+        <Grid>
+          <Row>
+            <Col xs={12} md={8}>
+              <NodeListing nodes={docs} />
+            </Col>
+            <Col xs={12} md={4}>
+              <Tags tags={tags} />
+            </Col>
+          </Row>
+        </Grid>
+      </Layout>
+    );
+  }
 }
 
-export default Index
+export default Index;
 
 export const pageQuery = graphql`
   query {
@@ -67,9 +56,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fields: { collection: { eq: "docs" } } }
-      sort: {
-       fields: [frontmatter___date], order: DESC
-      }) {
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

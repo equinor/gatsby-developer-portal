@@ -1,53 +1,42 @@
-import React from 'react'
-import {graphql} from 'gatsby'
-import Layout from '../components/Layout'
-import SearchEngineOptimization from '../components/SearchEngineOptimization'
-import Tags from '../components/TagListing';
-import {Grid, Col, Row} from 'react-styled-flexboxgrid';
-import BlogListing from '../components/BlogListing';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import SearchEngineOptimization from "../components/SearchEngineOptimization";
+import Tags from "../components/TagListing";
+import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import BlogListing from "../components/BlogListing";
 
 class Index extends React.Component {
-    render() {
-        const {
-            data,
-            location
-        } = this.props;
+  render() {
+    const { data, location } = this.props;
 
-        const {
-            title,
-            subTitle,
-            menuLinks
-        } = data.site.siteMetadata;
+    const { title, subTitle, menuLinks } = data.site.siteMetadata;
 
-        const posts = data.allMarkdownRemark.edges;
-        const tags = data.allMarkdownRemark.group;
+    const posts = data.allMarkdownRemark.edges;
+    const tags = data.allMarkdownRemark.group;
 
-        return (
-            <Layout
-                location={location}
-                title={`${title}`}
-                subTitle={subTitle}
-                menuLinks={menuLinks}>
-                <SearchEngineOptimization
-                    title="All blogs"
-                    keywords={[
-                        "blog"
-                    ]}
-                />
+    return (
+      <Layout
+        location={location}
+        title={`${title}`}
+        subTitle={subTitle}
+        menuLinks={menuLinks}
+      >
+        <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
 
-                <Tags tags={tags}/>
+        <Tags tags={tags} />
 
-                <Row>
-                    <Col xs={12} md={10} mdOffset={1}>
-                        <BlogListing nodes={posts}/>
-                    </Col>
-                </Row>
-            </Layout>
-        )
-    }
+        <Row>
+          <Col xs={12} md={10} mdOffset={1}>
+            <BlogListing nodes={posts} />
+          </Col>
+        </Row>
+      </Layout>
+    );
+  }
 }
 
-export default Index
+export default Index;
 
 export const pageQuery = graphql`
   query {
@@ -64,9 +53,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fields: { collection: { eq: "blog" } } }
-      sort: {
-       fields: [frontmatter___date], order: DESC
-      }) {
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

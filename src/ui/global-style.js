@@ -1,6 +1,6 @@
-import React from 'react';
-import Style from './style';
-import {createGlobalStyle} from "styled-components";
+import React from "react";
+import Style from "./style";
+import { createGlobalStyle } from "styled-components";
 
 // Global styles and resets
 const GlobalStyle = createGlobalStyle`

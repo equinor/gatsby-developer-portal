@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import kebabCase from "lodash/kebabCase";
 
 const TagMenu = styled.ul`
   padding: 0;
   list-style: none;
-  list-style-image: none;  
+  list-style-image: none;
   padding-bottom: 14px;
 `;
 
 const Tag = styled.li`
   border: none;
-  color: rgba(0,0,0,.68);
+  color: rgba(0, 0, 0, 0.68);
   display: inline-block;
   font-size: 15px;
   letter-spacing: 0;
@@ -30,20 +30,14 @@ const TagLink = styled(Link)`
   cursor: pointer;
 `;
 
-export default ({tags}) => {
-    const tagList = tags.map(tag => {
-        return (
-            <Tag key={tag}>
-                <TagLink to={`/tags/${kebabCase(tag)}/`}>
-                    {tag}
-                </TagLink>
-            </Tag>
-        )
-    });
-
+export default ({ tags }) => {
+  const tagList = tags.map(tag => {
     return (
-        <TagMenu>
-            {tagList}
-        </TagMenu>
-    )
-}
+      <Tag key={tag}>
+        <TagLink to={`/tags/${kebabCase(tag)}/`}>{tag}</TagLink>
+      </Tag>
+    );
+  });
+
+  return <TagMenu>{tagList}</TagMenu>;
+};
