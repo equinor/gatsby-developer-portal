@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import kebabCase from 'lodash/kebabCase';
+import React, { Component } from "react";
+import kebabCase from "lodash/kebabCase";
 import styled from "styled-components";
 import Image from "gatsby-image";
 
@@ -17,7 +17,7 @@ const AuthorContent = styled.div`
   display: flex;
   margin-right: 10px;
   flex-direction: column;
- `;
+`;
 
 const Avatar = styled.img`
   margin-bottom: 0;
@@ -28,60 +28,46 @@ const Avatar = styled.img`
 `;
 
 class Authors extends Component {
-    render() {
-        const {
-            authors,
-        } = this.props;
+  render() {
+    const { authors } = this.props;
 
-        const list = authors.map((author, index) => {
-            return <Bio key={`${author}-${index}`} author={author}/>
-        });
+    const list = authors.map((author, index) => {
+      return <Bio key={`${author}-${index}`} author={author} />;
+    });
 
-        return <Wrapper>{list}</Wrapper>
-    }
+    return <Wrapper>{list}</Wrapper>;
+  }
 }
 
-export {Authors}
+export { Authors };
 
 class Bio extends Component {
+  render() {
+    const { author } = this.props;
 
-    render() {
-        const {
-            author,
-        } = this.props;
+    const { name, image } = author;
 
-        const {
-            name,
-            image,
-        } = author;
-
-        return (
-            <Wrapper>
-                <Avatar src={image}
-                        alt={name}
-                        imgStyle={{
-                            borderRadius: `50%`,
-                        }}
-                />
-                <AuthorContent>
-                    <div className='bio-name'>
-                        {`${name}`}
-                    </div>
-                    {false &&
-                    <div className='bio-email'>
-                        <a href={`mailto:${email}`}>
-                            {email}
-                        </a>
-                    </div>}
-                    {false &&
-                    <div className='bio-bio'>
-                        {bio}
-                    </div>
-                    }
-                </AuthorContent>
-            </Wrapper>
-        )
-    }
+    return (
+      <Wrapper>
+        <Avatar
+          src={image}
+          alt={name}
+          imgStyle={{
+            borderRadius: `50%`,
+          }}
+        />
+        <AuthorContent>
+          <div className="bio-name">{`${name}`}</div>
+          {false && (
+            <div className="bio-email">
+              <a href={`mailto:${email}`}>{email}</a>
+            </div>
+          )}
+          {false && <div className="bio-bio">{bio}</div>}
+        </AuthorContent>
+      </Wrapper>
+    );
+  }
 }
 
-export default Bio
+export default Bio;

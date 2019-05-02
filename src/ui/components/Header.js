@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import media from '../media-query';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import media from "../media-query";
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding-top: 30px;
   padding-bottom: 40px;
-    
+
   ${media.sm`
     align-items: flex-end;
     flex-direction: row;
@@ -17,20 +17,18 @@ const Wrapper = styled.div`
 `;
 
 const Logo = styled.img`
-   margin-right: 60px;
+  margin-right: 60px;
 `;
 
-
 const Titles = styled.div`
-text-align:center;
+  text-align: center;
   //display: flex;
   //align-items: baseline;
   //justify-content: center;
-  padding: 40px;  
+  padding: 40px;
   margin-bottom: 30px;
   //flex-direction: row;
 `;
-
 
 const Title = styled.h1`
   display: inline;
@@ -42,14 +40,14 @@ const Title = styled.h1`
   color: black;
 
   a {
-     color: black;
-     text-decoration: none;
-     border: none;
+    color: black;
+    text-decoration: none;
+    border: none;
   }
 `;
 
 export const SubTitle = styled.h2`
-  margin: 0 0 0 1.0em;
+  margin: 0 0 0 1em;
   font-size: 0.8em;
   font-weight: 300;
   color: gray;
@@ -61,35 +59,35 @@ const NavBar = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
   flex-direction: row;
- 
+
   ${media.sm`
     flex-direction: column;
     align-items: flex-end;
   `};
 `;
 
-const Header = ({isHome, children, title, subTitle, logo}) => (
-    <div>
-        <Wrapper>
-            {logo && <a href="/"><Logo src={logo}/></a>}
-            <NavBar>
-                {children}
-            </NavBar>
-        </Wrapper>
-        {isHome &&
-        <Titles>
-            <a href="/">
-                {title && <Title>{title}</Title>}
-            </a>
-            <SubTitle>{subTitle}</SubTitle>
-        </Titles>
-        }
-    </div>
+const Header = ({ isHome, children, title, subTitle, logo }) => (
+  <div>
+    <Wrapper>
+      {logo && (
+        <a href="/">
+          <Logo src={logo} />
+        </a>
+      )}
+      <NavBar>{children}</NavBar>
+    </Wrapper>
+    {isHome && (
+      <Titles>
+        <a href="/">{title && <Title>{title}</Title>}</a>
+        <SubTitle>{subTitle}</SubTitle>
+      </Titles>
+    )}
+  </div>
 );
 
 Header.propTypes = {
-    title: PropTypes.string.isRequired,
-    subTitle: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
 };
 
 export default Header;
