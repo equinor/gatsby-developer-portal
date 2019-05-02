@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import SearchEngineOptimization from '../components/SearchEngineOptimization'
 import Tags from '../components/TagListing';
 import {Grid, Col, Row} from 'react-styled-flexboxgrid';
-import NodeListing from '../components/NodeListing';
+import BlogListing from '../components/BlogListing';
 
 class Index extends React.Component {
     render() {
@@ -34,12 +34,12 @@ class Index extends React.Component {
                         "blog"
                     ]}
                 />
+
+                <Tags tags={tags}/>
+
                 <Row>
-                    <Col xs={12} md={8}>
-                        <NodeListing nodes={posts}/>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <Tags tags={tags}/>
+                    <Col xs={12} md={10} mdOffset={1}>
+                        <BlogListing nodes={posts}/>
                     </Col>
                 </Row>
             </Layout>
@@ -64,8 +64,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fields: { collection: { eq: "blog" } } }
-      sort: { 
-       fields: [frontmatter___date], order: DESC 
+      sort: {
+       fields: [frontmatter___date], order: DESC
       }) {
       group(field: frontmatter___tags) {
         fieldValue
@@ -86,7 +86,8 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             authors
-          }          
+            tags
+          }
         }
       }
     }
