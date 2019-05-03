@@ -31,7 +31,7 @@ class Authors extends Component {
   render() {
     const { authors } = this.props;
 
-    const list = authors.map((author, index) => {
+    const list = authors && authors.map((author, index) => {
       return <Bio key={`${author}-${index}`} author={author} />;
     });
 
