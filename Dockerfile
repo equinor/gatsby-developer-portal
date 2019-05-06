@@ -1,5 +1,5 @@
 # Base
-FROM node:10.12.0 as base
+FROM node:12.1-slim as base
 RUN mkdir -p /app
 WORKDIR /app
 COPY package.json ./
