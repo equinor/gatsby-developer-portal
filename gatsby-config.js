@@ -137,7 +137,6 @@ module.exports = {
                 fields: [
                     { name: 'title', store: true, attributes: { boost: 20}},
                     { name: 'content', store: true },
-                    { name: 'collection', store: true },
                     { name: 'url', store: true },
                 ],
                 // How to resolve each field's value for a supported node type
@@ -146,7 +145,6 @@ module.exports = {
                     MarkdownRemark: {
                         title: node => node.frontmatter.title,
                         content: node => node.rawMarkdownBody,
-                        collection: node => node.frontmatter.collection,
                         url: node => node.fields.url,
                     },
                 },

@@ -87,6 +87,7 @@ const SeachIconStyled = () => {
     border: 1px solid ${Style.colors.energyRed};
     border-radius: 3px;
     background-color: #ffffff;
+    transform: translate(0, 25%);
   `;
 
   return (
