@@ -16,12 +16,12 @@ env:
 before_install:
   - docker --version
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS" developeracr.azurecr.io
-  - docker pull "$IMAGE_NAME" || true
+  - docker pull "$IMAGE_NAME:$TRAVIS_BRANCH" || true
   - echo "ENV GIT_SHA ${TRAVIS_COMMIT}" >> Dockerfile
 
 install:
   - docker pull "$IMAGE_NAME" || true
-  - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" --build-arg NPM_TOKEN="$NPM_TOKEN" --build-arg GITHUB_PERSONAL_TOKEN="$GITHUB_PERSONAL_TOKEN" .
+  - docker build --pull --cache-from "$IMAGE_NAME:$TRAVIS_BRANCH" --tag "$IMAGE_NAME" --build-arg NPM_TOKEN="$NPM_TOKEN" --build-arg GITHUB_PERSONAL_TOKEN="$GITHUB_PERSONAL_TOKEN" .
 
 before_deploy:  
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS" developeracr.azurecr.io
