@@ -48,7 +48,7 @@ Write your blog post here...
 
 ## Development
 
-https://developer-equinor-dev.azurewebsites.net (develop branch)
+https://developer-equinor-dev.azurewebsites.net (the develop branch)
 
 1.  **Start developing.**
 
