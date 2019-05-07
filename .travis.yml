@@ -15,13 +15,15 @@ env:
 
 before_install:
   - docker --version
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS" developeracr.azurecr.io
+  - docker pull "$IMAGE_NAME" || true
   - echo "ENV GIT_SHA ${TRAVIS_COMMIT}" >> Dockerfile
 
 install:
   - docker pull "$IMAGE_NAME" || true
   - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" --build-arg NPM_TOKEN="$NPM_TOKEN" --build-arg GITHUB_PERSONAL_TOKEN="$GITHUB_PERSONAL_TOKEN" .
 
-before_deploy:
+before_deploy:  
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS" developeracr.azurecr.io
   - git_sha="$(git rev-parse --short HEAD)"
   - if [ ! -z "$TRAVIS_TAG" ]; then export IMAGE_TAG=$TRAVIS_TAG; else export IMAGE_TAG=$TRAVIS_BRANCH; fi ;
