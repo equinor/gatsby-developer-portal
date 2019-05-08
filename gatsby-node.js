@@ -180,15 +180,18 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
     const data = [];
     const getProfile = author =>
       fetch("https://api.github.com/users/" + author, config);
-    for (let i = 0; i < authors.length; i++) {
-      const response = await getProfile(authors[i]);
-      const json = await response.json();
-      const image = await fetchBase64.remote(json.avatar_url);
-      console.log("downloaded avatar", authors[i]);
-      data.push({
-        image: image[1],
-        name: json.name,
-      });
+    
+    if (authors) {
+      for (let i = 0; i < authors.length; i++) {
+        const response = await getProfile(authors[i]);
+        const json = await response.json();
+        const image = await fetchBase64.remote(json.avatar_url);
+        console.log("downloaded avatar", authors[i]);
+        data.push({
+          image: image[1],
+          name: json.name,
+        });
+      }
     }
 
     createNodeField({

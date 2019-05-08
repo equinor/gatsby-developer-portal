@@ -9,18 +9,7 @@ import TechCircleIcon from "../assets/icons/circle_tech.svg";
 import DesignCircleIcon from "../assets/icons/circle_design.svg";
 
 import style from "../ui/style";
-
-const PaginationList = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-`;
-
-const BlogPostFinished = styled.div`
-  padding-bottom: 40px;
-`;
+import ReadMoreCard from "../components/ReadMoreCard";
 
 function getIconByTag(slug) {
   switch (slug) {
@@ -82,9 +71,8 @@ const Header = ({ title, tags, slug }) => {
   );
 };
 
-const Footer = () => {
+const Footer = props => {
   const FooterWrapper = styled.div`
-    height: 200px;
     width: 100%;
     background-color: #f2f2f2;
     padding-top: 30px;
@@ -94,6 +82,7 @@ const Footer = () => {
     <FooterWrapper>
       <Title fontSize={52}>Further reading</Title>
       <Seperator />
+      <ReadMoreCard slug={props.slug} />
     </FooterWrapper>
   );
 };
@@ -112,8 +101,11 @@ const DocMainTemplate = props => {
   return (
     <Layout location={location} menuLinks={menuLinks} title={title}>
       <Header title={title} tags={tags} slug={slug} />
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <Footer />
+      <div
+        style={{ padding: "40px 0" }}
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
+      <Footer slug={slug} />
     </Layout>
   );
 };
@@ -121,7 +113,7 @@ const DocMainTemplate = props => {
 export default DocMainTemplate;
 
 export const pageQuery = graphql`
-  query DocMainPost($slug: String!) {
+  query DocMainTemplate($slug: String!) {
     site {
       siteMetadata {
         menuLinks {
@@ -140,12 +132,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
         authors
-      }
-      fields {
-        authors {
-          name
-          image
-        }
       }
     }
   }

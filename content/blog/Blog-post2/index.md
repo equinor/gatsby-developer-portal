@@ -5,6 +5,7 @@ tags:
   - tech
 authors:
   - dre90
+featuredImage: ./salty_egg.jpg
 ---
 
 This is my first post on my new fake blog! How exciting!

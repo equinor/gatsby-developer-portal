@@ -52,7 +52,7 @@ const Categories = props => {
 
 export { Categories };
 
-function getIcon(slug) {
+export function getIcon(slug) {
   switch (slug) {
     case "/api/":
       return ApiIcon;
