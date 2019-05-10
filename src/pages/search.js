@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import { Authors } from "../components/Bio";
 import Tags from "../components/TagListing";
+import BlogListing from "../components/BlogListing";
 
 const SearchInputStyle = styled.input`
   font-weight: 500;
@@ -31,52 +31,18 @@ const SearchInput = ({ value, onChange }) => {
   );
 };
 
-const Result = ({ post }) => {
-  const ResultTitle = styled.div`
-    height: 36px;
-    width: 621px;
-    color: #333333;
-    font-family: Equinor;
-    font-size: 30px;
-    letter-spacing: -0.08px;
-    line-height: 36px;
-  `;
-  const node = post[0].node;
-  const {
-    frontmatter: { title, date, tags },
-    fields: { authors, collection, slug },
-  } = node;
-  const href = `/${collection}/${slug}`;
-  const tag = tags && tags.length > 0 && tags[0].toUpperCase();
-  return (
-    <div key={title} style={{ padding: "10px 0" }}>
-      <div>
-        {date} / {tag}
-      </div>
-      <Link to={href}>
-        <ResultTitle>{title}</ResultTitle>
-      </Link>
-      <div>
-        <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-      </div>
-      <div style={{ margin: "15px 0" }}>
-        <Authors authors={authors} />
-      </div>
-      <hr />
-    </div>
-  );
-};
-
 const Results = ({ query, posts }) => {
   const results = getSearchResults(query, "en");
   return (
     <div>
       {results.map(page => {
-        const post = posts.filter(p => p.node.frontmatter.title === page.title);
-        if (!post) {
+        const nodes = posts.filter(
+          p => p.node.frontmatter.title === page.title
+        );
+        if (!nodes) {
           return;
         }
-        return <Result key={page.title} post={post} />;
+        return <BlogListing key={page.title} nodes={nodes} />;
       })}
     </div>
   );
@@ -162,6 +128,13 @@ export const pageQuery = graphql`
             title
             authors
             tags
+            featuredImage {
+              childImageSharp {
+                fixed(width: 200, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

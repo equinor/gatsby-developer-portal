@@ -75,6 +75,13 @@ export const pageQuery = graphql`
             title
             authors
             tags
+            featuredImage {
+              childImageSharp {
+                fixed(width: 200, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

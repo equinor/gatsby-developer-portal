@@ -2,7 +2,12 @@
   developer.equinor.com
 </h1>
 
-[![Build Status](https://travis-ci.com/equinor/developer.svg?token=wb81zbmzUsHbzHFyWC7U&branch=master)](https://travis-ci.com/equinor/developer)
+|  |  |
+|---|---|
+| Master | [![Build Status](https://travis-ci.com/equinor/developer.svg?token=wb81zbmzUsHbzHFyWC7U&branch=master)](https://travis-ci.com/equinor/developer) |
+| Develop | [![Build Status](https://travis-ci.com/equinor/developer.svg?token=wb81zbmzUsHbzHFyWC7U&branch=develop)](https://travis-ci.com/equinor/developer) |
+
+
 
 ## Adding content
 

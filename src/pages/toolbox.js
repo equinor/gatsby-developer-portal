@@ -63,52 +63,25 @@ export default props => {
 
   const { title, subTitle, menuLinks } = data.site.siteMetadata;
 
-  //@todo use docs and tags to extract highlighted documents and categories.
   const docs = data.allMarkdownRemark.edges;
-  const tags = data.allMarkdownRemark.group;
 
   const highlightedItems = ["Api", "Security", "Open Source", "Api Principles"];
 
-  const categories = [
-    {
-      title: "Api",
-      type: "api",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel euismod lorem.",
-    },
-    {
-      title: "Open Source",
-      type: "open source",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel euismod lorem.",
-    },
-    {
-      title: "Security",
-      type: "security",
-      description:
-        "Phasellus tincidunt scelerisque arcu, id pretium metus pharetra et. Praesent sit amet aliquet enim.",
-    },
-    {
-      title: "Tech",
-      type: "tech",
-      description:
-        "Phasellus fermentum, dolor ac mattis tristique, purus est pretium erat, pulvinar sollicitudin arcu purus in leo. ",
-    },
-    {
-      title: "Design",
-      type: "design",
-      description:
-        "Phasellus vel euismod lorem. Duis condimentum risus sit amet cursus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
-    {
-      title: "Api Principles",
-      type: "api",
-      description:
-        "Phasellus tincidunt scelerisque arcu, id pretium metus pharetra et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
-  ];
+  const categories = docs
+    .filter(doc => {
+      const pathLength = doc.node.fields.slug.match(/\//g).length;
+      return pathLength === 2;
+    })
+    .map(doc => {
+      return {
+        title: doc.node.frontmatter.title,
+        slug: doc.node.fields.slug,
+        description: doc.node.excerpt,
+      };
+    })
+    .sort((a, b) => a.title.localeCompare(b.title));
 
-  /* The header's background need to fill the full width of the page. 
+  /* The header's background need to fill the full width of the page.
      Dimension hook is used to measure the content of this page (root container)
      Toolbox.left:  adjust background image to correct position.
      Toolbox.width: reset nested div which now has a full page width.
@@ -182,6 +155,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            tags
           }
         }
       }
