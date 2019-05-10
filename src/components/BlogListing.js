@@ -83,7 +83,7 @@ const BlogListing = ({ nodes }) => {
           </div>
 
           <Title>
-            <Link to={`${node.fields.collection}${node.fields.slug}`}>
+            <Link to={`/${node.fields.collection}${node.fields.slug}`}>
               {title}
             </Link>
           </Title>

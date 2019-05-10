@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import Tags from "../components/TagListing";
+import { TagFilter } from "../components/TagListing";
 import BlogListing from "../components/BlogListing";
+import {
+  Actions,
+  INITIAL_SELECTED_TAGS,
+  searchReducer,
+} from "../reducers/SearchReducer";
 
 const SearchInputStyle = styled.input`
   font-weight: 500;
@@ -48,30 +53,6 @@ const Results = ({ query, posts }) => {
   );
 };
 
-export default props => {
-  const { data, location } = props;
-  const { title, subTitle, menuLinks } = data.site.siteMetadata;
-  const posts = data.allMarkdownRemark.edges;
-  const tags = data.allMarkdownRemark.group;
-
-  const [query, setQuery] = useState("");
-
-  return (
-    <Layout
-      location={location}
-      title={title}
-      subTitle={subTitle}
-      menuLinks={menuLinks}
-    >
-      <div style={{ marginTop: 30, marginBottom: 150 }}>
-        <SearchInput value={query} onChange={setQuery} />
-        <Tags tags={tags} />
-        <Results query={query} posts={posts} />
-      </div>
-    </Layout>
-  );
-};
-
 function getSearchResults(query, lng) {
   if (typeof window === "undefined" || !window.__LUNR__) {
     return [];
@@ -93,6 +74,58 @@ function getSearchResults(query, lng) {
       .map(({ ref }) => lunrIndex.store[ref])
   );
 }
+
+/**
+ * @param selectedTags InitialSelectedTags
+ * @returns {function({node: *}): boolean}
+ */
+function filterTags(selectedTags) {
+  return ({ node }) => {
+    const tags = node.frontmatter.tags.filter(tag => {
+      const isDisabled = selectedTags[tag.toUpperCase()];
+      return !isDisabled;
+    });
+    return tags.length > 0;
+  };
+}
+
+export default props => {
+  const { data, location } = props;
+  const { title, subTitle, menuLinks } = data.site.siteMetadata;
+  const posts = data.allMarkdownRemark.edges;
+  const tags = data.allMarkdownRemark.group;
+
+  const [state, dispatch] = useReducer(searchReducer, {
+    selectedTags: INITIAL_SELECTED_TAGS,
+  });
+
+  const handleSearch = value => dispatch({ type: Actions.QUERY, value });
+  const handleSelectedTags = value =>
+    dispatch({ type: Actions.TOGGLE_SELECTED_TAG, value });
+  const onSelectAll = () => dispatch({ type: Actions.SELECT_ALL_TAGS });
+
+  const filterByTags = filterTags(state.selectedTags);
+  const postsFiltered = posts.filter(filterByTags);
+  return (
+    <Layout
+      location={location}
+      title={title}
+      subTitle={subTitle}
+      menuLinks={menuLinks}
+    >
+      <div style={{ marginTop: 30, marginBottom: 150 }}>
+        <SearchInput value={state.query} onChange={handleSearch} />
+        <TagFilter
+          tags={tags}
+          selectedTags={state.selectedTags}
+          onClick={handleSelectedTags}
+          onSelectAll={onSelectAll}
+        />
+        <Results query={state.query} posts={postsFiltered} />
+      </div>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query {
