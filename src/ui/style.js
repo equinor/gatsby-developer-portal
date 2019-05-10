@@ -12,6 +12,7 @@ const colors = {
   black80: "#333333",
   hover: "#00545B",
   lightGray: "#4A4A4A",
+  lighterGray: "#EAEAEA",
 };
 
 // Sizes for typography scale

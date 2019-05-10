@@ -180,7 +180,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
     const data = [];
     const getProfile = author =>
       fetch("https://api.github.com/users/" + author, config);
-    
+
     if (authors) {
       for (let i = 0; i < authors.length; i++) {
         const response = await getProfile(authors[i]);
