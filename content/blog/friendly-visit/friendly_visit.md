@@ -8,6 +8,7 @@ tags:
     - Exchange
 authors:
     - lars-petter-hauge
+featuredImage: ./Empty.png
 ---
 
 The daunting task of sitting with your software users - will you be
