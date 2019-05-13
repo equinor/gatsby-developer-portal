@@ -1,42 +1,50 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import Tags from "../components/TagListing";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import { filterTags, TagFilter } from "../components/TagListing";
+import { Col, Row } from "react-styled-flexboxgrid";
 import BlogListing from "../components/BlogListing";
+import {
+  INITIAL_SELECTED_TAGS,
+  searchReducer,
+} from "../reducers/SearchReducer";
 
-class Index extends React.Component {
-  render() {
-    const { data, location } = this.props;
+export default props => {
+  const { data, location } = props;
+  const [state, dispatch] = useReducer(searchReducer, {
+    selectedTags: INITIAL_SELECTED_TAGS,
+  });
+  const { title, subTitle, menuLinks } = data.site.siteMetadata;
 
-    const { title, subTitle, menuLinks } = data.site.siteMetadata;
+  const posts = data.allMarkdownRemark.edges;
+  const tags = data.allMarkdownRemark.group;
 
-    const posts = data.allMarkdownRemark.edges;
-    const tags = data.allMarkdownRemark.group;
+  const filteredPosts = posts.filter(filterTags(state.selectedTags));
 
-    return (
-      <Layout
-        location={location}
-        title={`${title}`}
-        subTitle={subTitle}
-        menuLinks={menuLinks}
-      >
-        <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
+  return (
+    <Layout
+      location={location}
+      title={`${title}`}
+      subTitle={subTitle}
+      menuLinks={menuLinks}
+    >
+      <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
 
-        <Tags tags={tags} />
+      <TagFilter
+        dispatch={dispatch}
+        tags={tags}
+        selectedTags={state.selectedTags}
+      />
 
-        <Row>
-          <Col xs={12} md={10} mdOffset={1}>
-            <BlogListing nodes={posts} />
-          </Col>
-        </Row>
-      </Layout>
-    );
-  }
-}
-
-export default Index;
+      <Row>
+        <Col xs={12} md={10} mdOffset={1}>
+          <BlogListing nodes={filteredPosts} />
+        </Col>
+      </Row>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query {
