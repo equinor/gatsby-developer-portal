@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import kebabCase from "lodash/kebabCase";
 import Style from "../ui/style";
+import { Actions } from "../reducers/SearchReducer";
 
 const Wrapper = styled.section`
   display: flex;
@@ -63,7 +64,25 @@ const TagWrapper = props => {
   );
 };
 
-export const TagFilter = ({ tags, selectedTags, onClick, onSelectAll }) => {
+/**
+ * @param selectedTags InitialSelectedTags
+ * @returns {function({node: *}): boolean}
+ */
+export function filterTags(selectedTags) {
+  return ({ node }) => {
+    const tags = node.frontmatter.tags.filter(tag => {
+      const isDisabled = selectedTags[tag.toUpperCase()];
+      return !isDisabled;
+    });
+    return tags.length > 0;
+  };
+}
+
+export const TagFilter = ({ tags, selectedTags, dispatch }) => {
+  const handleSelectedTags = value =>
+    dispatch({ type: Actions.TOGGLE_SELECTED_TAG, value });
+  const onSelectAll = () => dispatch({ type: Actions.SELECT_ALL_TAGS });
+
   const TagStatus = styled.span`
     font-size: 24px;
     padding-left: 10px;
@@ -73,7 +92,7 @@ export const TagFilter = ({ tags, selectedTags, onClick, onSelectAll }) => {
   return (
     <TagWrapper>
       {tags.map(tag => {
-        const handleClick = () => onClick(tag.fieldValue);
+        const handleClick = () => handleSelectedTags(tag.fieldValue);
         const disabled = selectedTags[tag.fieldValue.toUpperCase()];
         return (
           <FilterListItem

@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import { TagFilter } from "../components/TagListing";
+import { filterTags, TagFilter } from "../components/TagListing";
 import BlogListing from "../components/BlogListing";
 import {
   Actions,
@@ -75,20 +75,6 @@ function getSearchResults(query, lng) {
   );
 }
 
-/**
- * @param selectedTags InitialSelectedTags
- * @returns {function({node: *}): boolean}
- */
-function filterTags(selectedTags) {
-  return ({ node }) => {
-    const tags = node.frontmatter.tags.filter(tag => {
-      const isDisabled = selectedTags[tag.toUpperCase()];
-      return !isDisabled;
-    });
-    return tags.length > 0;
-  };
-}
-
 export default props => {
   const { data, location } = props;
   const { title, subTitle, menuLinks } = data.site.siteMetadata;
@@ -100,9 +86,6 @@ export default props => {
   });
 
   const handleSearch = value => dispatch({ type: Actions.QUERY, value });
-  const handleSelectedTags = value =>
-    dispatch({ type: Actions.TOGGLE_SELECTED_TAG, value });
-  const onSelectAll = () => dispatch({ type: Actions.SELECT_ALL_TAGS });
 
   const filterByTags = filterTags(state.selectedTags);
   const postsFiltered = posts.filter(filterByTags);
@@ -118,8 +101,7 @@ export default props => {
         <TagFilter
           tags={tags}
           selectedTags={state.selectedTags}
-          onClick={handleSelectedTags}
-          onSelectAll={onSelectAll}
+          dispatch={dispatch}
         />
         <Results query={state.query} posts={postsFiltered} />
       </div>
