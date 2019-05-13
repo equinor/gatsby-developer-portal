@@ -4,12 +4,11 @@ import {Link} from 'gatsby';
 import DocumentIcon from "../../assets/icons/Document.svg";
 
 const HighlightedDocumentItem = props => {
-  const { title, marginLeft, to } = props;
+  const { title, to } = props;
 
   const HighlightedDocumentStyle = styled.div`
     display: inline-flex;
     width: 100%;
-    margin-left: ${marginLeft}px;
     justify-content: center;
     padding-top: 20px;
     background-color: #ffffff;
