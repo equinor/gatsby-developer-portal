@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 import styled from "styled-components";
 import { Authors } from "../components/Bio";
 import { Grid, Col, Row } from "react-styled-flexboxgrid";
@@ -39,7 +40,6 @@ const Title = styled.h3`
 const Excerpt = styled.p`
   font-size: ${Style.typography.lg};
   line-height: 24px;
-  margin-bottom: 40px;
 `;
 
 const Divider = styled.div`
@@ -52,8 +52,8 @@ const TimeDate = styled.div`
   color: ${Style.colors.lightGray};
 `;
 
-const BlogListing = ({ nodes }) =>
-  nodes.map(({ node }) => {
+const BlogListing = ({ nodes }) => {
+  return nodes.map(({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
 
     const tags = node.frontmatter.tags.map((tag, index) => {
@@ -65,6 +65,10 @@ const BlogListing = ({ nodes }) =>
       );
     });
 
+    const imgFixed =
+      node.frontmatter.featuredImage &&
+      node.frontmatter.featuredImage.childImageSharp.fixed;
+    const imgHeight = (imgFixed && imgFixed.height) || 0;
     return (
       <Container key={node.fields.slug}>
         <Col xs={12} md={10} mdOffset={1}>
@@ -79,22 +83,35 @@ const BlogListing = ({ nodes }) =>
           </div>
 
           <Title>
-            <Link to={`${node.fields.collection}${node.fields.slug}`}>
+            <Link to={`/${node.fields.collection}${node.fields.slug}`}>
               {title}
             </Link>
           </Title>
 
           <div>
-            {/* Image */}
-
-            <Excerpt dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <div
+              style={{ width: "100%", minHeight: imgHeight, marginBottom: 20 }}
+            >
+              {imgFixed && (
+                <Img
+                  style={{ marginRight: 30, width: 200, float: "left" }}
+                  fixed={imgFixed}
+                />
+              )}
+              <Excerpt
+                style={{}}
+                dangerouslySetInnerHTML={{ __html: node.excerpt }}
+              />
+            </div>
+            <div>
+              {node.fields.authors && <Authors authors={node.fields.authors} />}
+            </div>
           </div>
-
-          {node.fields.authors && <Authors authors={node.fields.authors} />}
         </Col>
         <Divider />
       </Container>
     );
   });
+};
 
 export default BlogListing;

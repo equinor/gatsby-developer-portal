@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import { graphql, Link } from "gatsby";
+import React, { useReducer } from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import { Authors } from "../components/Bio";
-import Tags from "../components/TagListing";
+import { TagFilter } from "../components/TagListing";
+import BlogListing from "../components/BlogListing";
+import {
+  Actions,
+  INITIAL_SELECTED_TAGS,
+  searchReducer,
+} from "../reducers/SearchReducer";
 
 const SearchInputStyle = styled.input`
   font-weight: 500;
@@ -31,78 +36,20 @@ const SearchInput = ({ value, onChange }) => {
   );
 };
 
-const Result = ({ post }) => {
-  const ResultTitle = styled.div`
-    height: 36px;
-    width: 621px;
-    color: #333333;
-    font-family: Equinor;
-    font-size: 30px;
-    letter-spacing: -0.08px;
-    line-height: 36px;
-  `;
-  const node = post[0].node;
-  const {
-    frontmatter: { title, date, tags },
-    fields: { authors, collection, slug },
-  } = node;
-  const href = `/${collection}/${slug}`;
-  const tag = tags && tags.length > 0 && tags[0].toUpperCase();
-  return (
-    <div key={title} style={{ padding: "10px 0" }}>
-      <div>
-        {date} / {tag}
-      </div>
-      <Link to={href}>
-        <ResultTitle>{title}</ResultTitle>
-      </Link>
-      <div>
-        <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-      </div>
-      <div style={{ margin: "15px 0" }}>
-        <Authors authors={authors} />
-      </div>
-      <hr />
-    </div>
-  );
-};
-
 const Results = ({ query, posts }) => {
   const results = getSearchResults(query, "en");
   return (
     <div>
       {results.map(page => {
-        const post = posts.filter(p => p.node.frontmatter.title === page.title);
-        if (!post) {
+        const nodes = posts.filter(
+          p => p.node.frontmatter.title === page.title
+        );
+        if (!nodes) {
           return;
         }
-        return <Result key={page.title} post={post} />;
+        return <BlogListing key={page.title} nodes={nodes} />;
       })}
     </div>
-  );
-};
-
-export default props => {
-  const { data, location } = props;
-  const { title, subTitle, menuLinks } = data.site.siteMetadata;
-  const posts = data.allMarkdownRemark.edges;
-  const tags = data.allMarkdownRemark.group;
-
-  const [query, setQuery] = useState("");
-
-  return (
-    <Layout
-      location={location}
-      title={title}
-      subTitle={subTitle}
-      menuLinks={menuLinks}
-    >
-      <div style={{ marginTop: 30, marginBottom: 150 }}>
-        <SearchInput value={query} onChange={setQuery} />
-        <Tags tags={tags} />
-        <Results query={query} posts={posts} />
-      </div>
-    </Layout>
   );
 };
 
@@ -127,6 +74,58 @@ function getSearchResults(query, lng) {
       .map(({ ref }) => lunrIndex.store[ref])
   );
 }
+
+/**
+ * @param selectedTags InitialSelectedTags
+ * @returns {function({node: *}): boolean}
+ */
+function filterTags(selectedTags) {
+  return ({ node }) => {
+    const tags = node.frontmatter.tags.filter(tag => {
+      const isDisabled = selectedTags[tag.toUpperCase()];
+      return !isDisabled;
+    });
+    return tags.length > 0;
+  };
+}
+
+export default props => {
+  const { data, location } = props;
+  const { title, subTitle, menuLinks } = data.site.siteMetadata;
+  const posts = data.allMarkdownRemark.edges;
+  const tags = data.allMarkdownRemark.group;
+
+  const [state, dispatch] = useReducer(searchReducer, {
+    selectedTags: INITIAL_SELECTED_TAGS,
+  });
+
+  const handleSearch = value => dispatch({ type: Actions.QUERY, value });
+  const handleSelectedTags = value =>
+    dispatch({ type: Actions.TOGGLE_SELECTED_TAG, value });
+  const onSelectAll = () => dispatch({ type: Actions.SELECT_ALL_TAGS });
+
+  const filterByTags = filterTags(state.selectedTags);
+  const postsFiltered = posts.filter(filterByTags);
+  return (
+    <Layout
+      location={location}
+      title={title}
+      subTitle={subTitle}
+      menuLinks={menuLinks}
+    >
+      <div style={{ marginTop: 30, marginBottom: 150 }}>
+        <SearchInput value={state.query} onChange={handleSearch} />
+        <TagFilter
+          tags={tags}
+          selectedTags={state.selectedTags}
+          onClick={handleSelectedTags}
+          onSelectAll={onSelectAll}
+        />
+        <Results query={state.query} posts={postsFiltered} />
+      </div>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query {
@@ -162,6 +161,13 @@ export const pageQuery = graphql`
             title
             authors
             tags
+            featuredImage {
+              childImageSharp {
+                fixed(width: 200, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
