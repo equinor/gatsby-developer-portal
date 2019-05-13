@@ -16,10 +16,12 @@ const HighlightedDocuments = props => {
   return (
     <Grid style={{ width }}>
       <Row style={{ width: "100%", transform: `translate(0, -50%)` }}>
-        {items.map((title, index) => {
+        {items.map((item) => {
+          const {frontmatter: {title}, fields: {slug, collection}} = item.node;
+          const to = `/${collection}${slug}`;
           return (
-            <Col key={index + title} md={3} xs={6}>
-              <HighlightedDocumentItem key={title} title={title} />
+            <Col key={`highlighted-${title}`} md={3} xs={6}>
+              <HighlightedDocumentItem key={title} title={title} to={to} />
             </Col>
           );
         })}
@@ -65,7 +67,7 @@ export default props => {
 
   const docs = data.allMarkdownRemark.edges;
 
-  const highlightedItems = ["Api", "Security", "Open Source", "Api Principles"];
+  const highlightedItems = docs.filter(({node}) => node.frontmatter.featuredDocument);
 
   const categories = docs
     .filter(doc => {
@@ -156,6 +158,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            featuredDocument
           }
         }
       }
