@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from 'gatsby';
 import DocumentIcon from "../../assets/icons/Document.svg";
 
 const HighlightedDocumentItem = props => {
-  const { title, marginLeft } = props;
+  const { title, marginLeft, to } = props;
 
   const HighlightedDocumentStyle = styled.div`
     display: inline-flex;
@@ -17,12 +18,12 @@ const HighlightedDocumentItem = props => {
   `;
   return (
     <HighlightedDocumentStyle>
-      <div>
+      <Link to={to}>
         <div>
           <DocumentIcon />
         </div>
         <div style={{ margin: "10px 0" }}>{title}</div>
-      </div>
+      </Link>
     </HighlightedDocumentStyle>
   );
 };
