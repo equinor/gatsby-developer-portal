@@ -5,26 +5,10 @@ import styled from "styled-components";
 import { Authors } from "../components/Bio";
 import { Grid, Col, Row } from "react-styled-flexboxgrid";
 import Style from "../ui/style";
+import { TagsHeader } from "../ui/components/Tags";
 
 const Container = styled.div`
   margin-bottom: 20px;
-`;
-
-const Tags = styled.div``;
-
-const Tag = styled.span`
-  font-size: ${Style.typography.xs};
-  font-weight: 500;
-  line-height: 14px;
-  color: ${Style.colors.mossGreen};
-  text-transform: uppercase;
-
-  span {
-    font-size: 25px;
-    color: black;
-    font-weight: 200;
-    padding: 0 2px 0 10px;
-  }
 `;
 
 const Title = styled.h3`
@@ -47,23 +31,9 @@ const Divider = styled.div`
   margin: 20px 0;
 `;
 
-const TimeDate = styled.div`
-  font-size: ${Style.typography.sm};
-  color: ${Style.colors.lightGray};
-`;
-
 const BlogListing = ({ nodes }) => {
   return nodes.map(({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
-
-    const tags = node.frontmatter.tags.map((tag, index) => {
-      return (
-        <Tag key={`${tag}-${index}`}>
-          {" "}
-          <span>/</span> {tag}{" "}
-        </Tag>
-      );
-    });
 
     const imgFixed =
       node.frontmatter.featuredImage &&
@@ -72,16 +42,10 @@ const BlogListing = ({ nodes }) => {
     return (
       <Container key={node.fields.slug}>
         <Col xs={12} md={10} mdOffset={1}>
-          <div
-            style={{
-              display: "flex",
-            }}
-          >
-            <TimeDate>{node.frontmatter.date}</TimeDate>
-
-            <Tags>{tags}</Tags>
-          </div>
-
+          <TagsHeader
+            tags={node.frontmatter.tags}
+            date={node.frontmatter.date}
+          />
           <Title>
             <Link to={`/${node.fields.collection}${node.fields.slug}`}>
               {title}

@@ -1,21 +1,21 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import styled from "styled-components";
+
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import styled from "styled-components";
-import { Categories } from "../ui/components/Categories";
-import { HighlightedDocumentItem } from "../ui/components/HighlightedDocumentItem";
 import style from "../ui/style";
-import useDimensions from "react-use-dimensions";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import { HighlightedDocumentItem } from "../ui/components/HighlightedDocumentItem";
+import { Categories } from "../ui/components/Categories";
 
 const { colors } = style;
 
 const HighlightedDocuments = props => {
-  const { items, width } = props;
+  const { items } = props;
   return (
-    <Grid style={{ width }}>
-      <Row style={{ width: "100%", transform: `translate(0, -50%)` }}>
+    <Grid style={{ width: '100%' }}>
+      <Row style={{ transform: `translate(0, -50%)` }}>
         {items.map((item) => {
           const {frontmatter: {title}, fields: {slug, collection}} = item.node;
           const to = `/${collection}${slug}`;
@@ -47,7 +47,7 @@ const Header = props => {
 
   const HeaderBox = styled.div`
     width: 100%;
-    background-color: ${colors.mistBlue};
+    text-align: center;
     padding-top: 40px;
     padding-bottom: 150px;
   `;
@@ -83,14 +83,6 @@ export default props => {
     })
     .sort((a, b) => a.title.localeCompare(b.title));
 
-  /* The header's background need to fill the full width of the page.
-     Dimension hook is used to measure the content of this page (root container)
-     Toolbox.left:  adjust background image to correct position.
-     Toolbox.width: reset nested div which now has a full page width.
-  */
-  const [toolboxRef, toolboxSize] = useDimensions();
-  const [pageRef, pageSize] = useDimensions();
-
   return (
     <Layout
       location={location}
@@ -99,30 +91,19 @@ export default props => {
       menuLinks={menuLinks}
     >
       <SearchEngineOptimization title="All docs" keywords={["docs"]} />
-      <div ref={toolboxRef}>
-        {//hack to avoid flickering (caused by full background header) before pageSize is measured.
-        pageSize.width && (
-          <div
-            style={{
-              position: "relative",
-              width: "100vw",
-              marginLeft: -toolboxSize.left || 0,
-            }}
-          >
-            <Header title="Toolbox" highlightedItems={highlightedItems} />
-            <HighlightedDocuments
-              width={pageSize.width}
-              items={highlightedItems}
-            />
-            <Grid style={{ width: pageSize.width, marginBottom: 100 }}>
-              <Categories categories={categories} />
-            </Grid>
-          </div>
-        )}
-        {//hack to push footer out of sight during first render.
-        !pageSize.width && <div style={{ height: "100vh" }} />}
-        <div ref={pageRef} style={{ width: "100%" }} />
+      <div
+        style={{
+          marginLeft: "-100%",
+          marginRight: "-100%",
+          backgroundColor: style.colors.mistBlue,
+        }}
+      >
+        <Header title="Toolbox" highlightedItems={highlightedItems} />
       </div>
+      <HighlightedDocuments items={highlightedItems} />
+      <Grid style={{ width: "100%" }}>
+        <Categories categories={categories} />
+      </Grid>
     </Layout>
   );
 };
