@@ -8,16 +8,20 @@ import SearchEngineOptimization from "../components/SearchEngineOptimization";
 import style from "../ui/style";
 import { HighlightedDocumentItem } from "../ui/components/HighlightedDocumentItem";
 import { Categories } from "../ui/components/Categories";
+import { FullWidth } from "../ui/components/FullWidth";
 
 const { colors } = style;
 
 const HighlightedDocuments = props => {
   const { items } = props;
   return (
-    <Grid style={{ width: '100%' }}>
+    <Grid style={{ width: "100%" }}>
       <Row style={{ transform: `translate(0, -50%)` }}>
-        {items.map((item) => {
-          const {frontmatter: {title}, fields: {slug, collection}} = item.node;
+        {items.map(item => {
+          const {
+            frontmatter: { title },
+            fields: { slug, collection },
+          } = item.node;
           const to = `/${collection}${slug}`;
           return (
             <Col key={`highlighted-${title}`} md={3} xs={6}>
@@ -67,7 +71,9 @@ export default props => {
 
   const docs = data.allMarkdownRemark.edges;
 
-  const highlightedItems = docs.filter(({node}) => node.frontmatter.featuredDocument);
+  const highlightedItems = docs.filter(
+    ({ node }) => node.frontmatter.featuredDocument
+  );
 
   const categories = docs
     .filter(doc => {
@@ -91,15 +97,9 @@ export default props => {
       menuLinks={menuLinks}
     >
       <SearchEngineOptimization title="All docs" keywords={["docs"]} />
-      <div
-        style={{
-          marginLeft: "-100%",
-          marginRight: "-100%",
-          backgroundColor: style.colors.mistBlue,
-        }}
-      >
+      <FullWidth backgroundColor={style.colors.mistBlue}>
         <Header title="Toolbox" highlightedItems={highlightedItems} />
-      </div>
+      </FullWidth>
       <HighlightedDocuments items={highlightedItems} />
       <Grid style={{ width: "100%" }}>
         <Categories categories={categories} />

@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 import kebabCase from "lodash/kebabCase";
 import Style from "../ui/style";
-import { Actions } from "../reducers/SearchReducer";
 
 const Wrapper = styled.section`
   display: flex;
@@ -30,9 +29,9 @@ const List = styled.ul`
   padding-left: 20px;
 `;
 
-const ListItem = styled.li`
+export const ListItem = styled.li`
   background-color: ${props =>
-    props.disabled ? Style.colors.lighterGray : Style.colors.lichenGreen};
+    props.enabled ? Style.colors.lichenGreen : Style.colors.lighterGray};
   padding: 0 20px;
   text-align: center;
   border-radius: 20.5px;
@@ -49,11 +48,7 @@ const ListItem = styled.li`
   }
 `;
 
-const FilterListItem = styled(ListItem)`
-  cursor: pointer;
-`;
-
-const TagWrapper = props => {
+export const TagWrapper = props => {
   return (
     <Wrapper>
       <List>
@@ -61,59 +56,6 @@ const TagWrapper = props => {
         {props.children}
       </List>
     </Wrapper>
-  );
-};
-
-/**
- * @param selectedTags InitialSelectedTags
- * @returns {function({node: *}): boolean}
- */
-export function filterTags(selectedTags) {
-  return ({ node }) => {
-    const tags = node.frontmatter.tags.filter(tag => {
-      const isDisabled = selectedTags[tag.toUpperCase()];
-      return !isDisabled;
-    });
-    return tags.length > 0;
-  };
-}
-
-export const TagFilter = ({ tags, selectedTags, dispatch }) => {
-  const handleSelectedTags = value =>
-    dispatch({ type: Actions.TOGGLE_SELECTED_TAG, value });
-  const onSelectAll = () => dispatch({ type: Actions.SELECT_ALL_TAGS });
-
-  const TagStatus = styled.span`
-    font-size: 24px;
-    padding-left: 10px;
-    fontweight: 500;
-  `;
-
-  return (
-    <TagWrapper>
-      {tags.map(tag => {
-        const handleClick = () => handleSelectedTags(tag.fieldValue);
-        const disabled = selectedTags[tag.fieldValue.toUpperCase()];
-        return (
-          <FilterListItem
-            disabled={disabled}
-            key={tag.fieldValue}
-            onClick={handleClick}
-          >
-            <span>
-              {tag.fieldValue}
-              <TagStatus>{disabled ? "+" : "x"}</TagStatus>
-            </span>
-          </FilterListItem>
-        );
-      })}
-      <span
-        style={{ textDecoration: "underline", cursor: "pointer" }}
-        onClick={onSelectAll}
-      >
-        Select all
-      </span>
-    </TagWrapper>
   );
 };
 

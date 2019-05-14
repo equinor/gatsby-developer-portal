@@ -1,14 +1,13 @@
-import React, { useReducer } from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import { filterTags, TagFilter } from "../components/TagListing";
-import BlogListing from "../components/BlogListing";
 import {
-  Actions,
-  INITIAL_SELECTED_TAGS,
-  searchReducer,
-} from "../reducers/SearchReducer";
+  filterTags,
+  initializeSelectedTags,
+  TagFilter,
+} from "../components/TagFilter";
+import BlogListing from "../components/BlogListing";
 
 const SearchInputStyle = styled.input`
   font-weight: 500;
@@ -81,14 +80,12 @@ export default props => {
   const posts = data.allMarkdownRemark.edges;
   const tags = data.allMarkdownRemark.group;
 
-  const [state, dispatch] = useReducer(searchReducer, {
-    selectedTags: INITIAL_SELECTED_TAGS,
-  });
+  const [query, setQuery] = useState("");
+  const [selectedTags, setSelectedTags] = useState(
+    initializeSelectedTags(tags)
+  );
 
-  const handleSearch = value => dispatch({ type: Actions.QUERY, value });
-
-  const filterByTags = filterTags(state.selectedTags);
-  const postsFiltered = posts.filter(filterByTags);
+  const postsFiltered = posts.filter(filterTags(selectedTags));
   return (
     <Layout
       location={location}
@@ -97,13 +94,13 @@ export default props => {
       menuLinks={menuLinks}
     >
       <div style={{ marginTop: 30, marginBottom: 150 }}>
-        <SearchInput value={state.query} onChange={handleSearch} />
+        <SearchInput value={query} onChange={setQuery} />
         <TagFilter
           tags={tags}
-          selectedTags={state.selectedTags}
-          dispatch={dispatch}
+          selectedTags={selectedTags}
+          setSelectedTags={setSelectedTags}
         />
-        <Results query={state.query} posts={postsFiltered} />
+        <Results query={query} posts={postsFiltered} />
       </div>
     </Layout>
   );

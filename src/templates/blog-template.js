@@ -7,7 +7,8 @@ import styled from "styled-components";
 import { Authors } from "../components/Bio";
 import style from "../ui/style";
 import { TagsHeader } from "../ui/components/Tags";
-import FullWidth from "../ui/components/FullWidth";
+import { navigate } from "@reach/router";
+import { FullWidth } from "../ui/components/FullWidth";
 
 const PaginationList = styled.ul`
   display: flex;
@@ -49,7 +50,7 @@ const BlogPostHeader = props => {
 
   return (
     <Wrapper>
-      <TagsHeader tags={tags} date={date} />
+      <TagsHeader tags={tags} date={date} to="/blog" />
       <Title>{title}</Title>
       <Delimiter />
       <div>{authors && <Authors authors={authors} />}</div>
@@ -64,7 +65,7 @@ export default props => {
   const { title, date, tags } = post.frontmatter;
 
   return (
-    <Layout location={props.location} menuLinks={menuLinks}>
+    <Layout location={props.location} menuLinks={menuLinks} title={title}>
       <SearchEngineOptimization title={title} description={post.excerpt} />
       <FullWidth backgroundColor="#f2f2f2">
         <BlogPostHeader

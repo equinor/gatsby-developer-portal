@@ -1,26 +1,30 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import { filterTags, TagFilter } from "../components/TagListing";
+import {
+  filterTags,
+  initializeSelectedTags,
+  TagFilter,
+} from "../components/TagFilter";
 import { Col, Row } from "react-styled-flexboxgrid";
 import BlogListing from "../components/BlogListing";
-import {
-  INITIAL_SELECTED_TAGS,
-  searchReducer,
-} from "../reducers/SearchReducer";
 
 export default props => {
   const { data, location } = props;
-  const [state, dispatch] = useReducer(searchReducer, {
-    selectedTags: INITIAL_SELECTED_TAGS,
-  });
-  const { title, subTitle, menuLinks } = data.site.siteMetadata;
-
   const posts = data.allMarkdownRemark.edges;
   const tags = data.allMarkdownRemark.group;
 
-  const filteredPosts = posts.filter(filterTags(state.selectedTags));
+  const stateTag = location.state && location.state.selectedTag;
+  // const params = decodeURI(location.search);
+  // const paramTag = params && params.slice(params.indexOf('=')+1);
+
+  const { title, subTitle, menuLinks } = data.site.siteMetadata;
+  const [selectedTags, setSelectedTags] = useState(
+    initializeSelectedTags(tags, stateTag)
+  );
+
+  let filteredPosts = posts.filter(filterTags(selectedTags));
 
   return (
     <Layout
@@ -32,14 +36,24 @@ export default props => {
       <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
 
       <TagFilter
-        dispatch={dispatch}
+        selectedTags={selectedTags}
         tags={tags}
-        selectedTags={state.selectedTags}
+        setSelectedTags={setSelectedTags}
       />
 
       <Row>
         <Col xs={12} md={10} mdOffset={1}>
-          <BlogListing nodes={filteredPosts} />
+          <BlogListing
+            nodes={filteredPosts}
+            onTagClick={value => {
+              setSelectedTags(
+                selectedTags.map(tag => {
+                  tag.selected = value === tag.name;
+                  return tag;
+                })
+              );
+            }}
+          />
         </Col>
       </Row>
     </Layout>
