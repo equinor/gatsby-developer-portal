@@ -108,7 +108,10 @@ const Navigation = ({ menuLinks, location }) => (
   <Nav>
     <NavList>
       {menuLinks.map(link => {
-        const isActive = link.link === location.pathname;
+        const isSubPage =
+          link.link &&
+          location.pathname.substr(0, link.link.length) === link.link;
+        const isActive = link.link === location.pathname || isSubPage;
         const isLink = link.link;
         if (link.name === "Search") {
           return <SeachIconStyled key={link.name} />;

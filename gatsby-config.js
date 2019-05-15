@@ -11,7 +11,7 @@ module.exports = {
     menuLinks: [
       {
         name: "Toolbox",
-        link: "/toolbox",
+        link: "/docs",
       },
       {
         name: "Blog",
