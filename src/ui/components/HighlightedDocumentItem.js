@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from 'gatsby';
+import { Link } from "gatsby";
 import DocumentIcon from "../../assets/icons/Document.svg";
 
 const HighlightedDocumentItem = props => {

@@ -1,34 +1,11 @@
 import React from "react";
-import useDimensions from "react-use-dimensions";
+import styled from "styled-components";
 
-export default props => {
-  const [pageRef, pageSize] = useDimensions();
-  const [subPageRef, subPageSize] = useDimensions();
-  console.log(pageSize.width, subPageSize.width);
-  return (
-    <div ref={subPageRef}>
-      <div ref={pageRef} style={{ width: "100vw" }}>
-        {pageSize.width && (
-          <div
-            style={{
-              marginLeft: -pageSize.left,
-              backgroundColor: props.backgroundColor,
-            }}
-          >
-            {subPageSize.width && (
-              <div
-                style={{ width: subPageSize.width, marginLeft: pageSize.left }}
-              >
-                {props.children}
-              </div>
-            )}
-            {!subPageSize.width && (
-              <div ref={subPageSize} style={{ height: "100vh" }} />
-            )}
-          </div>
-        )}
-        {!pageSize.width && <div ref={pageRef} style={{ height: "100vh" }} />}
-      </div>
-    </div>
-  );
-};
+export const FullWidth = styled.div`
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: ${props => props.backgroundColor};
+`;

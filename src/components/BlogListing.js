@@ -31,7 +31,7 @@ const Divider = styled.div`
   margin: 20px 0;
 `;
 
-const BlogListing = ({ nodes }) => {
+const BlogListing = ({ nodes, onTagClick }) => {
   return nodes.map(({ node }) => {
     const title = node.frontmatter.title || node.fields.slug;
 
@@ -43,6 +43,7 @@ const BlogListing = ({ nodes }) => {
       <Container key={node.fields.slug}>
         <Col xs={12} md={10} mdOffset={1}>
           <TagsHeader
+            onTagClick={onTagClick}
             tags={node.frontmatter.tags}
             date={node.frontmatter.date}
           />

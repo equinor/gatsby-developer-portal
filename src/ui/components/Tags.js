@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Style from "../style";
+import { Link } from "@reach/router";
 
 const Tags = styled.div``;
 
@@ -10,13 +11,13 @@ const Tag = styled.span`
   line-height: 14px;
   color: ${Style.colors.mossGreen};
   text-transform: uppercase;
+`;
 
-  span {
-    font-size: 25px;
-    color: black;
-    font-weight: 200;
-    padding: 0 2px 0 10px;
-  }
+const Separator = styled.span`
+  font-size: 25px;
+  color: black;
+  font-weight: 200;
+  padding: 0 2px 0 10px;
 `;
 
 const TimeDate = styled.div`
@@ -24,7 +25,17 @@ const TimeDate = styled.div`
   color: ${Style.colors.lightGray};
 `;
 
-export const TagsHeader = ({ date, tags }) => {
+const TagElem = ({ to, tag }) => {
+  return to ? (
+    <Link to={to} state={{ selectedTag: tag }}>
+      {tag}
+    </Link>
+  ) : (
+    <span>{tag}</span>
+  );
+};
+
+export const TagsHeader = ({ date, tags, onTagClick = () => {}, to = "" }) => {
   return (
     <div
       style={{
@@ -36,9 +47,10 @@ export const TagsHeader = ({ date, tags }) => {
       <Tags>
         {tags.map((tag, index) => {
           return (
-            <Tag key={`${tag}-${index}`}>
+            <Tag key={`${tag}-${index}`} onClick={() => onTagClick(tag)}>
               {" "}
-              <span>/</span> {tag}{" "}
+              <Separator>/</Separator>
+              <TagElem to={to} tag={tag} />{" "}
             </Tag>
           );
         })}
