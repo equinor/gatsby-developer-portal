@@ -75,19 +75,14 @@ export default props => {
     ({ node }) => node.frontmatter.featuredDocument
   );
 
-  const categories = docs
+  const nodes = docs
     .filter(doc => {
       const pathLength = doc.node.fields.slug.match(/\//g).length;
       return pathLength === 2;
     })
-    .map(doc => {
-      return {
-        title: doc.node.frontmatter.title,
-        slug: doc.node.fields.slug,
-        description: doc.node.excerpt,
-      };
-    })
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .sort((a, b) =>
+      a.node.frontmatter.title.localeCompare(b.node.frontmatter.title)
+    );
 
   return (
     <Layout
@@ -102,7 +97,7 @@ export default props => {
       </FullWidth>
       <HighlightedDocuments items={highlightedItems} />
       <Grid style={{ width: "100%" }}>
-        <Categories categories={categories} />
+        <Categories nodes={nodes} />
       </Grid>
     </Layout>
   );

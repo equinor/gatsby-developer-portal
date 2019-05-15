@@ -34,13 +34,13 @@ export const Tag = ({ to, tag, onTagClick }) => {
   const TagElem = () => {
     if (to) {
       return (
-        <Link to={to}>
+        <Link to={to} state={{ tag }}>
           <TagStyle cursor="pointer">{tag}</TagStyle>
         </Link>
       );
     } else if (onTagClick) {
       return (
-        <TagStyle cursor="pointer" onClick={onTagClick}>
+        <TagStyle cursor="pointer" onClick={() => onTagClick(tag)}>
           {tag}
         </TagStyle>
       );

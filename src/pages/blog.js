@@ -15,7 +15,7 @@ export default props => {
   const posts = data.allMarkdownRemark.edges;
   const tags = data.allMarkdownRemark.group;
 
-  const stateTag = location.state && location.state.selectedTag;
+  const stateTag = location.state && location.state.tag;
   // const params = decodeURI(location.search);
   // const paramTag = params && params.slice(params.indexOf('=')+1);
 
