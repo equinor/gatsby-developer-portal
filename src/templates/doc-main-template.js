@@ -10,6 +10,7 @@ import DesignCircleIcon from "../assets/icons/circle_design.svg";
 import style from "../ui/style";
 import ReadMoreCard from "../components/ReadMoreCard";
 import { Tag } from "../ui/components/Tags";
+import { FullWidth } from "../ui/components/FullWidth";
 
 function getIconByTag(slug) {
   switch (slug) {
@@ -56,7 +57,7 @@ const Header = ({ title, tags, slug }) => {
   `;
   const Icon = getIconByTag(slug);
   return (
-    <React.Fragment>
+    <FullWidth backgroundColor="#f2f2f2">
       <HeaderWrapper>
         <IconWrapper>
           <Icon />
@@ -68,7 +69,7 @@ const Header = ({ title, tags, slug }) => {
           <Tag tag={category} />
         </div>
       </HeaderWrapper>
-    </React.Fragment>
+    </FullWidth>
   );
 };
 
@@ -80,11 +81,13 @@ const Footer = props => {
     margin: 30px 0;
   `;
   return (
-    <FooterWrapper>
-      <Title fontSize={52}>Further reading</Title>
-      <Seperator />
-      <ReadMoreCard slug={props.slug} />
-    </FooterWrapper>
+    <FullWidth backgroundColor="#f2f2f2">
+      <FooterWrapper>
+        <Title fontSize={52}>Further reading</Title>
+        <Seperator />
+        <ReadMoreCard slug={props.slug} />
+      </FooterWrapper>
+    </FullWidth>
   );
 };
 

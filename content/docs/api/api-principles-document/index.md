@@ -1,5 +1,6 @@
 ---
 title: API Principles
+tags: ['API']
 featuredDocument: true
 ---
 
