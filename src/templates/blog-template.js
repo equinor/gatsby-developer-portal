@@ -6,8 +6,7 @@ import SearchEngineOptimization from "../components/SearchEngineOptimization";
 import styled from "styled-components";
 import { Authors } from "../components/Bio";
 import style from "../ui/style";
-import { TagsHeader } from "../ui/components/Tags";
-import { navigate } from "@reach/router";
+import { BlogTag } from "../ui/components/Tags";
 import { FullWidth } from "../ui/components/FullWidth";
 
 const PaginationList = styled.ul`
@@ -50,7 +49,7 @@ const BlogPostHeader = props => {
 
   return (
     <Wrapper>
-      <TagsHeader tags={tags} date={date} to="/blog" />
+      <BlogTag tags={tags} date={date} to="/blog" />
       <Title>{title}</Title>
       <Delimiter />
       <div>{authors && <Authors authors={authors} />}</div>

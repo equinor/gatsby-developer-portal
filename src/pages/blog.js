@@ -43,17 +43,20 @@ export default props => {
 
       <Row>
         <Col xs={12} md={10} mdOffset={1}>
-          <BlogListing
-            nodes={filteredPosts}
-            onTagClick={value => {
-              setSelectedTags(
-                selectedTags.map(tag => {
-                  tag.selected = value === tag.name;
-                  return tag;
-                })
-              );
-            }}
-          />
+          {filteredPosts.map(({ node }) => (
+            <BlogListing
+              key={node.fields.slug}
+              node={node}
+              onTagClick={value => {
+                setSelectedTags(
+                  selectedTags.map(tag => {
+                    tag.selected = value === tag.name;
+                    return tag;
+                  })
+                );
+              }}
+            />
+          ))}
         </Col>
       </Row>
     </Layout>

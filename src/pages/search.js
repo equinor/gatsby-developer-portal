@@ -8,6 +8,7 @@ import {
   TagFilter,
 } from "../components/TagFilter";
 import BlogListing from "../components/BlogListing";
+import DocListing from "../ui/components/DocListing";
 
 const SearchInputStyle = styled.input`
   font-weight: 500;
@@ -46,7 +47,16 @@ const Results = ({ query, posts }) => {
         if (!nodes) {
           return;
         }
-        return <BlogListing key={page.title} nodes={nodes} />;
+        return nodes.map(({ node }) => {
+          switch (node.fields.collection) {
+            case "blog":
+              return <BlogListing key={node.fields.slug} node={node} />;
+            case "docs":
+              return <DocListing key={node.fields.slug} node={node} />;
+            default:
+              return null;
+          }
+        });
       })}
     </div>
   );
