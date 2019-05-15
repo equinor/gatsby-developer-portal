@@ -79,17 +79,18 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        node.frontmatter.tags.forEach(tag => {
-          createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
-            component: path.resolve(`./src/templates/tag-template.js`),
-            context: {
-              // Data passed to context is available
-              // in page queries as GraphQL variables.
-              tag,
-            },
+        node.frontmatter.tags &&
+          node.frontmatter.tags.forEach(tag => {
+            createPage({
+              path: `/tags/${_.kebabCase(tag)}/`,
+              component: path.resolve(`./src/templates/tag-template.js`),
+              context: {
+                // Data passed to context is available
+                // in page queries as GraphQL variables.
+                tag,
+              },
+            });
           });
-        });
       });
     });
   }
@@ -111,6 +112,7 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 tags
+                featuredDocument
               }
             }
           }
@@ -120,24 +122,54 @@ exports.createPages = async ({ graphql, actions }) => {
       .then(result => {
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           //create subpages
-          const pathLength = node.fields.slug.match(/\//g).length;
-          if (pathLength === 2) {
-            createPage({
-              path: `${node.fields.collection}${node.fields.slug}`,
-              component: path.resolve("src/templates/doc-main-template.js"),
-              context: {
-                slug: node.fields.slug,
-              },
-            });
-          } else {
-            createPage({
-              path: `${node.fields.collection}${node.fields.slug}`,
-              component: path.resolve("src/templates/doc-template.js"),
-              context: {
-                slug: node.fields.slug,
-              },
-            });
+          createPage({
+            path: `${node.fields.collection}${node.fields.slug}`,
+            component: path.resolve("src/templates/doc-template.js"),
+            context: {
+              slug: node.fields.slug,
+            },
+          });
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  async function createDocThemePages() {
+    graphql(`
+      {
+        allMarkdownRemark(
+          filter: { fields: { collection: { eq: "docs-theme" } } }
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+                collection
+              }
+              frontmatter {
+                title
+                tags
+                featuredDocument
+              }
+            }
           }
+        }
+      }
+    `)
+      .then(result => {
+        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+          //create subpages
+          createPage({
+            path: `${node.fields.collection}${node.fields.slug}`,
+            component: path.resolve("src/templates/doc-main-template.js"),
+            context: {
+              slug: node.fields.slug,
+            },
+          });
         });
       })
       .catch(error => {
@@ -147,6 +179,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   await createBlogPages();
   await createDocPages();
+  await createDocThemePages();
   await createTagPages();
 };
 

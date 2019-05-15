@@ -1,42 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import Tags from "../components/TagListing";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import {
+  filterTags,
+  initializeSelectedTags,
+  TagFilter,
+} from "../components/TagFilter";
+import { Col, Row } from "react-styled-flexboxgrid";
 import BlogListing from "../components/BlogListing";
 
-class Index extends React.Component {
-  render() {
-    const { data, location } = this.props;
+export default props => {
+  const { data, location } = props;
+  const posts = data.allMarkdownRemark.edges;
+  const tags = data.allMarkdownRemark.group;
 
-    const { title, subTitle, menuLinks } = data.site.siteMetadata;
+  const stateTag = location.state && location.state.tag;
+  // const params = decodeURI(location.search);
+  // const paramTag = params && params.slice(params.indexOf('=')+1);
 
-    const posts = data.allMarkdownRemark.edges;
-    const tags = data.allMarkdownRemark.group;
+  const { title, subTitle, menuLinks } = data.site.siteMetadata;
+  const [selectedTags, setSelectedTags] = useState(
+    initializeSelectedTags(tags, stateTag)
+  );
 
-    return (
-      <Layout
-        location={location}
-        title={`${title}`}
-        subTitle={subTitle}
-        menuLinks={menuLinks}
-      >
-        <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
+  let filteredPosts = posts.filter(filterTags(selectedTags));
 
-        <Tags tags={tags} />
+  return (
+    <Layout
+      location={location}
+      title={`${title}`}
+      subTitle={subTitle}
+      menuLinks={menuLinks}
+    >
+      <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
 
-        <Row>
-          <Col xs={12} md={10} mdOffset={1}>
-            <BlogListing nodes={posts} />
-          </Col>
-        </Row>
-      </Layout>
-    );
-  }
-}
+      <TagFilter
+        selectedTags={selectedTags}
+        tags={tags}
+        setSelectedTags={setSelectedTags}
+      />
 
-export default Index;
+      <Row>
+        <Col xs={12} md={10} mdOffset={1}>
+          {filteredPosts.map(({ node }) => (
+            <BlogListing
+              key={node.fields.slug}
+              node={node}
+              onTagClick={value => {
+                setSelectedTags(
+                  selectedTags.map(tag => {
+                    tag.selected = value === tag.name;
+                    return tag;
+                  })
+                );
+              }}
+            />
+          ))}
+        </Col>
+      </Row>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query {

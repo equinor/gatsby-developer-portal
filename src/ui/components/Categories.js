@@ -9,7 +9,7 @@ import DesignIcon from "../../assets/icons/Design.svg";
 import { Col, Row } from "react-styled-flexboxgrid";
 
 const Categories = props => {
-  const { categories } = props;
+  const { nodes } = props;
 
   const CategoryTitle = styled.div`
     color: #333333;
@@ -27,22 +27,25 @@ const Categories = props => {
     height: "auto",
   };
 
-  const categoryComponents = categories.map((category, index) => {
-    const Icon = getIcon(category.slug);
-
+  const categoryComponents = nodes.map(({ node }) => {
+    const Icon = getIcon(node.fields);
+    const {
+      frontmatter: { title },
+      fields: { slug, collection },
+    } = node;
     return (
       <Col
         md={4}
         sm={6}
         xs={12}
-        key={"category-" + category.slug}
+        key={"category-" + node.fields.slug}
         style={{ marginTop: 50 }}
       >
         <Icon style={iconStyle} />
         <CategoryTitle>
-          <Link to={"/docs/" + category.slug}>{category.title}</Link>
+          <Link to={`/${collection}${slug}`}>{title}</Link>
         </CategoryTitle>
-        <div>{category.description}</div>
+        <div>{node.excerpt}</div>
       </Col>
     );
   });
@@ -52,8 +55,12 @@ const Categories = props => {
 
 export { Categories };
 
-export function getIcon(slug) {
-  switch (slug) {
+export function getIcon(fields) {
+  const baseSlug = fields.slug.substr(
+    0,
+    fields.slug.substr(1).indexOf("/") + 2
+  );
+  switch (baseSlug) {
     case "/api/":
       return ApiIcon;
     case "/open-source/":
@@ -65,6 +72,6 @@ export function getIcon(slug) {
     case "/design/":
       return DesignIcon;
     default:
-      throw `icon type ${slug} is not supported. `;
+      throw `icon type ${baseSlug} is not supported. `;
   }
 }

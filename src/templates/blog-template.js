@@ -1,10 +1,13 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
+
 import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import Tags from "../components/TagMenu";
 import styled from "styled-components";
 import { Authors } from "../components/Bio";
+import style from "../ui/style";
+import { BlogTag } from "../ui/components/Tags";
+import { FullWidth } from "../ui/components/FullWidth";
 
 const PaginationList = styled.ul`
   display: flex;
@@ -18,51 +21,87 @@ const BlogPostFinished = styled.div`
   padding-bottom: 40px;
 `;
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark;
-    const menuLinks = this.props.data.site.siteMetadata.menuLinks;
-    const { previous, next } = this.props.pageContext;
+const BlogPostHeader = props => {
+  const { title, date, tags, authors } = props;
 
-    const { title, date, tags } = post.frontmatter;
+  const Wrapper = styled.div`
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: #f2f2f2;
+  `;
 
-    return (
-      <Layout location={this.props.location} menuLinks={menuLinks}>
-        <SearchEngineOptimization title={title} description={post.excerpt} />
-        <h3>{title}</h3>
-        <p>{date}</p>
-        <Tags tags={tags} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <BlogPostFinished />
-        {post.fields.authors && <Authors authors={post.fields.authors} />}
-        <PaginationList>
-          <li>
-            {previous && (
-              <Link
-                to={`${previous.fields.collection}${previous.fields.slug}`}
-                rel="prev"
-              >
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <div>
-            {next && (
-              <Link
-                to={`${next.fields.collection}${next.fields.slug}`}
-                rel="next"
-              >
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </div>
-        </PaginationList>
-      </Layout>
-    );
-  }
-}
+  const Title = styled.div`
+    color: #333333;
+    font-family: Equinor;
+    font-size: 48px;
+    letter-spacing: -0.1px;
+    line-height: 52px;
+    margin-top: 20px;
+  `;
 
-export default BlogPostTemplate;
+  const Delimiter = styled.div`
+    border-bottom: 3px solid red;
+    margin: 20px 0 30px;
+    width: 20%;
+    color: ${style.colors.energyRed}
+    max-width: 250px;
+  `;
+
+  return (
+    <Wrapper>
+      <BlogTag tags={tags} date={date} to="/blog" />
+      <Title>{title}</Title>
+      <Delimiter />
+      <div>{authors && <Authors authors={authors} />}</div>
+    </Wrapper>
+  );
+};
+
+export default props => {
+  const post = props.data.markdownRemark;
+  const menuLinks = props.data.site.siteMetadata.menuLinks;
+  const { previous, next } = props.pageContext;
+  const { title, date, tags } = post.frontmatter;
+
+  return (
+    <Layout location={props.location} menuLinks={menuLinks} title={title}>
+      <SearchEngineOptimization title={title} description={post.excerpt} />
+      <FullWidth backgroundColor="#f2f2f2">
+        <BlogPostHeader
+          title={title}
+          date={date}
+          tags={tags}
+          authors={post.fields.authors}
+        />
+      </FullWidth>
+
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <BlogPostFinished />
+      <PaginationList>
+        <li>
+          {previous && (
+            <Link
+              to={`${previous.fields.collection}${previous.fields.slug}`}
+              rel="prev"
+            >
+              ← {previous.frontmatter.title}
+            </Link>
+          )}
+        </li>
+        <div>
+          {next && (
+            <Link
+              to={`${next.fields.collection}${next.fields.slug}`}
+              rel="next"
+            >
+              {next.frontmatter.title} →
+            </Link>
+          )}
+        </div>
+      </PaginationList>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Tags from "../components/TagMenu";
 import styled from "styled-components";
 import ApiCircleIcon from "../assets/icons/circle_api.svg";
 import OpenSourceCircleIcon from "../assets/icons/circle_open_source.svg";
@@ -10,6 +9,8 @@ import DesignCircleIcon from "../assets/icons/circle_design.svg";
 
 import style from "../ui/style";
 import ReadMoreCard from "../components/ReadMoreCard";
+import { Tag } from "../ui/components/Tags";
+import { FullWidth } from "../ui/components/FullWidth";
 
 function getIconByTag(slug) {
   switch (slug) {
@@ -43,6 +44,7 @@ const Title = styled.div`
 `;
 
 const Header = ({ title, tags, slug }) => {
+  const category = slug.substring(1, slug.substr(1).indexOf("/") + 1);
   const HeaderWrapper = styled.div`
     background-color: #f2f2f2;
     width: 100%;
@@ -55,7 +57,7 @@ const Header = ({ title, tags, slug }) => {
   `;
   const Icon = getIconByTag(slug);
   return (
-    <React.Fragment>
+    <FullWidth backgroundColor="#f2f2f2">
       <HeaderWrapper>
         <IconWrapper>
           <Icon />
@@ -64,10 +66,10 @@ const Header = ({ title, tags, slug }) => {
         <Seperator />
 
         <div style={{ margin: "10px 0 20px", textAlign: "center" }}>
-          <Tags tags={tags} />
+          <Tag tag={category} />
         </div>
       </HeaderWrapper>
-    </React.Fragment>
+    </FullWidth>
   );
 };
 
@@ -79,11 +81,13 @@ const Footer = props => {
     margin: 30px 0;
   `;
   return (
-    <FooterWrapper>
-      <Title fontSize={52}>Further reading</Title>
-      <Seperator />
-      <ReadMoreCard slug={props.slug} />
-    </FooterWrapper>
+    <FullWidth backgroundColor="#f2f2f2">
+      <FooterWrapper>
+        <Title fontSize={52}>Further reading</Title>
+        <Seperator />
+        <ReadMoreCard slug={props.slug} />
+      </FooterWrapper>
+    </FullWidth>
   );
 };
 

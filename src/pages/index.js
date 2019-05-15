@@ -29,9 +29,6 @@ class Index extends React.Component {
             <Col xs={12} md={8}>
               <NodeListing nodes={docs} />
             </Col>
-            <Col xs={12} md={4}>
-              <Tags tags={tags} />
-            </Col>
           </Row>
         </Grid>
       </Layout>

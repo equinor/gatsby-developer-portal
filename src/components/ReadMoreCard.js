@@ -3,12 +3,12 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { getIcon } from "../ui/components/Categories";
 
 const ReadMoreCard = props => {
-  const { baseSlug } = props;
   const {
-    fields: { slug },
+    fields,
+    fields: { slug, collection },
     frontmatter: { title },
   } = props.data.node;
-  const Icon = getIcon(baseSlug);
+  const Icon = getIcon(fields);
   return (
     <div
       style={{
@@ -25,7 +25,7 @@ const ReadMoreCard = props => {
         <div style={{ display: "inline-flex" }}>
           <div>
             <div>{title}</div>
-            <Link to={`/docs/${slug}`}>Read more</Link>
+            <Link to={`/${collection}${slug}`}>Read more</Link>
           </div>
         </div>
       </div>
@@ -41,6 +41,7 @@ export default props => {
           node {
             fields {
               slug
+              collection
             }
             frontmatter {
               title
@@ -50,12 +51,7 @@ export default props => {
       }
     }
   `);
-  const subPages = data.allMarkdownRemark.edges.filter(edge => {
-    const slug = edge.node.fields.slug;
-    const isSubPath =
-      slug.length > props.slug.length && slug.startsWith(props.slug);
-    return isSubPath;
-  });
+  const subPages = data.allMarkdownRemark.edges;
 
   return (
     <div style={{ display: "flex" }}>
@@ -63,7 +59,7 @@ export default props => {
         return (
           <ReadMoreCard
             key={"readmore" + index}
-            baseSlug={props.slug}
+            slug={props.slug}
             data={data}
           />
         );

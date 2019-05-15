@@ -29,9 +29,9 @@ const List = styled.ul`
   padding-left: 20px;
 `;
 
-const ListItem = styled.li`
+export const ListItem = styled.li`
   background-color: ${props =>
-    props.disabled ? Style.colors.lighterGray : Style.colors.lichenGreen};
+    props.enabled ? Style.colors.lichenGreen : Style.colors.lighterGray};
   padding: 0 20px;
   text-align: center;
   border-radius: 20.5px;
@@ -48,11 +48,7 @@ const ListItem = styled.li`
   }
 `;
 
-const FilterListItem = styled(ListItem)`
-  cursor: pointer;
-`;
-
-const TagWrapper = props => {
+export const TagWrapper = props => {
   return (
     <Wrapper>
       <List>
@@ -60,41 +56,6 @@ const TagWrapper = props => {
         {props.children}
       </List>
     </Wrapper>
-  );
-};
-
-export const TagFilter = ({ tags, selectedTags, onClick, onSelectAll }) => {
-  const TagStatus = styled.span`
-    font-size: 24px;
-    padding-left: 10px;
-    fontweight: 500;
-  `;
-
-  return (
-    <TagWrapper>
-      {tags.map(tag => {
-        const handleClick = () => onClick(tag.fieldValue);
-        const disabled = selectedTags[tag.fieldValue.toUpperCase()];
-        return (
-          <FilterListItem
-            disabled={disabled}
-            key={tag.fieldValue}
-            onClick={handleClick}
-          >
-            <span>
-              {tag.fieldValue}
-              <TagStatus>{disabled ? "+" : "x"}</TagStatus>
-            </span>
-          </FilterListItem>
-        );
-      })}
-      <span
-        style={{ textDecoration: "underline", cursor: "pointer" }}
-        onClick={onSelectAll}
-      >
-        Select all
-      </span>
-    </TagWrapper>
   );
 };
 

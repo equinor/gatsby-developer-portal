@@ -17,7 +17,7 @@ const NodeListing = ({ nodes }) =>
     return (
       <Container key={node.fields.slug}>
         <Title>
-          <Link to={`${node.fields.collection}${node.fields.slug}`}>
+          <Link to={`/${node.fields.collection}${node.fields.slug}`}>
             {title}
           </Link>
         </Title>
