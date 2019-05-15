@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Title`,
-    subTitle: `Sub title`,
+    title: `For developers - by developers `,
+    subTitle: ``,
     author: `Equinor ASA`,
     description: `Site for developers`,
     siteUrl: `https://developer.equinor.com`,
@@ -45,6 +45,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/docs`,
         name: `docs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/docs-theme`,
+        name: `docs-theme`,
       },
     },
     {

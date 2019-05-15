@@ -70,16 +70,11 @@ export default props => {
   const { title, subTitle, menuLinks } = data.site.siteMetadata;
 
   const docs = data.allMarkdownRemark.edges;
-
   const highlightedItems = docs.filter(
     ({ node }) => node.frontmatter.featuredDocument
   );
-
   const nodes = docs
-    .filter(doc => {
-      const pathLength = doc.node.fields.slug.match(/\//g).length;
-      return pathLength === 2;
-    })
+    .filter(({ node }) => node.fields.collection === "docs-theme")
     .sort((a, b) =>
       a.node.frontmatter.title.localeCompare(b.node.frontmatter.title)
     );
@@ -117,7 +112,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: { collection: { eq: "docs" } } }
+      filter: { fields: { collection: { in: ["docs", "docs-theme"] } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       group(field: frontmatter___tags) {

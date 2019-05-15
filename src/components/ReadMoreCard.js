@@ -51,12 +51,7 @@ export default props => {
       }
     }
   `);
-  const subPages = data.allMarkdownRemark.edges.filter(edge => {
-    const slug = edge.node.fields.slug;
-    const isSubPath =
-      slug.length > props.slug.length && slug.startsWith(props.slug);
-    return isSubPath;
-  });
+  const subPages = data.allMarkdownRemark.edges;
 
   return (
     <div style={{ display: "flex" }}>
@@ -64,7 +59,7 @@ export default props => {
         return (
           <ReadMoreCard
             key={"readmore" + index}
-            baseSlug={props.slug}
+            slug={props.slug}
             data={data}
           />
         );
