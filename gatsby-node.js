@@ -79,17 +79,18 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        node.frontmatter.tags.forEach(tag => {
-          createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
-            component: path.resolve(`./src/templates/tag-template.js`),
-            context: {
-              // Data passed to context is available
-              // in page queries as GraphQL variables.
-              tag,
-            },
+        node.frontmatter.tags &&
+          node.frontmatter.tags.forEach(tag => {
+            createPage({
+              path: `/tags/${_.kebabCase(tag)}/`,
+              component: path.resolve(`./src/templates/tag-template.js`),
+              context: {
+                // Data passed to context is available
+                // in page queries as GraphQL variables.
+                tag,
+              },
+            });
           });
-        });
       });
     });
   }

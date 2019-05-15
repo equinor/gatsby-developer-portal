@@ -10,7 +10,7 @@ import { ListItem, TagWrapper } from "./TagListing";
 export function filterTags(selectedTags) {
   const hasSelections = selectedTags.filter(tag => tag.selected).length;
   return ({ node }) => {
-    if (!hasSelections) {
+    if (!hasSelections || !node.frontmatter.tags) {
       return true;
     }
 
@@ -22,13 +22,6 @@ export function filterTags(selectedTags) {
     });
     return tags.length;
   };
-}
-
-export function filterTagsByLocation(location, selectedTags) {
-  return selectedTags.map(tag => {
-    tag.selected = location.state.selectedTag === tag.name;
-    return tag;
-  });
 }
 
 export function initializeSelectedTags(tags, paramTag) {

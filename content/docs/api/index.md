@@ -1,7 +1,5 @@
 ---
 title: Api
-tags: ['API']
-authors: ["oyron"]
 ---
 
 
