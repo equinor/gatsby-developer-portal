@@ -81,7 +81,7 @@ export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
       style={{ textDecoration: "underline", cursor: "pointer" }}
       onClick={onClick}
     >
-      {selectAll ? "Select all" : "Deelect all"}
+      {selectAll ? "Select all" : "Deselect all"}
     </span>
   );
   return (
