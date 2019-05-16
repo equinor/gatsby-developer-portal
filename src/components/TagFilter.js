@@ -87,16 +87,16 @@ export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
   return (
     <TagWrapper>
       {tags.map((tag, index) => {
-        const enabled = selectedTags[index].selected;
+        const isEnabled = selectedTags[index].selected;
         return (
           <FilterListItem
-            enabled={selectedTags[index].selected}
+            enabled={isEnabled}
             key={tag.fieldValue}
             onClick={() => toggleTag(selectedTags, tag.fieldValue)}
           >
             <span>
               {tag.fieldValue}
-              <TagStatus>{enabled ? "X" : "+"}</TagStatus>
+              <TagStatus>{isEnabled ? "X" : "+"}</TagStatus>
             </span>
           </FilterListItem>
         );
