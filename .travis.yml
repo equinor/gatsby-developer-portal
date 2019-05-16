@@ -4,7 +4,10 @@ sudo: required
 
 dist: trusty
 
-language: node_js
+language: bash
+
+# skip npm test
+script: 'true'
 
 services:
   - docker
@@ -23,7 +26,7 @@ install:
   - docker pull "$IMAGE_NAME" || true
   - docker build --pull --cache-from "$IMAGE_NAME:$TRAVIS_BRANCH" --tag "$IMAGE_NAME" --build-arg NPM_TOKEN="$NPM_TOKEN" --build-arg GITHUB_PERSONAL_TOKEN="$GITHUB_PERSONAL_TOKEN" .
 
-before_deploy:  
+before_deploy:
   - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS" developeracr.azurecr.io
   - git_sha="$(git rev-parse --short HEAD)"
   - if [ ! -z "$TRAVIS_TAG" ]; then export IMAGE_TAG=$TRAVIS_TAG; else export IMAGE_TAG=$TRAVIS_BRANCH; fi ;

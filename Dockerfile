@@ -20,9 +20,9 @@ RUN echo "//npm.equinor.com/:_authToken=$NPM_TOKEN" > .npmrc && \
 COPY . .
 
 # Run tests
-# FROM dependencies as test
-# WORKDIR /app
-# RUN CI=true yarn test
+FROM dependencies as test
+WORKDIR /app
+RUN CI=true yarn test
 
 # Build
 FROM dependencies as builder
