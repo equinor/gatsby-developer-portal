@@ -1,12 +1,8 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
-import ApiIcon from "../../assets/icons/Api.svg";
-import OpenSourceIcon from "../../assets/icons/OpenSource.svg";
-import TechIcon from "../../assets/icons/Tech.svg";
-import SecurityIcon from "../../assets/icons/Security.svg";
-import DesignIcon from "../../assets/icons/Design.svg";
 import { Col, Row } from "react-styled-flexboxgrid";
+import { getIcon } from "../../components/IconUtil";
 
 const Categories = props => {
   const { nodes } = props;
@@ -28,11 +24,11 @@ const Categories = props => {
   };
 
   const categoryComponents = nodes.map(({ node }) => {
-    const Icon = getIcon(node.fields);
     const {
-      frontmatter: { title },
+      frontmatter: { title, tags },
       fields: { slug, collection },
     } = node;
+    const Icon = getIcon(tags[0]);
     return (
       <Col
         md={4}
@@ -54,24 +50,3 @@ const Categories = props => {
 };
 
 export { Categories };
-
-export function getIcon(fields) {
-  const baseSlug = fields.slug.substr(
-    0,
-    fields.slug.substr(1).indexOf("/") + 2
-  );
-  switch (baseSlug) {
-    case "/api/":
-      return ApiIcon;
-    case "/open-source/":
-      return OpenSourceIcon;
-    case "/tech/":
-      return TechIcon;
-    case "/security/":
-      return SecurityIcon;
-    case "/design/":
-      return DesignIcon;
-    default:
-      throw `icon type ${baseSlug} is not supported. `;
-  }
-}

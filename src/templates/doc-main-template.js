@@ -2,30 +2,11 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import ApiCircleIcon from "../assets/icons/circle_api.svg";
-import OpenSourceCircleIcon from "../assets/icons/circle_open_source.svg";
-import TechCircleIcon from "../assets/icons/circle_tech.svg";
-import DesignCircleIcon from "../assets/icons/circle_design.svg";
-
 import style from "../ui/style";
 import ReadMoreCard from "../components/ReadMoreCard";
 import { Tag } from "../ui/components/Tags";
 import { FullWidth } from "../ui/components/FullWidth";
-
-function getIconByTag(slug) {
-  switch (slug) {
-    case "/api/":
-      return ApiCircleIcon;
-    case "/open-source/":
-      return OpenSourceCircleIcon;
-    case "/tech/":
-      return TechCircleIcon;
-    case "/design/":
-      return DesignCircleIcon;
-    default:
-      throw `icon type ${slug} is not supported. `;
-  }
-}
+import { getCircleIcon } from "../components/IconUtil";
 
 const Seperator = styled.div`
   height: 4px;
@@ -55,7 +36,7 @@ const Header = ({ title, tags, slug }) => {
     height: 72px;
     transform: translate(0, -50%);
   `;
-  const Icon = getIconByTag(slug);
+  const Icon = getCircleIcon(tags[0]);
   return (
     <FullWidth backgroundColor="#f2f2f2">
       <HeaderWrapper>
@@ -73,7 +54,7 @@ const Header = ({ title, tags, slug }) => {
   );
 };
 
-const Footer = props => {
+const Footer = ({ tags }) => {
   const FooterWrapper = styled.div`
     width: 100%;
     background-color: #f2f2f2;
@@ -85,7 +66,7 @@ const Footer = props => {
       <FooterWrapper>
         <Title fontSize={52}>Further reading</Title>
         <Seperator />
-        <ReadMoreCard slug={props.slug} />
+        <ReadMoreCard tags={tags} />
       </FooterWrapper>
     </FullWidth>
   );
@@ -109,7 +90,7 @@ const DocMainTemplate = props => {
         style={{ padding: "40px 0" }}
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
-      <Footer slug={slug} />
+      <Footer tags={tags} />
     </Layout>
   );
 };
@@ -133,9 +114,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
         tags
-        authors
       }
     }
   }
