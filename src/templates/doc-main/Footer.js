@@ -12,6 +12,7 @@ export default props => {
     background-color: #f2f2f2;
     padding-top: 30px;
     margin: 30px 0;
+    padding: 50px 0;
   `;
   return (
     <FullWidth backgroundColor="#f2f2f2">

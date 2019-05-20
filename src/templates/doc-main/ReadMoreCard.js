@@ -1,31 +1,55 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import { getIcon } from "../../util/iconUtil";
+import styled from "styled-components";
+import { getCircleIcon } from "../../util/iconUtil";
+import { Tag } from "../../ui/components";
+import { style } from "../../ui";
+
+const ReadMoreLink = ({ to }) => {
+  const StyledLink = styled.span`
+    border: 1px solid ${style.colors.mossGreen};
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 10px;
+  `;
+  return (
+    <StyledLink>
+      <Link to={to}>Read more</Link>
+    </StyledLink>
+  );
+};
 
 const ReadMoreCard = props => {
   const {
     fields: { slug, collection },
     frontmatter: { title, tags },
   } = props.node;
-  const Icon = getIcon(tags[0]);
+  const Icon = getCircleIcon(tags[0]);
   return (
     <div
       style={{
         display: "inline-flex",
+        backgroundColor: "#fff",
         margin: 20,
-        padding: 20,
-        border: "1px solid",
+        width: "100%",
+        padding: "5px 20px",
       }}
     >
-      <div style={{ display: "flex" }}>
-        <div style={{ display: "inline-flex", marginRight: 20 }}>
-          <Icon />
+      <div>
+        <div style={{ display: "block", margin: "10px 0 20px" }}>
+          <Tag tag={tags[0]} to={`/docs-theme/${tags[0].toLowerCase()}/`} />
         </div>
-        <div style={{ display: "inline-flex" }}>
-          <div>
-            <div>{title}</div>
-            <Link to={`/${collection}${slug}`}>Read more</Link>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ display: "inline-flex" }}>
+            <Icon />
           </div>
+
+          <div style={{ display: "inline-flex", alignItems: "center" }}>
+            <div style={{ marginLeft: 20 }}>{title}</div>
+          </div>
+        </div>
+        <div style={{ margin: "30px 0 15px" }}>
+          <ReadMoreLink to={`/${collection}${slug}`} />
         </div>
       </div>
     </div>
