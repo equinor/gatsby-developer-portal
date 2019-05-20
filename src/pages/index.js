@@ -1,11 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import Tags from "../components/TagListing";
 import { Grid, Col, Row } from "react-styled-flexboxgrid";
-import NodeListing from "../components/NodeListing";
-import Card from "../ui/components/Card";
+
+import { Layout } from "../ui";
+import { SearchEngineOptimization } from "../components";
+import NodeListing from "../templates/tag/NodeListing";
 
 class Index extends React.Component {
   render() {

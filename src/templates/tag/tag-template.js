@@ -1,8 +1,9 @@
-import Layout from "../components/Layout";
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import NodeListing from "../components/NodeListing";
+
+import { Layout } from "../../ui";
+import NodeListing from "./NodeListing";
 
 const TagTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext;

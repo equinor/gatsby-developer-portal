@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import Style from "../style";
 import { Link } from "@reach/router";
+import { style } from "../ui";
 
 const Tags = styled.div``;
 
 const TagStyle = styled.span`
-  font-size: ${Style.typography.xs};
+  font-size: ${style.typography.xs};
   font-weight: 500;
   line-height: 14px;
   cursor: ${({ cursor }) => cursor || "inherit"};
-  color: ${Style.colors.mossGreen};
+  color: ${style.colors.mossGreen};
   text-transform: uppercase;
 `;
 
@@ -26,8 +26,8 @@ const TagSeparator = () => {
 
 const TimeDate = styled.div`
   margin-right: 10px;
-  font-size: ${Style.typography.sm};
-  color: ${Style.colors.lightGray};
+  font-size: ${style.typography.sm};
+  color: ${style.colors.lightGray};
 `;
 
 export const Tag = ({ to, tag, onTagClick }) => {

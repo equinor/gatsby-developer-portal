@@ -1,8 +1,8 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import { Col, Row } from "react-styled-flexboxgrid";
-import { getIcon } from "../../components/IconUtil";
+import { getIcon } from "../util/iconUtil";
 
 const Categories = props => {
   const { nodes } = props;

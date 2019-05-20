@@ -1,88 +1,11 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import styled from "styled-components";
-import {
-  filterTags,
-  initializeSelectedTags,
-  TagFilter,
-} from "../components/TagFilter";
-import BlogListing from "../components/BlogListing";
-import DocListing from "../ui/components/DocListing";
 
-const SearchInputStyle = styled.input`
-  font-weight: 500;
-  width: 100%;
-  outline: none;
-  font-size: 48px;
-  letter-spacing: -0.1px;
-  line-height: 52px;
-  padding: 30px 0;
-  text-align: center;
-  background-color: rgba(255, 18, 67, 0.1);
-  border: 0;
-`;
-
-const SearchInput = ({ value, onChange }) => {
-  return (
-    <form>
-      <SearchInputStyle
-        autoFocus
-        type="text"
-        value={value}
-        onChange={e => onChange(e.target.value)}
-      />
-    </form>
-  );
-};
-
-const Results = ({ query, posts }) => {
-  const results = getSearchResults(query, "en");
-  return (
-    <div>
-      {results.map(page => {
-        const nodes = posts.filter(
-          p => p.node.frontmatter.title === page.title
-        );
-        if (!nodes) {
-          return;
-        }
-        return nodes.map(({ node }) => {
-          switch (node.fields.collection) {
-            case "blog":
-              return <BlogListing key={node.fields.slug} node={node} />;
-            case "docs":
-              return <DocListing key={node.fields.slug} node={node} />;
-            default:
-              return null;
-          }
-        });
-      })}
-    </div>
-  );
-};
-
-function getSearchResults(query, lng) {
-  if (typeof window === "undefined" || !window.__LUNR__) {
-    return [];
-  }
-  const lunrIndex = window.__LUNR__[lng];
-
-  if (!query) {
-    query = "**";
-  }
-
-  const searchQuery = `${query.trim()}~1`;
-  const results = lunrIndex.index.search(searchQuery);
-  return (
-    results
-      // .filter(result => {
-      //   console.log(result);
-      //   return result.score > 0.1;
-      // })
-      .map(({ ref }) => lunrIndex.store[ref])
-  );
-}
+import { Layout } from "../ui";
+import { TagFilter } from "../components";
+import { filterTags, initializeSelectedTags } from "../util/tagUtil";
+import { SearchInput } from "./search/_SearchInput";
+import { Results } from "./search/_Results";
 
 export default props => {
   const { data, location } = props;

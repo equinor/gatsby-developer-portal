@@ -1,11 +1,10 @@
 import React from "react";
-import GlobalStyle from "../ui/global-style";
-import EquinorLogo from "../assets/equinor.png";
+import { GlobalStyle } from "../../ui";
+import EquinorLogo from "../../assets/equinor.png";
 import styled from "styled-components";
-import Container from "../ui/components/Container";
-import Header from "../ui/components/Header";
-import Navigation from "../components/Navigation";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import Container from "./Container";
+import Header from "./Header";
+import Navigation from "./Navigation";
 
 const Footer = styled.footer`
   padding-top: 20px;

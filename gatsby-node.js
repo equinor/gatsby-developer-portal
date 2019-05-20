@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   async function createBlogPages() {
-    const blogTemplate = path.resolve(`./src/templates/blog-template.js`);
+    const blogTemplate = path.resolve(`./src/templates/blog/blog-template.js`);
     const result = await graphql(`
       {
         allMarkdownRemark(
@@ -83,7 +83,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node.frontmatter.tags.forEach(tag => {
             createPage({
               path: `/tags/${_.kebabCase(tag)}/`,
-              component: path.resolve(`./src/templates/tag-template.js`),
+              component: path.resolve(`./src/templates/tag/tag-template.js`),
               context: {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
@@ -124,7 +124,7 @@ exports.createPages = async ({ graphql, actions }) => {
           //create subpages
           createPage({
             path: `${node.fields.collection}${node.fields.slug}`,
-            component: path.resolve("src/templates/doc-template.js"),
+            component: path.resolve("src/templates/doc/doc-template.js"),
             context: {
               slug: node.fields.slug,
             },
@@ -165,7 +165,9 @@ exports.createPages = async ({ graphql, actions }) => {
           //create subpages
           createPage({
             path: `${node.fields.collection}${node.fields.slug}`,
-            component: path.resolve("src/templates/doc-main-template.js"),
+            component: path.resolve(
+              "src/templates/doc-main/doc-main-template.js"
+            ),
             context: {
               slug: node.fields.slug,
             },

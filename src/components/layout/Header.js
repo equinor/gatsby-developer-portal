@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import media from "../media-query";
+import media from "../../ui/media-query";
 
 const Wrapper = styled.div`
   display: flex;
