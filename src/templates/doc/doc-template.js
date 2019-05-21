@@ -1,8 +1,9 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-import Layout from "../components/Layout";
-import SearchEngineOptimization from "../components/SearchEngineOptimization";
+import { graphql } from "gatsby";
 import styled from "styled-components";
+
+import { Layout } from "../../ui";
+import { SearchEngineOptimization } from "../../components";
 
 const BlogPostFinished = styled.hr`
   margin-top: 20px;

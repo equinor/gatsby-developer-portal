@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import {
-  filterTags,
-  initializeSelectedTags,
-  TagFilter,
-} from "../components/TagFilter";
 import { Col, Row } from "react-styled-flexboxgrid";
-import BlogListing from "../components/BlogListing";
+
+import { Layout } from "../ui";
+import {
+  TagFilter,
+  BlogListing,
+  SearchEngineOptimization,
+} from "../components";
+import { filterTags, initializeSelectedTags } from "../util/tagUtil";
 
 export default props => {
   const { data, location } = props;

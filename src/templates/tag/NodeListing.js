@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { Authors } from "../components/Bio";
+
+import { Authors } from "../../components";
 
 const Container = styled.div`
   margin-bottom: 60px;

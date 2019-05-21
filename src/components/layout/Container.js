@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import media from "../media-query";
+import media from "../../ui/media-query";
 
 const Wrapper = styled.div`
   margin: 0 auto;

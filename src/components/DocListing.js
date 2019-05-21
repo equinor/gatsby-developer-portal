@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Tag } from "./Tags";
-import { Divider } from "../../components/BlogListing";
-import { getIcon } from "../../components/IconUtil";
+import { Divider } from "./BlogListing";
+import { getIcon } from "../util/iconUtil";
 
 export default ({ node }) => {
   const {

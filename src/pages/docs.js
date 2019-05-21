@@ -1,68 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
-import styled from "styled-components";
+import { Grid, Row } from "react-styled-flexboxgrid";
 
-import Layout from "../components/Layout";
-import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import style from "../ui/style";
-import { HighlightedDocumentItem } from "../ui/components/HighlightedDocumentItem";
-import { Categories } from "../ui/components/Categories";
-import { FullWidth } from "../ui/components/FullWidth";
-
-const { colors } = style;
-
-const HighlightedDocuments = props => {
-  const { items } = props;
-  return (
-    <Grid style={{ width: "100%" }}>
-      <Row style={{ transform: `translate(0, -50%)` }}>
-        {items.map(item => {
-          const {
-            frontmatter: { title },
-            fields: { slug, collection },
-          } = item.node;
-          const to = `/${collection}${slug}`;
-          return (
-            <Col key={`highlighted-${title}`} md={3} xs={6}>
-              <HighlightedDocumentItem key={title} title={title} to={to} />
-            </Col>
-          );
-        })}
-      </Row>
-    </Grid>
-  );
-};
-
-const Header = props => {
-  const HeaderTitle = styled.span`
-    padding-bottom: 30px;
-    border-bottom: 4px solid ${colors.energyRed};
-  `;
-
-  const HeaderWrapper = styled.div`
-    font-family: Equinor;
-    font-size: 48px;
-    letter-spacing: -0.1px;
-    line-height: 52px;
-    text-align: center;
-    padding-bottom: 40px; /* match title border distance */
-  `;
-
-  const HeaderBox = styled.div`
-    width: 100%;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 150px;
-  `;
-  return (
-    <HeaderBox>
-      <HeaderWrapper>
-        <HeaderTitle>{props.title}</HeaderTitle>
-      </HeaderWrapper>
-    </HeaderBox>
-  );
-};
+import { Layout, style } from "../ui";
+import { FullWidth, Categories, SearchEngineOptimization } from "../components";
+import { Header } from "./docs/_Header";
+import { HighlightedDocuments } from "./docs/_HighlightedDocuments";
 
 export default props => {
   const { data, location } = props;

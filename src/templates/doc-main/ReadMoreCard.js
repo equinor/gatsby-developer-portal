@@ -1,12 +1,12 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import { getIcon } from "./IconUtil";
+import { getIcon } from "../../util/iconUtil";
 
-const ReadMoreCard = ({ node }) => {
+const ReadMoreCard = props => {
   const {
     fields: { slug, collection },
     frontmatter: { title, tags },
-  } = node;
+  } = props.node;
   const Icon = getIcon(tags[0]);
   return (
     <div
@@ -33,7 +33,6 @@ const ReadMoreCard = ({ node }) => {
 };
 
 export default props => {
-  const { tags } = props;
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(filter: { fields: { collection: { eq: "docs" } } }) {
@@ -56,16 +55,9 @@ export default props => {
 
   return (
     <div style={{ display: "flex" }}>
-      {subPages
-        .filter(({ node }) => {
-          //filter only docs with at least one tag from doc-theme.
-          return tags.filter(tag => {
-            return node.frontmatter.tags.includes(tag);
-          }).length;
-        })
-        .map((data, index) => {
-          return <ReadMoreCard key={"readmore" + index} node={data.node} />;
-        })}
+      {subPages.map((data, index) => {
+        return <ReadMoreCard key={"readmore" + index} node={data.node} />;
+      })}
     </div>
   );
 };

@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import { Authors } from "../components/Bio";
+import { Authors } from ".";
 import { Grid, Col, Row } from "react-styled-flexboxgrid";
-import Style from "../ui/style";
-import { BlogTag } from "../ui/components/Tags";
+import { style } from "../ui";
+import { BlogTag } from "./Tags";
 
 const Container = styled.div`
   margin-bottom: 20px;
@@ -14,7 +14,7 @@ const Container = styled.div`
 const Title = styled.h3`
   margin-bottom: 17px;
   a {
-    font-size: ${Style.typography.xxxl};
+    font-size: ${style.typography.xxxl};
     font-weight: 400;
     letter-spacing: -0.08px;
     line-height: 36px;
@@ -22,7 +22,7 @@ const Title = styled.h3`
 `;
 
 const Excerpt = styled.p`
-  font-size: ${Style.typography.lg};
+  font-size: ${style.typography.lg};
   line-height: 24px;
 `;
 

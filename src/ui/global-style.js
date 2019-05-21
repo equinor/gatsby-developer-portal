@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
-  body {        
+  body {
     color: ${Style.colors.black80};
     font-family: Equinor;
 	font-size: 18px;
