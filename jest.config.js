@@ -15,6 +15,6 @@ module.exports = {
   testURL: `http://localhost`,
   setupFiles: [`<rootDir>/loadershim.js`],
   collectCoverage: true,
-  coverageDirectory: './coverage',
-  collectCoverageFrom: ["./src/**"]
+  coverageDirectory: "./coverage",
+  collectCoverageFrom: ["./src/**"],
 };

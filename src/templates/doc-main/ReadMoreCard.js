@@ -2,8 +2,8 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { getCircleIcon } from "../../util/iconUtil";
-import { Tag } from "../../ui/components";
 import { style } from "../../ui";
+import { FullWidth, Tag } from "../../components";
 
 const ReadMoreLink = ({ to }) => {
   const StyledLink = styled.span`
@@ -31,7 +31,7 @@ const ReadMoreCard = props => {
         display: "inline-flex",
         backgroundColor: "#fff",
         margin: 20,
-        width: "100%",
+        maxWidth: "33%",
         padding: "5px 20px",
       }}
     >
@@ -78,10 +78,12 @@ export default props => {
   const subPages = data.allMarkdownRemark.edges;
 
   return (
-    <div style={{ display: "flex" }}>
-      {subPages.map((data, index) => {
-        return <ReadMoreCard key={"readmore" + index} node={data.node} />;
-      })}
-    </div>
+    <FullWidth>
+      <div style={{ display: "flex" }}>
+        {subPages.map((data, index) => {
+          return <ReadMoreCard key={"readmore" + index} node={data.node} />;
+        })}
+      </div>
+    </FullWidth>
   );
 };

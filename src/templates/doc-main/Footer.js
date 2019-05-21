@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import { FullWidth } from "../../components";
-import { Title } from "./Title";
+import { FullWidth, HeaderTitle } from "../../components";
 import ReadMoreCard from "./ReadMoreCard";
-import { Separator } from "./Header";
+import { style } from "../../ui";
 
 export default props => {
   const FooterWrapper = styled.div`
@@ -17,9 +16,15 @@ export default props => {
   return (
     <FullWidth backgroundColor="#f2f2f2">
       <FooterWrapper>
-        <Title fontSize={52}>Further reading</Title>
-        <Separator />
-        <ReadMoreCard slug={props.slug} />
+        <HeaderTitle
+          title="Further Reading"
+          fontSize={48}
+          alignCenter
+          color={style.colors.mossGreen}
+        />
+        <div style={{ marginTop: 50 }}>
+          <ReadMoreCard slug={props.slug} />
+        </div>
       </FooterWrapper>
     </FullWidth>
   );

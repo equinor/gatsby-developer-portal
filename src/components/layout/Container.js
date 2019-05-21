@@ -8,11 +8,11 @@ const Wrapper = styled.div`
   width: 100%;
 
   ${media.lg`
-    max-width: 800px;
+    max-width: 960px;
   `};
 
   ${media.xl`
-    max-width: 1000px;
+    max-width: 1140px;
   `};
 `;
 
