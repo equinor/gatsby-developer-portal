@@ -4,6 +4,8 @@ import { TagFilter } from "./TagFilter";
 import { Authors } from "./Bio";
 import DocListing from "./DocListing";
 import BlogListing from "./BlogListing";
+import { DocHeader } from "./DocHeader";
+import { HeaderTitle } from "./Titles";
 import { BlogTag, Tag } from "./Tags";
 import SearchEngineOptimization from "./SearchEngineOptimization";
 
@@ -13,8 +15,10 @@ export {
   BlogTag,
   BlogListing,
   DocListing,
+  DocHeader,
   Categories,
   FullWidth,
+  HeaderTitle,
   SearchEngineOptimization,
   TagFilter,
   Tag,

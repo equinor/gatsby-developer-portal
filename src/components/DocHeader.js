@@ -1,22 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { FullWidth, Tag } from "../../components";
-import { Title } from "./Title";
-import { getCircleIcon } from "../../util/iconUtil";
-import { style } from "../../ui";
+import { FullWidth, Tag } from ".";
+import { getCircleIcon } from "../util/iconUtil";
+import { HeaderTitle } from "./Titles";
+import { style } from "../ui";
 
-export const Separator = styled.div`
-  height: 4px;
-  width: 187px;
-  margin: 25px auto 20px;
-  background-color: ${style.colors.mossGreen};
-`;
-
-export const Header = ({ title, tags }) => {
+export const DocHeader = ({ title, tags }) => {
   const HeaderWrapper = styled.div`
     background-color: #f2f2f2;
     width: 100%;
-    margin-bottom: 30px;
+    text-align: center;
   `;
 
   const IconWrapper = styled.div`
@@ -30,10 +23,12 @@ export const Header = ({ title, tags }) => {
         <IconWrapper>
           <Icon />
         </IconWrapper>
-        <Title>{title}</Title>
-        <Separator />
-
-        <div style={{ margin: "10px 0 20px", textAlign: "center" }}>
+        <HeaderTitle
+          title={title}
+          color={style.colors.mossGreen}
+          alignCenter={true}
+        />
+        <div style={{ padding: "15px 0 20px", textAlign: "center" }}>
           <Tag tag={tags[0]} />
         </div>
       </HeaderWrapper>

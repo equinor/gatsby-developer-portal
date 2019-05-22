@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 
 import { Layout } from "../../ui";
-import { SearchEngineOptimization } from "../../components";
+import { DocHeader, SearchEngineOptimization } from "../../components";
 
 const BlogPostFinished = styled.hr`
   margin-top: 20px;
@@ -12,20 +12,20 @@ const BlogPostFinished = styled.hr`
 
 class BlogPostTemplate extends React.Component {
   render() {
+    const props = this.props;
+    const {
+      markdownRemark: { frontmatter },
+    } = props.data;
     const post = this.props.data.markdownRemark;
-    const { menuLinks, title } = this.props.data.site.siteMetadata;
+    const { menuLinks, title } = props.data.site.siteMetadata;
 
     return (
-      <Layout
-        location={this.props.location}
-        menuLinks={menuLinks}
-        title={title}
-      >
+      <Layout location={props.location} menuLinks={menuLinks} title={title}>
         <SearchEngineOptimization
           title={post.frontmatter.title || ""}
           description={post.excerpt || ""}
         />
-        <h3>{post.frontmatter.title}</h3>
+        <DocHeader tags={frontmatter.tags} title={frontmatter.title} />
         <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <BlogPostFinished />

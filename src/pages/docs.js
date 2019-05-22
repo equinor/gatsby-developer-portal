@@ -3,8 +3,13 @@ import { graphql } from "gatsby";
 import { Grid, Row } from "react-styled-flexboxgrid";
 
 import { Layout, style } from "../ui";
-import { FullWidth, Categories, SearchEngineOptimization } from "../components";
-import { Header } from "./docs/_Header";
+import {
+  FullWidth,
+  Categories,
+  SearchEngineOptimization,
+  TitleTagSeparator,
+  HeaderTitle,
+} from "../components";
 import { HighlightedDocuments } from "./docs/_HighlightedDocuments";
 
 export default props => {
@@ -31,7 +36,9 @@ export default props => {
     >
       <SearchEngineOptimization title="All docs" keywords={["docs"]} />
       <FullWidth backgroundColor={style.colors.mistBlue}>
-        <Header title="Toolbox" highlightedItems={highlightedItems} />
+        <div style={{ padding: "70px 0 140px" }}>
+          <HeaderTitle title="Toolbox" alignCenter={true} />
+        </div>
       </FullWidth>
       <HighlightedDocuments items={highlightedItems} />
       <Grid style={{ width: "100%" }}>

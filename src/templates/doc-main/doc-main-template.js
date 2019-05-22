@@ -2,8 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import { Layout } from "../../ui";
-import { Header } from "./Header";
 import Footer from "./Footer";
+import { DocHeader } from "../../components";
 
 export default props => {
   const {
@@ -18,7 +18,7 @@ export default props => {
 
   return (
     <Layout location={location} menuLinks={menuLinks} title={title}>
-      <Header title={title} tags={tags} slug={slug} />
+      <DocHeader title={title} tags={tags} slug={slug} />
       <div
         style={{ padding: "40px 0" }}
         dangerouslySetInnerHTML={{ __html: post.html }}
