@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FullWidth, Tag } from ".";
+import { FullWidth } from "./FullWidth";
+import { Tag } from "./Tags";
 import { getCircleIcon } from "../util/iconUtil";
 import { HeaderTitle } from "./Titles";
 import { style } from "../ui";

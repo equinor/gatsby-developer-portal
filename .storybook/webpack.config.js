@@ -16,8 +16,31 @@ module.exports = ({ config }) => {
     require.resolve("@babel/plugin-proposal-class-properties"),
   ]
   
+  //remove svg from current rule.
+  config.module.rules.map(rule => {
+    if (String(rule.test) === String(/\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/)) {
+      rule.test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+    }
+    return rule;
+  });
+  
+  // use svgr for svg files
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: [
+      {
+        loader: "babel-loader"
+      },
+      {
+        loader: "@svgr/webpack",
+        options: {
+          jsx: true // true outputs JSX tags
+        }
+      }
+    ],
+  });
+  
   // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
   config.resolve.mainFields = ["browser", "module", "main"]
-  
   return config
 }

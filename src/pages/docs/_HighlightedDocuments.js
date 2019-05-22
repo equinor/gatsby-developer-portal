@@ -7,7 +7,7 @@ export const HighlightedDocuments = props => {
   return (
     <Grid style={{ width: "100%" }}>
       <Row style={{ transform: `translate(0, -50%)` }}>
-        {items.map(item => {
+        {items.slice(0, 4).map(item => {
           const {
             frontmatter: { title },
             fields: { slug, collection },
