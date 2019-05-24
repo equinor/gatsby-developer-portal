@@ -63,7 +63,7 @@ export default ({ tags }) => {
   return (
     <TagWrapper>
       {tags.map(tag => (
-        <ListItem key={tag.fieldValue}>
+        <ListItem key={tag.fieldValue} enabled={tag.enabled}>
           <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
             {tag.fieldValue}
           </Link>

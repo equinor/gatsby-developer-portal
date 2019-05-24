@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { Authors } from ".";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import { Col } from "react-styled-flexboxgrid";
 import { style } from "../ui";
 import { BlogTag } from "./Tags";
 
@@ -38,6 +38,10 @@ const BlogListing = ({ node, onTagClick }) => {
     node.frontmatter.featuredImage &&
     node.frontmatter.featuredImage.childImageSharp.fixed;
   const imgHeight = (imgFixed && imgFixed.height) || 0;
+
+  //remove this when we actually have a real picture in at least one blogpost.
+  const showImage = imgFixed && imgFixed.src.indexOf("Empty.png") === 0;
+
   return (
     <Container key={node.fields.slug}>
       <Col xs={12} md={10} mdOffset={1}>
@@ -54,9 +58,13 @@ const BlogListing = ({ node, onTagClick }) => {
 
         <div>
           <div
-            style={{ width: "100%", minHeight: imgHeight, marginBottom: 20 }}
+            style={{
+              width: "100%",
+              minHeight: showImage ? imgHeight : 0,
+              marginBottom: 20,
+            }}
           >
-            {imgFixed && (
+            {imgFixed && showImage && (
               <Img
                 style={{ marginRight: 30, width: 200, float: "left" }}
                 fixed={imgFixed}

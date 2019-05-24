@@ -10,35 +10,45 @@ import SecurityIcon from "../assets/icons/Security.svg";
 import DesignIcon from "../assets/icons/Design.svg";
 import DocumentIcon from "../assets/icons/Document.svg";
 
+const IconEnum = {
+  API: "api",
+  DESIGN: "design",
+  OPEN_SOURCE: "open-source",
+  TECH: "tech",
+  SECURITY: "security",
+};
+Object.freeze(IconEnum);
+export { IconEnum };
+
 export function getCircleIcon(tag) {
   switch (tag.toLowerCase()) {
-    case "api":
+    case IconEnum.API:
       return ApiCircleIcon;
-    case "open-source":
-      return OpenSourceCircleIcon;
-    case "tech":
-      return TechCircleIcon;
-    case "security":
-      return SecurityCircleIcon;
-    case "design":
+    case IconEnum.DESIGN:
       return DesignCircleIcon;
+    case IconEnum.OPEN_SOURCE:
+      return OpenSourceCircleIcon;
+    case IconEnum.SECURITY:
+      return SecurityCircleIcon;
+    case IconEnum.TECH:
+      return TechCircleIcon;
     default:
-      throw `icon type ${tag} is not supported. `;
+      throw `icon type ${tag} is not supported.`;
   }
 }
 
 export function getIcon(tag) {
   switch (tag.toLowerCase()) {
-    case "api":
+    case IconEnum.API:
       return ApiIcon;
-    case "open-source":
-      return OpenSourceIcon;
-    case "tech":
-      return TechIcon;
-    case "security":
-      return SecurityIcon;
-    case "design":
+    case IconEnum.DESIGN:
       return DesignIcon;
+    case IconEnum.OPEN_SOURCE:
+      return OpenSourceIcon;
+    case IconEnum.SECURITY:
+      return SecurityIcon;
+    case IconEnum.TECH:
+      return TechIcon;
     default:
       return DocumentIcon;
   }
