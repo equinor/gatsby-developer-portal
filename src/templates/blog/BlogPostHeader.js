@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { style } from "../../ui";
-import { BlogTag, Authors, HeaderTitle } from "../../components";
+import { HeaderTitle } from "../../components/Titles";
+import { BlogTag } from "../../components/Tags";
+import { Authors } from "../../components/Bio";
 
 export const BlogPostHeader = props => {
   const { title, date, tags, authors } = props;

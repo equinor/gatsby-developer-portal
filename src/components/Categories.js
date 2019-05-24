@@ -23,7 +23,7 @@ const Categories = props => {
     height: "auto",
   };
 
-  const categoryComponents = nodes.map(({ node }) => {
+  const categoryComponents = nodes.map(({ node }, index) => {
     const {
       frontmatter: { title, tags },
       fields: { slug, collection },
@@ -34,7 +34,7 @@ const Categories = props => {
         md={4}
         sm={6}
         xs={12}
-        key={"category-" + node.fields.slug}
+        key={"category-" + node.fields.slug + index}
         style={{ marginTop: 50 }}
       >
         <Icon style={iconStyle} />
