@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { Tag } from "./Tags";
 import { Divider } from "./BlogListing";
 import { getIcon } from "../util/iconUtil";
+import { Col } from "react-styled-flexboxgrid";
 
 export default ({ node }) => {
   const {
@@ -12,7 +13,7 @@ export default ({ node }) => {
   //find base slug.
   const Icon = getIcon(tags[0]);
   return (
-    <React.Fragment>
+    <Col xs={12} md={10} mdOffset={1}>
       <div style={{}}>
         <Icon style={{ height: 30, width: 30 }} />
         <Tag tag={tags[0]} />
@@ -21,6 +22,6 @@ export default ({ node }) => {
         {title}
       </Link>
       <Divider />
-    </React.Fragment>
+    </Col>
   );
 };

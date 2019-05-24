@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchEngineOptimization renders correctly 1`] = `null`;
+
+exports[`SearchEngineOptimization renders correctly with keywords 1`] = `null`;
