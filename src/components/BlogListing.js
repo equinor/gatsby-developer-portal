@@ -43,7 +43,7 @@ const BlogListing = ({ node, onTagClick }) => {
   const showImage = imgFixed && imgFixed.src.indexOf("Empty.png") === 0;
 
   return (
-    <Container key={node.fields.slug}>
+    <Container>
       <Col xs={12} md={10} mdOffset={1}>
         <BlogTag
           onTagClick={onTagClick}
@@ -80,9 +80,19 @@ const BlogListing = ({ node, onTagClick }) => {
           </div>
         </div>
       </Col>
-      <Divider />
     </Container>
   );
 };
 
-export default BlogListing;
+export default props => (
+  <Container>
+    <BlogListing {...props} />
+  </Container>
+);
+
+export const BlogListingDivider = props => (
+  <Container>
+    <BlogListing {...props} />
+    <Divider />
+  </Container>
+);

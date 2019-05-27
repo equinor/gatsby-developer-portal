@@ -1,6 +1,7 @@
 import React from "react";
 
-import { BlogListing, DocListing } from "../../components";
+import { DocListing } from "../../components";
+import { BlogListingDivider } from "../../components/BlogListing";
 
 export const Results = ({ query, posts }) => {
   const results = getSearchResults(query, "en");
@@ -16,7 +17,7 @@ export const Results = ({ query, posts }) => {
         return nodes.map(({ node }) => {
           switch (node.fields.collection) {
             case "blog":
-              return <BlogListing key={node.fields.slug} node={node} />;
+              return <BlogListingDivider key={node.fields.slug} node={node} />;
             case "docs":
               return <DocListing key={node.fields.slug} node={node} />;
             default:

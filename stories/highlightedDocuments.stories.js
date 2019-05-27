@@ -6,7 +6,7 @@ import { LayoutDecorator } from './index.stories'
 const items = [
   { node: { frontmatter: { title: "Api" }, fields: {} } },
   { node: { frontmatter: { title: "Tech" }, fields: {} } },
-  { node: { frontmatter: { title: "Open source kdløj" }, fields: {} } },
+  { node: { frontmatter: { title: "Open Source" }, fields: {} } },
   { node: { frontmatter: { title: "Design" }, fields: {} } },
   { node: { frontmatter: { title: "dont show this" }, fields: {} } },
 ];

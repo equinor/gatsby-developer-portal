@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { mockAuthors } from './mock/mockData'
 import BlogListing from '../src/components/BlogListing'
+import { BlogSummary } from '../src/components/BlogSummary'
 import { BlogPostHeader } from '../src/templates/blog/BlogPostHeader'
 import { LayoutDecorator } from './index.stories'
 
@@ -19,3 +20,7 @@ storiesOf('Blog', module)
   .add('BlogPostHeader', () => (
     <BlogPostHeader title="Api" date="2019-05-04" tags={['api']} authors={mockAuthors}/>
   ))
+  .add('BlogSummary', () => (
+    <BlogSummary nodes={[{node: blogNode}, {node: blogNode}]}/>
+  ))
+
