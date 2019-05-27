@@ -1,0 +1,2352 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Blog BlogListing 1`] = `
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  margin-bottom: 0;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.c5 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c15 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c8 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c6 {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+
+.c4 {
+  margin-bottom: 20px;
+}
+
+.c9 {
+  margin-bottom: 17px;
+}
+
+.c9 a {
+  font-size: 30px;
+  font-weight: 400;
+  -webkit-letter-spacing: -0.08px;
+  -moz-letter-spacing: -0.08px;
+  -ms-letter-spacing: -0.08px;
+  letter-spacing: -0.08px;
+  line-height: 36px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c14 {
+  border-bottom: 1px solid #f2f2f2;
+  margin: 20px 0;
+}
+
+.c7 {
+  font-size: 25px;
+  color: black;
+  font-weight: 200;
+  padding: 0 2px 0 10px;
+}
+
+@media (max-width:576px) {
+  .c11 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width:0em) {
+  .c5 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c5 {
+    -webkit-flex-basis: 83.33333333333334%;
+    -ms-flex-preferred-size: 83.33333333333334%;
+    flex-basis: 83.33333333333334%;
+    max-width: 83.33333333333334%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c5 {
+    margin-left: 8.333333333333334%;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c1 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        href="/"
+      >
+        <img
+          className="c2"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      className="c5"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          className="c6"
+        >
+          2019-05-04
+        </div>
+        <div
+          className=""
+        >
+          <span
+            className="c7"
+          >
+            /
+          </span>
+          <span
+            className="c8"
+          >
+            Api
+          </span>
+        </div>
+      </div>
+      <h3
+        className="c9"
+      >
+        <a
+          href="/"
+        >
+          A blogpost
+        </a>
+      </h3>
+      <div>
+        <div
+          style={
+            Object {
+              "marginBottom": 20,
+              "minHeight": 0,
+              "width": "100%",
+            }
+          }
+        >
+          <p
+            className="c10"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "The Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis...",
+              }
+            }
+            style={Object {}}
+          />
+        </div>
+        <div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c11"
+            >
+              <img
+                alt="Ola Nordmann"
+                className="c12"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkCAIAAADxLsZiAAAF4klEQVR4nOzXAY3jMBBA0dtTiJRWyEQhE1qhYAjLoeraav57BGakxl/TbYzxD+Dp/q9eAGAGsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxK2aZOu8542i7ftx2v1Cp/kq/sKc746lx2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkDCNm3SfrymzZrjOu/VK1D0vKc0h8sOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5I+BljrN4B4M+57IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IGGbNuk672mzptmP1+oVaPGO3uayAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDErbVC3y367xXr/Bh+/FavcInPe8H4m3zYvewV+QhscrzntIc/sYCCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJP2OM1TsA/DmXHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkPAbAAD//9JGJL1D6GKKAAAAAElFTkSuQmCC"
+              />
+              <div
+                className="c13"
+              >
+                <div
+                  className="bio-name"
+                >
+                  Ola Nordmann
+                </div>
+              </div>
+            </div>
+            <div
+              className="c11"
+            >
+              <img
+                alt="Kari Nordmann"
+                className="c12"
+                src="data:image/png;base64,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"
+              />
+              <div
+                className="c13"
+              >
+                <div
+                  className="bio-name"
+                >
+                  Kari Nordmann
+                </div>
+              </div>
+            </div>
+            <div
+              className="c11"
+            >
+              <img
+                alt="Erik Eriksen"
+                className="c12"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkCAIAAADxLsZiAAAF4klEQVR4nOzXAY3jMBBA0dtTiJRWyEQhE1qhYAjLoeraav57BGakxl/TbYzxD+Dp/q9eAGAGsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxK2aZOu8542i7ftx2v1Cp/kq/sKc746lx2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkDCNm3SfrymzZrjOu/VK1D0vKc0h8sOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5I+BljrN4B4M+57IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IGGbNuk672mzptmP1+oVaPGO3uayAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDEsQOSBA7IEHsgASxAxLEDkgQOyBB7IAEsQMSxA5IEDsgQeyABLEDErbVC3y367xXr/Bh+/FavcInPe8H4m3zYvewV+QhscrzntIc/sYCCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJP2OM1TsA/DmXHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkCB2QILYAQliBySIHZAgdkCC2AEJYgckiB2QIHZAgtgBCWIHJIgdkPAbAAD//9JGJL1D6GKKAAAAAElFTkSuQmCC"
+              />
+              <div
+                className="c13"
+              >
+                <div
+                  className="bio-name"
+                >
+                  Erik Eriksen
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c14"
+    />
+  </div>
+  <footer
+    className="c15"
+  >
+    Copyright © 
+    2019
+     Equinor ASA
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Blog BlogPostHeader 1`] = `
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  margin-bottom: 0;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c14 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c8 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: pointer;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c6 {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+
+.c10 {
+  height: 4px;
+  width: 20%;
+  margin: 20px 0 0;
+  background-color: #ff1243;
+}
+
+.c9 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: initial;
+}
+
+.c4 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #f2f2f2;
+}
+
+.c5 {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: #f2f2f2;
+}
+
+.c7 {
+  font-size: 25px;
+  color: black;
+  font-weight: 200;
+  padding: 0 2px 0 10px;
+}
+
+@media (max-width:576px) {
+  .c11 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c1 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        href="/"
+      >
+        <img
+          className="c2"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      className="c5"
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          className="c6"
+        >
+          2019-05-04
+        </div>
+        <div
+          className=""
+        >
+          <span
+            className="c7"
+          >
+            /
+          </span>
+          <a
+            href="/blog"
+            onClick={[Function]}
+          >
+            <span
+              className="c8"
+              cursor="pointer"
+            >
+              api
+            </span>
+          </a>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "margin": "20px 0 40px",
+          }
+        }
+      >
+        <div
+          className="c9"
+          color="#ff1243"
+          title="Api"
+        >
+          Api
+        </div>
+        <div
+          className="c10"
+          color="#ff1243"
+        />
+      </div>
+      <div
+        className="c11"
+      >
+        <div
+          className="c11"
+        >
+          <img
+            alt="Ola Nordmann"
+            className="c12"
+            src="data:image/png;base64,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"
+          />
+          <div
+            className="c13"
+          >
+            <div
+              className="bio-name"
+            >
+              Ola Nordmann
+            </div>
+          </div>
+        </div>
+        <div
+          className="c11"
+        >
+          <img
+            alt="Kari Nordmann"
+            className="c12"
+            src="data:image/png;base64,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"
+          />
+          <div
+            className="c13"
+          >
+            <div
+              className="bio-name"
+            >
+              Kari Nordmann
+            </div>
+          </div>
+        </div>
+        <div
+          className="c11"
+        >
+          <img
+            alt="Erik Eriksen"
+            className="c12"
+            src="data:image/png;base64,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"
+          />
+          <div
+            className="c13"
+          >
+            <div
+              className="bio-name"
+            >
+              Erik Eriksen
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="c14"
+  >
+    Copyright © 
+    2019
+     Equinor ASA
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Card default 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid gray;
+  box-shadow: 5px 5px #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+@media (min-width:80em) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+<div
+  className="c0"
+>
+  content
+</div>
+`;
+
+exports[`Storyshots Categories default 1`] = `
+.c5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.c6 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.c1 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c3 {
+  margin-right: 60px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c0 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+}
+
+.c7 {
+  color: #333333;
+  font-size: 30px;
+  -webkit-letter-spacing: -0.08px;
+  -moz-letter-spacing: -0.08px;
+  -ms-letter-spacing: -0.08px;
+  letter-spacing: -0.08px;
+  line-height: 36px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width:0em) {
+  .c6 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:48em) {
+  .c6 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c6 {
+    -webkit-flex-basis: 33.333333333333336%;
+    -ms-flex-preferred-size: 33.333333333333336%;
+    flex-basis: 33.333333333333336%;
+    max-width: 33.333333333333336%;
+    display: block;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c1 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c2 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c4 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div>
+      <div
+        className="c2"
+      >
+        <a
+          href="/"
+        >
+          <img
+            className="c3"
+            src="test-file-stub"
+          />
+        </a>
+        <div
+          className="c4"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "border": "1px solid",
+          "margin": 10,
+          "width": 1140,
+        }
+      }
+    >
+      <div
+        className="c5"
+      >
+        <div
+          className="c6"
+          style={
+            Object {
+              "marginTop": 50,
+            }
+          }
+        >
+          <test-file-stub
+            style={
+              Object {
+                "height": "auto",
+                "margin": 0,
+                "width": "auto",
+              }
+            }
+          />
+          <div
+            className="c7"
+          >
+            <a
+              href="/undefined/api/"
+            >
+              Api
+            </a>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+          </div>
+        </div>
+        <div
+          className="c6"
+          style={
+            Object {
+              "marginTop": 50,
+            }
+          }
+        >
+          <test-file-stub
+            style={
+              Object {
+                "height": "auto",
+                "margin": 0,
+                "width": "auto",
+              }
+            }
+          />
+          <div
+            className="c7"
+          >
+            <a
+              href="/undefined/design/"
+            >
+              Design
+            </a>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+          </div>
+        </div>
+        <div
+          className="c6"
+          style={
+            Object {
+              "marginTop": 50,
+            }
+          }
+        >
+          <test-file-stub
+            style={
+              Object {
+                "height": "auto",
+                "margin": 0,
+                "width": "auto",
+              }
+            }
+          />
+          <div
+            className="c7"
+          >
+            <a
+              href="/undefined/security/"
+            >
+              Security
+            </a>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+          </div>
+        </div>
+        <div
+          className="c6"
+          style={
+            Object {
+              "marginTop": 50,
+            }
+          }
+        >
+          <test-file-stub
+            style={
+              Object {
+                "height": "auto",
+                "margin": 0,
+                "width": "auto",
+              }
+            }
+          />
+          <div
+            className="c7"
+          >
+            <a
+              href="/undefined/security/"
+            >
+              Tech
+            </a>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+          </div>
+        </div>
+        <div
+          className="c6"
+          style={
+            Object {
+              "marginTop": 50,
+            }
+          }
+        >
+          <test-file-stub
+            style={
+              Object {
+                "height": "auto",
+                "margin": 0,
+                "width": "auto",
+              }
+            }
+          />
+          <div
+            className="c7"
+          >
+            <a
+              href="/undefined/open-source/"
+            >
+              Open Source
+            </a>
+          </div>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      className="c8"
+    >
+      Copyright © 
+      2019
+       Equinor ASA
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Doc DocHeader api 1`] = `
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c11 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c10 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c8 {
+  height: 4px;
+  width: 20%;
+  margin: 20px auto 0;
+  background-color: #007079;
+}
+
+.c7 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.c4 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #f2f2f2;
+}
+
+.c5 {
+  background-color: #f2f2f2;
+  width: 100%;
+  text-align: center;
+}
+
+.c6 {
+  height: 72px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c9 {
+  font-size: 25px;
+  color: black;
+  font-weight: 200;
+  padding: 0 2px 0 10px;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c1 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        href="/"
+      >
+        <img
+          className="c2"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        <test-file-stub />
+      </div>
+      <div
+        className="c7"
+        color="#007079"
+        title="Api"
+      >
+        Api
+      </div>
+      <div
+        className="c8"
+        color="#007079"
+      />
+      <div
+        style={
+          Object {
+            "padding": "15px 0 20px",
+            "textAlign": "center",
+          }
+        }
+      >
+        <span
+          className="c9"
+        >
+          /
+        </span>
+        <span
+          className="c10"
+        >
+          api
+        </span>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="c11"
+  >
+    Copyright © 
+    2019
+     Equinor ASA
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Doc DocHeader tech 1`] = `
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c11 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c10 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c8 {
+  height: 4px;
+  width: 20%;
+  margin: 20px auto 0;
+  background-color: #007079;
+}
+
+.c7 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.c4 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #f2f2f2;
+}
+
+.c5 {
+  background-color: #f2f2f2;
+  width: 100%;
+  text-align: center;
+}
+
+.c6 {
+  height: 72px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.c9 {
+  font-size: 25px;
+  color: black;
+  font-weight: 200;
+  padding: 0 2px 0 10px;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c1 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        href="/"
+      >
+        <img
+          className="c2"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        <test-file-stub />
+      </div>
+      <div
+        className="c7"
+        color="#007079"
+        title="Technology"
+      >
+        Technology
+      </div>
+      <div
+        className="c8"
+        color="#007079"
+      />
+      <div
+        style={
+          Object {
+            "padding": "15px 0 20px",
+            "textAlign": "center",
+          }
+        }
+      >
+        <span
+          className="c9"
+        >
+          /
+        </span>
+        <span
+          className="c10"
+        >
+          tech
+        </span>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="c11"
+  >
+    Copyright © 
+    2019
+     Equinor ASA
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Doc DocListing 1`] = `
+.c4 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c6 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c7 {
+  border-bottom: 1px solid #f2f2f2;
+  margin: 20px 0;
+}
+
+.c5 {
+  font-size: 25px;
+  color: black;
+  font-weight: 200;
+  padding: 0 2px 0 10px;
+}
+
+@media only screen and (min-width:0em) {
+  .c4 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c4 {
+    -webkit-flex-basis: 83.33333333333334%;
+    -ms-flex-preferred-size: 83.33333333333334%;
+    flex-basis: 83.33333333333334%;
+    max-width: 83.33333333333334%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c4 {
+    margin-left: 8.333333333333334%;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c1 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        href="/"
+      >
+        <img
+          className="c2"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    className="c4"
+  >
+    <div
+      style={Object {}}
+    >
+      <test-file-stub />
+      <span
+        className="c5"
+      >
+        /
+      </span>
+      <span
+        className="c6"
+      >
+        API
+      </span>
+    </div>
+    <a
+      href="/undefined/api/"
+      style={
+        Object {
+          "padding": "10px 0 20px",
+        }
+      }
+    >
+      Api
+    </a>
+    <div
+      className="c7"
+    />
+  </div>
+  <footer
+    className="c8"
+  >
+    Copyright © 
+    2019
+     Equinor ASA
+  </footer>
+</div>
+`;
+
+exports[`Storyshots HighlightedDocuments default 1`] = `
+.c4 {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.c5 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.c6 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c15 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c7 {
+  padding: 20px 0 15px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1), 0 20px 20px 0 rgba(0,0,0,0.05);
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  padding: 20px 0 15px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1), 0 20px 20px 0 rgba(0,0,0,0.05);
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c11 {
+  padding: 20px 0 15px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1), 0 20px 20px 0 rgba(0,0,0,0.05);
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c13 {
+  padding: 20px 0 15px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.1), 0 20px 20px 0 rgba(0,0,0,0.05);
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width:48em) {
+  .c4 {
+    width: 46rem;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c4 {
+    width: 61rem;
+  }
+}
+
+@media only screen and (min-width:75em) {
+  .c4 {
+    width: 76rem;
+  }
+}
+
+@media only screen and (min-width:0em) {
+  .c6 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c6 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+    display: block;
+  }
+}
+
+@media (min-width:62em) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c1 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        href="/"
+      >
+        <img
+          className="c2"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "border": "1px solid",
+        "marginTop": 200,
+      }
+    }
+  >
+    <div
+      className="c4"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="c5"
+        style={
+          Object {
+            "transform": "translate(0, -50%)",
+          }
+        }
+      >
+        <div
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <a
+              href="/undefinedundefined"
+            >
+              <div
+                className="c8"
+              >
+                <div>
+                  <test-file-stub />
+                </div>
+              </div>
+              <div
+                className="c8"
+              >
+                Api
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <div
+            className="c9"
+          >
+            <a
+              href="/undefinedundefined"
+            >
+              <div
+                className="c10"
+              >
+                <div>
+                  <test-file-stub />
+                </div>
+              </div>
+              <div
+                className="c10"
+              >
+                Tech
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <div
+            className="c11"
+          >
+            <a
+              href="/undefinedundefined"
+            >
+              <div
+                className="c12"
+              >
+                <div>
+                  <test-file-stub />
+                </div>
+              </div>
+              <div
+                className="c12"
+              >
+                Open source kdløj
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          className="c6"
+        >
+          <div
+            className="c13"
+          >
+            <a
+              href="/undefinedundefined"
+            >
+              <div
+                className="c14"
+              >
+                <div>
+                  <test-file-stub />
+                </div>
+              </div>
+              <div
+                className="c14"
+              >
+                Design
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    className="c15"
+  >
+    Copyright © 
+    2019
+     Equinor ASA
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Titles HeaderTitle 1`] = `
+Array [
+  .c0 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: initial;
+}
+
+<div
+    className="c0"
+    title="Toolbox"
+  >
+    Toolbox
+  </div>,
+  .c0 {
+  height: 4px;
+  width: 20%;
+  margin: 20px 0 0;
+  background-color: #ff1243;
+}
+
+<div
+    className="c0"
+    color="#ff1243"
+  />,
+]
+`;
+
+exports[`Storyshots Titles HeaderTitle with custom color 1`] = `
+Array [
+  .c0 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: initial;
+}
+
+<div
+    className="c0"
+    color="blue"
+    title="Toolbox"
+  >
+    Toolbox
+  </div>,
+  .c0 {
+  height: 4px;
+  width: 20%;
+  margin: 20px 0 0;
+  background-color: blue;
+}
+
+<div
+    className="c0"
+    color="blue"
+  />,
+]
+`;
+
+exports[`Storyshots Titles Separator 1`] = `
+.c0 {
+  height: 4px;
+  width: 20%;
+  background-color: #007079;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Storyshots Welcome to Storybook 1`] = `
+<article
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
+      "lineHeight": 1.4,
+      "padding": 15,
+    }
+  }
+>
+  <h1>
+    Welcome to storybook
+  </h1>
+  <p>
+    This is a UI component dev environment for your app.
+  </p>
+  <p>
+    We've added some basic stories inside the 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      src/stories
+    </code>
+     directory.
+    <br />
+    A story is a single state of one or more UI components. You can have as many stories as you want.
+    <br />
+    (Basically a story is like a visual test case.)
+  </p>
+  <p>
+    See these sample 
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottom": "1px solid #1474f3",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "color": "#1474f3",
+          "cursor": "pointer",
+          "font": "inherit",
+          "padding": 0,
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+      type="button"
+    >
+      stories
+    </button>
+     for a component called
+     
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      Button
+    </code>
+    .
+  </p>
+  <p>
+    Just like that, you can add your own components as stories.
+    <br />
+    You can also edit those components and see changes right away.
+    <br />
+    (Try editing the 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      Button
+    </code>
+     stories located at
+     
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      src/stories/index.js
+    </code>
+    .)
+  </p>
+  <p>
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    Have a look at the
+     
+    <a
+      href="https://storybook.js.org/basics/writing-stories"
+      rel="noopener noreferrer"
+      style={
+        Object {
+          "borderBottom": "1px solid #1474f3",
+          "color": "#1474f3",
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+      target="_blank"
+    >
+      Writing Stories
+    </a>
+     
+    section in our documentation.
+  </p>
+  <p
+    style={
+      Object {
+        "opacity": 0.5,
+      }
+    }
+  >
+    <b>
+      NOTE:
+    </b>
+    <br />
+    Have a look at the 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      .storybook/webpack.config.js
+    </code>
+     to add webpack loaders and plugins you are using in this project.
+  </p>
+</article>
+`;

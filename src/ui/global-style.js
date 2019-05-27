@@ -77,12 +77,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 50px auto;
     width: 100%;
   }
-    
-  svg {
-    margin: 0 auto;
-    width: 100%;
-  }
-    
+  
   a {
     color: ${Style.colors.black80}
     text-decoration: none;

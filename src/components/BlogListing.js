@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import { Authors } from ".";
+import { Authors } from "./Bio";
 import { Col } from "react-styled-flexboxgrid";
 import { style } from "../ui";
 import { BlogTag } from "./Tags";

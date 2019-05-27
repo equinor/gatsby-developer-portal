@@ -9,7 +9,6 @@ const Categories = props => {
 
   const CategoryTitle = styled.div`
     color: #333333;
-    font-family: Equinor;
     font-size: 30px;
     letter-spacing: -0.08px;
     line-height: 36px;
