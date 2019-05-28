@@ -16,18 +16,17 @@ const Categories = props => {
     margin-bottom: 15px;
   `;
 
-  const iconStyle = {
-    margin: 0,
-    width: "auto",
-    height: "auto",
-  };
+  const IconStyle = styled.div`
+    margin: 0 auto;
+  `;
 
   const categoryComponents = nodes.map(({ node }, index) => {
     const {
       frontmatter: { title, tags },
       fields: { slug, collection },
     } = node;
-    const Icon = getIcon(tags[0]);
+    const iconTag = tags && tags.length > 0 ? tags[0] : "";
+    const Icon = getIcon(iconTag);
     return (
       <Col
         md={4}
@@ -36,7 +35,9 @@ const Categories = props => {
         key={"category-" + node.fields.slug + index}
         style={{ marginTop: 50 }}
       >
-        <Icon style={iconStyle} />
+        <IconStyle>
+          <Icon />
+        </IconStyle>
         <CategoryTitle>
           <Link to={`/${collection}${slug}`}>{title}</Link>
         </CategoryTitle>

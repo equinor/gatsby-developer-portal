@@ -1436,12 +1436,12 @@ exports[`Storyshots Categories default 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c9 {
   padding-top: 20px;
   text-align: center;
 }
 
-.c7 {
+.c8 {
   color: #333333;
   font-size: 30px;
   -webkit-letter-spacing: -0.08px;
@@ -1451,6 +1451,10 @@ exports[`Storyshots Categories default 1`] = `
   line-height: 36px;
   margin-top: 5px;
   margin-bottom: 15px;
+}
+
+.c7 {
+  margin: 0 auto;
 }
 
 @media only screen and (min-width:0em) {
@@ -1562,17 +1566,13 @@ exports[`Storyshots Categories default 1`] = `
             }
           }
         >
-          <test-file-stub
-            style={
-              Object {
-                "height": "auto",
-                "margin": 0,
-                "width": "auto",
-              }
-            }
-          />
           <div
             className="c7"
+          >
+            <test-file-stub />
+          </div>
+          <div
+            className="c8"
           >
             <a
               href="/undefined/api/"
@@ -1592,17 +1592,13 @@ exports[`Storyshots Categories default 1`] = `
             }
           }
         >
-          <test-file-stub
-            style={
-              Object {
-                "height": "auto",
-                "margin": 0,
-                "width": "auto",
-              }
-            }
-          />
           <div
             className="c7"
+          >
+            <test-file-stub />
+          </div>
+          <div
+            className="c8"
           >
             <a
               href="/undefined/design/"
@@ -1622,17 +1618,13 @@ exports[`Storyshots Categories default 1`] = `
             }
           }
         >
-          <test-file-stub
-            style={
-              Object {
-                "height": "auto",
-                "margin": 0,
-                "width": "auto",
-              }
-            }
-          />
           <div
             className="c7"
+          >
+            <test-file-stub />
+          </div>
+          <div
+            className="c8"
           >
             <a
               href="/undefined/security/"
@@ -1652,17 +1644,13 @@ exports[`Storyshots Categories default 1`] = `
             }
           }
         >
-          <test-file-stub
-            style={
-              Object {
-                "height": "auto",
-                "margin": 0,
-                "width": "auto",
-              }
-            }
-          />
           <div
             className="c7"
+          >
+            <test-file-stub />
+          </div>
+          <div
+            className="c8"
           >
             <a
               href="/undefined/security/"
@@ -1682,17 +1670,13 @@ exports[`Storyshots Categories default 1`] = `
             }
           }
         >
-          <test-file-stub
-            style={
-              Object {
-                "height": "auto",
-                "margin": 0,
-                "width": "auto",
-              }
-            }
-          />
           <div
             className="c7"
+          >
+            <test-file-stub />
+          </div>
+          <div
+            className="c8"
           >
             <a
               href="/undefined/open-source/"
@@ -1707,7 +1691,7 @@ exports[`Storyshots Categories default 1`] = `
       </div>
     </div>
     <footer
-      className="c8"
+      className="c9"
     >
       Copyright © 
       2019
@@ -1887,7 +1871,7 @@ exports[`Storyshots Doc DocHeader api 1`] = `
       <div
         className="c6"
       >
-        <test-file-stub />
+        test-file-stub
       </div>
       <div
         className="c7"
@@ -2101,7 +2085,7 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
       <div
         className="c6"
       >
-        <test-file-stub />
+        test-file-stub
       </div>
       <div
         className="c7"
@@ -2310,9 +2294,20 @@ exports[`Storyshots Doc DocListing 1`] = `
     className="c4"
   >
     <div
-      style={Object {}}
+      style={
+        Object {
+          "paddingTop": 30,
+        }
+      }
     >
-      <test-file-stub />
+      <test-file-stub
+        style={
+          Object {
+            "height": 30,
+            "width": 30,
+          }
+        }
+      />
       <span
         className="c5"
       >

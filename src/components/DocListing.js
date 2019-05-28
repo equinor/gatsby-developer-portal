@@ -10,12 +10,13 @@ export default ({ node }) => {
     frontmatter: { title, tags },
     fields: { slug, collection },
   } = node;
-  const Icon = getIcon(tags[0]);
+  const iconTag = tags && tags.length > 0 ? tags[0] : "";
+  const Icon = getIcon(iconTag);
   return (
     <Col xs={12} md={10} mdOffset={1}>
-      <div style={{}}>
-        <Icon />
-        <Tag tag={tags[0]} />
+      <div style={{ paddingTop: 30 }}>
+        <Icon style={{ width: 30, height: 30 }} />
+        {iconTag && <Tag tag={iconTag} />}
       </div>
       <Link to={`/${collection}${slug}`} style={{ padding: "10px 0 20px" }}>
         {title}

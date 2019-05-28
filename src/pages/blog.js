@@ -32,6 +32,7 @@ export default props => {
     >
       <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
 
+      <div style={{ marginTop: 40 }} />
       <TagFilter
         selectedTags={selectedTags}
         tags={tags}

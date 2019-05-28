@@ -6,8 +6,6 @@ import { colors, typography } from "../ui";
 
 const Wrapper = styled.section`
   display: flex;
-  margin-left: 15px;
-  margin-right: 15px;
   margin: 0 15px 40px;
 `;
 
@@ -22,7 +20,6 @@ const Title = styled.span`
 `;
 
 const List = styled.ul`
-  margin-top: 40px;
   list-style: none;
   display: inline-flex;
   flex-wrap: wrap;

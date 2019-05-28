@@ -1,3 +1,4 @@
+import React from "react";
 import ApiCircleIcon from "../assets/icons/circle_api.svg";
 import OpenSourceCircleIcon from "../assets/icons/circle_open_source.svg";
 import TechCircleIcon from "../assets/icons/circle_tech.svg";
@@ -33,7 +34,7 @@ export function getCircleIcon(tag) {
     case IconEnum.TECH:
       return TechCircleIcon;
     default:
-      throw `icon type ${tag} is not supported.`;
+      return null;
   }
 }
 

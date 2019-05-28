@@ -18,6 +18,9 @@ const FilterListItem = styled(ListItem)`
  * @constructor
  */
 export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
+  if (!tags || tags.length === 0) {
+    return null;
+  }
   const [selectAll, setSelectAll] = useState(false);
 
   const TagStatus = styled.span`

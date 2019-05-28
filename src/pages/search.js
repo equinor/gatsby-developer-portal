@@ -27,7 +27,9 @@ export default props => {
       menuLinks={menuLinks}
     >
       <div style={{ marginTop: 30, marginBottom: 150 }}>
-        <SearchInput value={query} onChange={setQuery} />
+        <div style={{ marginBottom: 40 }}>
+          <SearchInput value={query} onChange={setQuery} />
+        </div>
         <TagFilter
           tags={tags}
           selectedTags={selectedTags}

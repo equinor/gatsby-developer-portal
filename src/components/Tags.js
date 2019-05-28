@@ -66,16 +66,17 @@ export const BlogTag = ({ date, tags, onTagClick, to = "" }) => {
       <TimeDate>{date}</TimeDate>
 
       <Tags>
-        {tags.map((tag, index) => {
-          return (
-            <Tag
-              key={`${tag}-${index}`}
-              tag={tag}
-              to={to}
-              onTagClick={onTagClick}
-            />
-          );
-        })}
+        {tags &&
+          tags.map((tag, index) => {
+            return (
+              <Tag
+                key={`${tag}-${index}`}
+                tag={tag}
+                to={to}
+                onTagClick={onTagClick}
+              />
+            );
+          })}
       </Tags>
     </div>
   );

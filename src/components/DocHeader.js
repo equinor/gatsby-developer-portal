@@ -17,20 +17,18 @@ export const DocHeader = ({ title, tags }) => {
     height: 72px;
     transform: translate(0, -50%);
   `;
-  const Icon = getCircleIcon(tags[0]);
+  const iconTag = tags && tags.length > 0 ? tags[0] : "";
   return (
     <FullWidth backgroundColor="#f2f2f2">
       <HeaderWrapper>
-        <IconWrapper>
-          <Icon />
-        </IconWrapper>
+        <IconWrapper>{getCircleIcon(iconTag)}</IconWrapper>
         <HeaderTitle
           title={title}
           color={colors.mossGreen}
           alignCenter={true}
         />
         <div style={{ padding: "15px 0 20px", textAlign: "center" }}>
-          <Tag tag={tags[0]} />
+          <Tag tag={iconTag} />
         </div>
       </HeaderWrapper>
     </FullWidth>
