@@ -1,23 +1,8 @@
 import React from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
-import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 import { getCircleIcon } from "../../util/iconUtil";
-import { style } from "../../ui";
 import { FullWidth, Tag } from "../../components";
-
-const ReadMoreLink = ({ to }) => {
-  const StyledLink = styled.span`
-    border: 1px solid ${style.colors.mossGreen};
-    border-radius: 3px;
-    background-color: #ffffff;
-    padding: 10px;
-  `;
-  return (
-    <StyledLink>
-      <Link to={to}>Read more</Link>
-    </StyledLink>
-  );
-};
+import { PageLink } from "../../components/PageLink";
 
 const ReadMoreCard = props => {
   const {
@@ -49,7 +34,7 @@ const ReadMoreCard = props => {
           </div>
         </div>
         <div style={{ margin: "30px 0 15px" }}>
-          <ReadMoreLink to={`/${collection}${slug}`} />
+          <PageLink to={`/${collection}${slug}`} title="Read More" />
         </div>
       </div>
     </div>

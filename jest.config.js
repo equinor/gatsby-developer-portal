@@ -13,7 +13,7 @@ module.exports = {
   },
   setupFilesAfterEnv: ["./src/setupTests.js"],
   testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/loadershim.js`],
+  setupFiles: [`<rootDir>/loadershim.js`, "./src/register-context.js"],
   collectCoverage: true,
   coverageDirectory: "./coverage",
   collectCoverageFrom: ["./src/**"],

@@ -28,9 +28,4 @@ describe("Bio", () => {
     expect(getAllByAltText(mockAuthors[1].name)).toHaveLength(1);
     expect(getAllByAltText(mockAuthors[2].name)).toHaveLength(1);
   });
-
-  it("renders correctly", () => {
-    const tree = renderer.create(<Authors authors={mockAuthors} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });

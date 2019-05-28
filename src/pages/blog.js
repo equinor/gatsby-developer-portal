@@ -5,10 +5,10 @@ import { Col, Row } from "react-styled-flexboxgrid";
 import { Layout } from "../ui";
 import {
   TagFilter,
-  BlogListing,
   SearchEngineOptimization,
 } from "../components";
 import { filterTags, initializeSelectedTags } from "../util/tagUtil";
+import { BlogListingDivider } from "../components/BlogListing";
 
 export default props => {
   const { data, location } = props;
@@ -44,7 +44,7 @@ export default props => {
       <Row>
         <Col xs={12} md={10} mdOffset={1}>
           {filteredPosts.map(({ node }) => (
-            <BlogListing
+            <BlogListingDivider
               key={node.fields.slug}
               node={node}
               onTagClick={value => {

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import { Authors } from ".";
+import { Authors } from "./Bio";
 import { Col } from "react-styled-flexboxgrid";
 import { style } from "../ui";
 import { BlogTag } from "./Tags";
@@ -43,7 +43,7 @@ const BlogListing = ({ node, onTagClick }) => {
   const showImage = imgFixed && imgFixed.src.indexOf("Empty.png") === 0;
 
   return (
-    <Container key={node.fields.slug}>
+    <Container>
       <Col xs={12} md={10} mdOffset={1}>
         <BlogTag
           onTagClick={onTagClick}
@@ -80,9 +80,19 @@ const BlogListing = ({ node, onTagClick }) => {
           </div>
         </div>
       </Col>
-      <Divider />
     </Container>
   );
 };
 
-export default BlogListing;
+export default props => (
+  <Container>
+    <BlogListing {...props} />
+  </Container>
+);
+
+export const BlogListingDivider = props => (
+  <Container>
+    <BlogListing {...props} />
+    <Divider />
+  </Container>
+);

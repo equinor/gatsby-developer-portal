@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 
 import { Layout } from "../../ui";
-import { SearchEngineOptimization, FullWidth } from "../../components";
+import { SearchEngineOptimization } from "../../components";
 import { BlogPostHeader } from "./BlogPostHeader";
 import PaginationList from "./PaginationList";
 
@@ -20,14 +20,12 @@ export default props => {
   return (
     <Layout location={props.location} menuLinks={menuLinks} title={title}>
       <SearchEngineOptimization title={title} description={post.excerpt} />
-      <FullWidth backgroundColor="#f2f2f2">
-        <BlogPostHeader
-          title={title}
-          date={date}
-          tags={tags}
-          authors={post.fields.authors}
-        />
-      </FullWidth>
+      <BlogPostHeader
+        title={title}
+        date={date}
+        tags={tags}
+        authors={post.fields.authors}
+      />
 
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <BlogPostFinished />
