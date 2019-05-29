@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { style } from "../../ui";
+import { colors } from "../../ui/style";
 import SearchIcon from "../../assets/icons/search-filled.svg";
 
 const Nav = styled.nav`
@@ -11,7 +11,7 @@ const Nav = styled.nav`
   font-size: 18px;
   line-height: 1.3;
   font-style: normal;
-  color: ${style.colors.black80};
+  color: ${colors.black80};
 `;
 
 const NavList = styled.li`
@@ -84,7 +84,7 @@ const SeachIconStyled = () => {
     display: inline-flex;
     height: 30px;
     width: 30px;
-    border: 1px solid ${style.colors.energyRed};
+    border: 1px solid ${colors.energyRed};
     border-radius: 3px;
     background-color: #ffffff;
     transform: translate(0, 25%);
@@ -97,7 +97,7 @@ const SeachIconStyled = () => {
           margin: "auto",
           height: 23,
           width: 16,
-          color: style.colors.energyRed,
+          color: colors.energyRed,
         }}
       />
     </SeachIconRect>

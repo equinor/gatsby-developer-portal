@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BlogListing from "./BlogListing";
 import { HeaderTitle } from "./Titles";
-import { style } from "../ui";
+import { colors } from "../ui";
 import { Col } from "react-styled-flexboxgrid";
 import { FullWidth } from "./FullWidth";
 import { PageLink } from "./PageLink";
@@ -23,11 +23,11 @@ export const BlogSummary = props => {
       <div style={{ padding: "50px 0 30px" }}>
         <HeaderTitle
           title="Latest developer insight"
-          color={style.colors.mossGreen}
+          color={colors.mossGreen}
           alignCenter
         />
         <Col xs={12} md={8} mdOffset={2}>
-          {nodes.map(({node}, index) => {
+          {nodes.map(({ node }, index) => {
             return (
               <Wrapper key={`node-${index}`}>
                 <BlogListing node={node} />
@@ -41,7 +41,7 @@ export const BlogSummary = props => {
           <PageLink
             to="/blog"
             title="See all blogpost"
-            color={style.colors.energyRed}
+            color={colors.energyRed}
           />
         </PageLinkWrapper>
       </div>

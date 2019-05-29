@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import { Col, Row } from "react-styled-flexboxgrid";
 
-import { Layout } from "../ui";
-import {
-  TagFilter,
-  SearchEngineOptimization,
-} from "../components";
+import Layout from "../components/layout/Layout";
+import { TagFilter, SearchEngineOptimization } from "../components";
 import { filterTags, initializeSelectedTags } from "../util/tagUtil";
 import { BlogListingDivider } from "../components/BlogListing";
 

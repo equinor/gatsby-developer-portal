@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "../ui";
 import { TagFilter } from "../components";
 import { filterTags, initializeSelectedTags } from "../util/tagUtil";
 import { SearchInput } from "./search/_SearchInput";
 import { Results } from "./search/_Results";
+import Layout from "../components/layout/Layout";
 
 export default props => {
   const { data, location } = props;

@@ -74,3 +74,6 @@ azure/.azure_env
 #IntelliJ
 .idea
 developer.iml
+
+# Storybook
+storybook-static

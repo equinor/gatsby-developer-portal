@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
-import { Layout } from "../../ui";
+import Layout from "../../components/layout/Layout";
 import NodeListing from "./NodeListing";
 
 const TagTemplate = ({ pageContext, data, location }) => {

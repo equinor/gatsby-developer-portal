@@ -27,7 +27,4 @@ const typography = {
   xxxxl: "36px",
 };
 
-export default {
-  typography,
-  colors,
-};
+export { typography, colors };

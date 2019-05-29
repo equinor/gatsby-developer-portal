@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 
-import { Layout } from "../../ui";
+import Layout from "../../components/layout/Layout";
 import { SearchEngineOptimization } from "../../components";
 import { BlogPostHeader } from "./BlogPostHeader";
 import PaginationList from "./PaginationList";
