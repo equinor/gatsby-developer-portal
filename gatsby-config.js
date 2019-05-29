@@ -159,5 +159,6 @@ module.exports = {
         filename: "search_index.json",
       },
     },
+    `gatsby-plugin-accessibilityjs`,
   ],
 };

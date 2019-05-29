@@ -15,6 +15,7 @@
     "fetch-base64": "2.1.2",
     "gatsby": "2.4.2",
     "gatsby-image": "^2.0.29",
+    "gatsby-plugin-accessibilityjs": "^1.0.3",
     "gatsby-plugin-feed": "^2.0.13",
     "gatsby-plugin-google-analytics": "^2.0.13",
     "gatsby-plugin-lunr": "1.4.0",
