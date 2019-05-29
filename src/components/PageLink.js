@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { style } from "../ui";
+import { colors } from "../ui";
 import { Link } from "gatsby";
 import React from "react";
 
@@ -7,7 +7,7 @@ export const PageLink = props => {
   //setting defaults.
   const params = Object.assign(
     {
-      color: style.colors.mossGreen,
+      color: colors.mossGreen,
     },
     props
   );

@@ -40,6 +40,44 @@ exports[`Storyshots Blog BlogListing 1`] = `
   padding-left: 0.5rem;
 }
 
+.c8 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c6 {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+
+.c4 {
+  margin-bottom: 20px;
+}
+
+.c9 {
+  margin-bottom: 17px;
+}
+
+.c9 a {
+  font-size: 30px;
+  font-weight: 400;
+  -webkit-letter-spacing: -0.08px;
+  -moz-letter-spacing: -0.08px;
+  -ms-letter-spacing: -0.08px;
+  letter-spacing: -0.08px;
+  line-height: 36px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -86,44 +124,6 @@ exports[`Storyshots Blog BlogListing 1`] = `
 .c14 {
   padding-top: 20px;
   text-align: center;
-}
-
-.c8 {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14px;
-  cursor: inherit;
-  color: #007079;
-  text-transform: uppercase;
-}
-
-.c6 {
-  margin-right: 10px;
-  font-size: 14px;
-  color: #4A4A4A;
-}
-
-.c4 {
-  margin-bottom: 20px;
-}
-
-.c9 {
-  margin-bottom: 17px;
-}
-
-.c9 a {
-  font-size: 30px;
-  font-weight: 400;
-  -webkit-letter-spacing: -0.08px;
-  -moz-letter-spacing: -0.08px;
-  -ms-letter-spacing: -0.08px;
-  letter-spacing: -0.08px;
-  line-height: 36px;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c7 {
@@ -394,6 +394,48 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
   border-radius: 100%;
 }
 
+.c8 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: pointer;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c6 {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+
+.c10 {
+  height: 4px;
+  width: 20%;
+  margin: 20px 0 0;
+  background-color: #ff1243;
+}
+
+.c9 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: initial;
+}
+
+.c4 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #f2f2f2;
+}
+
 .c0 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -440,48 +482,6 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
 .c14 {
   padding-top: 20px;
   text-align: center;
-}
-
-.c8 {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14px;
-  cursor: pointer;
-  color: #007079;
-  text-transform: uppercase;
-}
-
-.c6 {
-  margin-right: 10px;
-  font-size: 14px;
-  color: #4A4A4A;
-}
-
-.c10 {
-  height: 4px;
-  width: 20%;
-  margin: 20px 0 0;
-  background-color: #ff1243;
-}
-
-.c9 {
-  color: #333333;
-  font-size: 52px;
-  -webkit-letter-spacing: -0.1px;
-  -moz-letter-spacing: -0.1px;
-  -ms-letter-spacing: -0.1px;
-  letter-spacing: -0.1px;
-  line-height: 52px;
-  text-align: initial;
-}
-
-.c4 {
-  left: calc((100% - 100vw) / 2);
-  position: relative;
-  width: 100vw;
-  padding-left: calc((100vw - 100%) / 2);
-  padding-right: calc((100vw - 100%) / 2);
-  background-color: #f2f2f2;
 }
 
 .c5 {
@@ -739,54 +739,6 @@ exports[`Storyshots Blog BlogSummary 1`] = `
   padding-left: 0.5rem;
 }
 
-.c0 {
-  margin: 0 auto;
-  padding: 0 15px 50px;
-  width: 100%;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-top: 30px;
-  padding-bottom: 40px;
-}
-
-.c2 {
-  margin-right: 60px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c22 {
-  padding-top: 20px;
-  text-align: center;
-}
-
 .c13 {
   font-size: 12px;
   font-weight: 500;
@@ -856,6 +808,54 @@ exports[`Storyshots Blog BlogSummary 1`] = `
   -webkit-transform: translate(0,50%);
   -ms-transform: translate(0,50%);
   transform: translate(0,50%);
+}
+
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c22 {
+  padding-top: 20px;
+  text-align: center;
 }
 
 .c8 {
@@ -1385,6 +1385,14 @@ exports[`Storyshots Categories default 1`] = `
   padding-left: 0.5rem;
 }
 
+.c0 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+}
+
 .c1 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -1431,14 +1439,6 @@ exports[`Storyshots Categories default 1`] = `
 .c8 {
   padding-top: 20px;
   text-align: center;
-}
-
-.c0 {
-  left: calc((100% - 100vw) / 2);
-  position: relative;
-  width: 100vw;
-  padding-left: calc((100vw - 100%) / 2);
-  padding-right: calc((100vw - 100%) / 2);
 }
 
 .c7 {
@@ -1718,6 +1718,42 @@ exports[`Storyshots Categories default 1`] = `
 `;
 
 exports[`Storyshots Doc DocHeader api 1`] = `
+.c10 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c8 {
+  height: 4px;
+  width: 20%;
+  margin: 20px auto 0;
+  background-color: #007079;
+}
+
+.c7 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.c4 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #f2f2f2;
+}
+
 .c0 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -1764,42 +1800,6 @@ exports[`Storyshots Doc DocHeader api 1`] = `
 .c11 {
   padding-top: 20px;
   text-align: center;
-}
-
-.c10 {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14px;
-  cursor: inherit;
-  color: #007079;
-  text-transform: uppercase;
-}
-
-.c8 {
-  height: 4px;
-  width: 20%;
-  margin: 20px auto 0;
-  background-color: #007079;
-}
-
-.c7 {
-  color: #333333;
-  font-size: 52px;
-  -webkit-letter-spacing: -0.1px;
-  -moz-letter-spacing: -0.1px;
-  -ms-letter-spacing: -0.1px;
-  letter-spacing: -0.1px;
-  line-height: 52px;
-  text-align: center;
-}
-
-.c4 {
-  left: calc((100% - 100vw) / 2);
-  position: relative;
-  width: 100vw;
-  padding-left: calc((100vw - 100%) / 2);
-  padding-right: calc((100vw - 100%) / 2);
-  background-color: #f2f2f2;
 }
 
 .c5 {
@@ -1932,6 +1932,42 @@ exports[`Storyshots Doc DocHeader api 1`] = `
 `;
 
 exports[`Storyshots Doc DocHeader tech 1`] = `
+.c10 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c8 {
+  height: 4px;
+  width: 20%;
+  margin: 20px auto 0;
+  background-color: #007079;
+}
+
+.c7 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.c4 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #f2f2f2;
+}
+
 .c0 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -1978,42 +2014,6 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
 .c11 {
   padding-top: 20px;
   text-align: center;
-}
-
-.c10 {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14px;
-  cursor: inherit;
-  color: #007079;
-  text-transform: uppercase;
-}
-
-.c8 {
-  height: 4px;
-  width: 20%;
-  margin: 20px auto 0;
-  background-color: #007079;
-}
-
-.c7 {
-  color: #333333;
-  font-size: 52px;
-  -webkit-letter-spacing: -0.1px;
-  -moz-letter-spacing: -0.1px;
-  -ms-letter-spacing: -0.1px;
-  letter-spacing: -0.1px;
-  line-height: 52px;
-  text-align: center;
-}
-
-.c4 {
-  left: calc((100% - 100vw) / 2);
-  position: relative;
-  width: 100vw;
-  padding-left: calc((100vw - 100%) / 2);
-  padding-right: calc((100vw - 100%) / 2);
-  background-color: #f2f2f2;
 }
 
 .c5 {
@@ -2155,6 +2155,20 @@ exports[`Storyshots Doc DocListing 1`] = `
   padding-left: 0.5rem;
 }
 
+.c6 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  cursor: inherit;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+.c7 {
+  border-bottom: 1px solid #f2f2f2;
+  margin: 20px 0;
+}
+
 .c0 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -2201,20 +2215,6 @@ exports[`Storyshots Doc DocListing 1`] = `
 .c8 {
   padding-top: 20px;
   text-align: center;
-}
-
-.c6 {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14px;
-  cursor: inherit;
-  color: #007079;
-  text-transform: uppercase;
-}
-
-.c7 {
-  border-bottom: 1px solid #f2f2f2;
-  margin: 20px 0;
 }
 
 .c5 {

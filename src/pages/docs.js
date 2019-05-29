@@ -2,15 +2,15 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Grid, Row } from "react-styled-flexboxgrid";
 
-import { Layout, style } from "../ui";
+import { colors } from "../ui";
 import {
   FullWidth,
   Categories,
   SearchEngineOptimization,
-  TitleTagSeparator,
   HeaderTitle,
 } from "../components";
 import { HighlightedDocuments } from "./docs/_HighlightedDocuments";
+import Layout from "../components/layout/Layout";
 
 export default props => {
   const { data, location } = props;
@@ -35,7 +35,7 @@ export default props => {
       menuLinks={menuLinks}
     >
       <SearchEngineOptimization title="All docs" keywords={["docs"]} />
-      <FullWidth backgroundColor={style.colors.mistBlue}>
+      <FullWidth backgroundColor={colors.mistBlue}>
         <div style={{ padding: "70px 0 140px" }}>
           <HeaderTitle title="Toolbox" alignCenter={true} />
         </div>

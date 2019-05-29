@@ -23,7 +23,7 @@ export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
   const TagStatus = styled.span`
     font-size: 24px;
     padding-left: 10px;
-    fontweight: 500;
+    font-weight: 500;
   `;
 
   const toggleTags = () => {

@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { HighlightedDocuments } from '../src/pages/docs/_HighlightedDocuments'
-import { LayoutDecorator } from './index.stories'
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { HighlightedDocuments } from "../src/pages/docs/_HighlightedDocuments";
+import { LayoutDecorator } from "./index.stories";
 
 const items = [
   { node: { frontmatter: { title: "Api" }, fields: {} } },
@@ -14,7 +14,7 @@ const items = [
 storiesOf("HighlightedDocuments", module)
   .addDecorator(LayoutDecorator)
   .add("default", () => (
-      <div style={{ marginTop: 200, border: "1px solid"}}>
-        <HighlightedDocuments items={items} />
-      </div>
+    <div style={{ marginTop: 200, border: "1px solid" }}>
+      <HighlightedDocuments items={items} />
+    </div>
   ));

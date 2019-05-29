@@ -4,7 +4,7 @@ import kebabCase from "lodash/kebabCase";
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 
-import { Layout } from "../ui";
+import Layout from "../components/layout/Layout";
 
 const TagPage = ({ pageContext, data, location }) => {
   const { group } = data.allMarkdownRemark;

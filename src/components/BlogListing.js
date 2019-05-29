@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import { Authors } from "./Bio";
 import { Col } from "react-styled-flexboxgrid";
-import { style } from "../ui";
+import { typography } from "../ui";
 import { BlogTag } from "./Tags";
 
 const Container = styled.div`
@@ -14,7 +14,7 @@ const Container = styled.div`
 const Title = styled.h3`
   margin-bottom: 17px;
   a {
-    font-size: ${style.typography.xxxl};
+    font-size: ${typography.xxxl};
     font-weight: 400;
     letter-spacing: -0.08px;
     line-height: 36px;
@@ -22,7 +22,7 @@ const Title = styled.h3`
 `;
 
 const Excerpt = styled.p`
-  font-size: ${style.typography.lg};
+  font-size: ${typography.lg};
   line-height: 24px;
 `;
 

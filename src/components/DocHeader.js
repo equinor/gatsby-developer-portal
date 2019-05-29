@@ -4,7 +4,7 @@ import { FullWidth } from "./FullWidth";
 import { Tag } from "./Tags";
 import { getCircleIcon } from "../util/iconUtil";
 import { HeaderTitle } from "./Titles";
-import { style } from "../ui";
+import { colors } from "../ui";
 
 export const DocHeader = ({ title, tags }) => {
   const HeaderWrapper = styled.div`
@@ -26,7 +26,7 @@ export const DocHeader = ({ title, tags }) => {
         </IconWrapper>
         <HeaderTitle
           title={title}
-          color={style.colors.mossGreen}
+          color={colors.mossGreen}
           alignCenter={true}
         />
         <div style={{ padding: "15px 0 20px", textAlign: "center" }}>

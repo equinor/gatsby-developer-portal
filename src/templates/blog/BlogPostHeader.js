@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { style } from "../../ui";
+import { colors } from "../../ui";
 import { HeaderTitle } from "../../components/Titles";
 import { BlogTag } from "../../components/Tags";
 import { Authors } from "../../components/Bio";
@@ -20,7 +20,7 @@ export const BlogPostHeader = props => {
       <Wrapper>
         <BlogTag tags={tags} date={date} to="/blog" />
         <div style={{ margin: "20px 0 40px" }}>
-          <HeaderTitle title={title} color={style.colors.energyRed} />
+          <HeaderTitle title={title} color={colors.energyRed} />
         </div>
         {authors && <Authors authors={authors} />}
       </Wrapper>

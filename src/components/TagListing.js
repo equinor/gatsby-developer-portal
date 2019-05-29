@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import kebabCase from "lodash/kebabCase";
-import { style } from "../ui";
+import { colors, typography } from "../ui";
 
 const Wrapper = styled.section`
   display: flex;
@@ -14,7 +14,7 @@ const Wrapper = styled.section`
 const Title = styled.span`
   margin-top: 10px;
   display: inline-flex;
-  font-size: ${style.typography.base};
+  font-size: ${typography.base};
   font-weight: bold;
   line-height: 21px;
   flex-wrap: wrap;
@@ -31,7 +31,7 @@ const List = styled.ul`
 
 export const ListItem = styled.li`
   background-color: ${props =>
-    props.enabled ? style.colors.lichenGreen : style.colors.lighterGray};
+    props.enabled ? colors.lichenGreen : colors.lighterGray};
   padding: 0 20px;
   text-align: center;
   border-radius: 20.5px;
@@ -43,7 +43,7 @@ export const ListItem = styled.li`
     font-size: 12px;
     font-weight: 500;
     line-height: 14px;
-    color: ${style.colors.mossGreen};
+    color: ${colors.mossGreen};
     text-transform: uppercase;
   }
 `;

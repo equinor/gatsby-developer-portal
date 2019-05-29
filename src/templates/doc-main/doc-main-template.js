@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Layout } from "../../ui";
+import Layout from "../../components/layout/Layout";
 import Footer from "./Footer";
 import { DocHeader } from "../../components";
 

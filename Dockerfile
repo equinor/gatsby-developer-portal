@@ -34,6 +34,7 @@ RUN yarn build-storybook
 
 # Runtime - nginx
 FROM nginx:1.15-alpine as development
+COPY --from=builder /app/public /usr/share/nginx/html
 COPY --from=builder /app/storybook-static /usr/share/nginx/html/storybook
 COPY conf.dev.template /etc/nginx/conf.d/conf.template
 RUN cat /etc/nginx/conf.d/conf.template

@@ -1,7 +1,8 @@
+"use strict";
 import React from "react";
 import styled from "styled-components";
 import Separator from "./Separator";
-import { style } from "../ui";
+import { colors } from "../ui";
 
 const Title = styled.div`
   color: #333333;
@@ -16,10 +17,7 @@ export const HeaderTitle = props => {
   return (
     <React.Fragment>
       <Title {...props}>{props.title}</Title>
-      <Separator
-        margin={margin}
-        color={props.color || style.colors.energyRed}
-      />
+      <Separator margin={margin} color={props.color || colors.energyRed} />
     </React.Fragment>
   );
 };

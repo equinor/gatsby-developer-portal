@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { FullWidth, HeaderTitle } from "../../components";
 import ReadMoreCard from "./ReadMoreCard";
-import { style } from "../../ui";
+import { colors } from "../../ui";
 
 export default props => {
   const FooterWrapper = styled.div`
@@ -20,7 +20,7 @@ export default props => {
           title="Further Reading"
           fontSize={48}
           alignCenter
-          color={style.colors.mossGreen}
+          color={colors.mossGreen}
         />
         <div style={{ marginTop: 50 }}>
           <ReadMoreCard slug={props.slug} />

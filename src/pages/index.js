@@ -2,9 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Grid, Col, Row } from "react-styled-flexboxgrid";
 
-import { Layout } from "../ui";
 import { SearchEngineOptimization } from "../components";
 import NodeListing from "../templates/tag/NodeListing";
+import Layout from "../components/layout/Layout";
 
 class Index extends React.Component {
   render() {

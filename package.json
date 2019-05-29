@@ -84,7 +84,7 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "format": "prettier --write 'src/**/*.js' '*.js' 'src/**/*.md'",
+    "format": "prettier --write 'src/**/*.js' 'stories/**/*.js' '*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
