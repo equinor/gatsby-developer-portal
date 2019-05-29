@@ -18,6 +18,7 @@ export const SearchInput = ({ value, onChange }) => {
   return (
     <form>
       <SearchInputStyle
+        aria-label="search"
         autoFocus
         type="text"
         value={value}
