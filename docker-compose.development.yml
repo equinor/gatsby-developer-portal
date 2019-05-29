@@ -5,7 +5,7 @@ services:
     build:
       args:
         NPM_TOKEN: "${NPM_TOKEN}"
-      target: production
+      target: development
     environment:
       - NODE_ENV=production
     ports:
