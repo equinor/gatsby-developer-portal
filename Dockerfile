@@ -6,8 +6,6 @@ COPY package.json ./
 
 # Dependencies
 FROM base as dependencies
-#ENV http_proxy http://www-proxy.statoil.no:80/
-#ENV https_proxy http://www-proxy.statoil.no:80/
 RUN npm config set registry https://npm.equinor.com/
 RUN npm install -g yarn
 ENV PATH=$PATH:/app/node_modules/.bin
