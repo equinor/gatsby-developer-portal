@@ -71,9 +71,13 @@ const Header = ({ isHome, children, title, subTitle, logo }) => (
   <div>
     <Wrapper>
       {logo && (
-        <Link aria-label="Back to landingpage" to="/">
-          <Logo src={logo} alt="developer.equinor.com" />
-        </Link>
+        <a
+          target="_black"
+          aria-label="Equinor.com"
+          href="https://www.equinor.com"
+        >
+          <Logo src={logo} alt="equinor.com" />
+        </a>
       )}
       <NavBar>{children}</NavBar>
     </Wrapper>

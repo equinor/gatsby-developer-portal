@@ -1,41 +1,50 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
+import { Grid } from "react-styled-flexboxgrid";
 
-import { SearchEngineOptimization } from "../components";
-import NodeListing from "../templates/tag/NodeListing";
+import { colors } from "../ui";
+import {
+  FullWidth,
+  Categories,
+  SearchEngineOptimization,
+  HeaderTitle,
+} from "../components";
 import Layout from "../components/layout/Layout";
 
-class Index extends React.Component {
-  render() {
-    const { data, location } = this.props;
+export default props => {
+  const { data, location } = props;
 
-    const { title, subTitle, menuLinks } = data.site.siteMetadata;
+  const { title, subTitle, menuLinks } = data.site.siteMetadata;
 
-    const docs = data.allMarkdownRemark.edges;
-    const tags = data.allMarkdownRemark.group;
-
-    return (
-      <Layout
-        location={location}
-        title={title}
-        subTitle={subTitle}
-        menuLinks={menuLinks}
-      >
-        <SearchEngineOptimization title="All docs" keywords={["docs"]} />
-        <Grid>
-          <Row>
-            <Col xs={12} md={8}>
-              <NodeListing nodes={docs} />
-            </Col>
-          </Row>
-        </Grid>
-      </Layout>
+  const docs = data.allMarkdownRemark.edges;
+  const nodes = docs
+    .filter(({ node }) => node.fields.collection === "docs-theme")
+    .sort((a, b) =>
+      a.node.frontmatter.title.localeCompare(b.node.frontmatter.title)
     );
-  }
-}
 
-export default Index;
+  return (
+    <Layout
+      location={location}
+      title={title}
+      subTitle={subTitle}
+      menuLinks={menuLinks}
+    >
+      <SearchEngineOptimization title="All docs" keywords={["docs"]} />
+      <FullWidth backgroundColor={colors.mistBlue}>
+        <div style={{ padding: "70px 0 140px" }}>
+          <HeaderTitle
+            title="For developers - by developers"
+            alignCenter={true}
+          />
+        </div>
+      </FullWidth>
+      <Grid style={{ width: "100%" }}>
+        <Categories nodes={nodes} />
+      </Grid>
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query {
@@ -51,7 +60,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: { collection: { eq: "docs" } } }
+      filter: { fields: { collection: { in: ["docs", "docs-theme"] } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       group(field: frontmatter___tags) {
@@ -67,6 +76,8 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            tags
+            featuredDocument
           }
         }
       }

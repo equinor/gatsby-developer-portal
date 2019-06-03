@@ -109,10 +109,7 @@ const Navigation = ({ menuLinks, location }) => (
   <Nav>
     <NavList>
       {menuLinks.map(link => {
-        const isSubPage =
-          link.link &&
-          location.pathname.substr(0, link.link.length) === link.link;
-        const isActive = link.link === location.pathname || isSubPage;
+        const isActive = isLocationActive(location.pathname, link.link);
         const isLink = link.link;
         if (link.name === "Search") {
           return <SeachIconStyled key={link.name} />;
@@ -141,3 +138,17 @@ const Navigation = ({ menuLinks, location }) => (
 );
 
 export default Navigation;
+
+export function isLocationActive(pathname, link) {
+  if (link === "/") {
+    return (
+      link === pathname ||
+      pathname.startsWith("/docs") ||
+      pathname.startsWith("/doc-theme")
+    );
+  } else {
+    return (
+      link === pathname || (link && pathname.substr(0, link.length) === link)
+    );
+  }
+}
