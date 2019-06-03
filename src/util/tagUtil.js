@@ -3,20 +3,25 @@
  * @returns {function({node: *}): boolean}
  */
 export function filterTags(selectedTags) {
-  const hasSelections = selectedTags.filter(tag => tag.selected).length;
-  return ({ node }) => {
-    if (!hasSelections || !node.frontmatter.tags) {
-      return true;
-    }
-
-    //returns true if one of post tag's is selected.
-    const tags = node.frontmatter.tags.filter(tagName => {
-      return selectedTags.filter(selectedTag => {
-        return selectedTag.selected && selectedTag.name === tagName;
-      }).length;
-    });
-    return tags.length;
-  };
+  const hasSelections = selectedTags.filter(tag => tag.selected).length > 0;
+  if (hasSelections) {
+    //filter selected tags.
+    return ({ node }) => {
+      const hasTags = node.frontmatter.tags && node.frontmatter.tags.length > 0;
+      if (hasTags) {
+        //returns true if one of post tag's is selected.
+        const tags = node.frontmatter.tags.filter(tagName => {
+          return selectedTags.filter(selectedTag => {
+            return selectedTag.selected && selectedTag.name === tagName;
+          }).length;
+        });
+        return tags.length;
+      }
+    };
+  } else {
+    //bypass filter, nothing to filter.
+    return () => true;
+  }
 }
 
 export function initializeSelectedTags(tags, paramTag) {

@@ -19,11 +19,6 @@ describe("iconUtil", () => {
     expect(getCircleIcon(IconEnum.OPEN_SOURCE)).toBe(FILE_STUB);
     expect(getCircleIcon(IconEnum.SECURITY)).toBe(FILE_STUB);
     expect(getCircleIcon(IconEnum.DESIGN)).toBe(FILE_STUB);
-  });
-
-  it("should throw on unsupported tag", () => {
-    expect(() => {
-      getCircleIcon("invalid");
-    }).toThrow();
+    expect(getIcon("not supported.")).toBe(FILE_STUB);
   });
 });

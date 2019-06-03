@@ -9,7 +9,7 @@ const ReadMoreCard = props => {
     fields: { slug, collection },
     frontmatter: { title, tags },
   } = props.node;
-  const Icon = getCircleIcon(tags[0]);
+  const iconTag = tags && tags.length > 0 ? tags[0] : "";
   return (
     <div
       style={{
@@ -22,12 +22,10 @@ const ReadMoreCard = props => {
     >
       <div>
         <div style={{ display: "block", margin: "10px 0 20px" }}>
-          <Tag tag={tags[0]} to={`/docs-theme/${tags[0].toLowerCase()}/`} />
+          <Tag tag={iconTag} to={`/docs-theme/${iconTag.toLowerCase()}/`} />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ display: "inline-flex" }}>
-            <Icon />
-          </div>
+          <div style={{ display: "inline-flex" }}>{getCircleIcon(iconTag)}</div>
 
           <div style={{ display: "inline-flex", alignItems: "center" }}>
             <div style={{ marginLeft: 20 }}>{title}</div>
