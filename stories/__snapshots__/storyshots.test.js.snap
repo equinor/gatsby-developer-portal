@@ -212,9 +212,11 @@ exports[`Storyshots Blog BlogListing 1`] = `
       className="c1"
     >
       <a
+        aria-label="Back to landingpage"
         href="/"
       >
         <img
+          alt="developer.equinor.com"
           className="c2"
           src="test-file-stub"
         />
@@ -550,9 +552,11 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
       className="c1"
     >
       <a
+        aria-label="Back to landingpage"
         href="/"
       >
         <img
+          alt="developer.equinor.com"
           className="c2"
           src="test-file-stub"
         />
@@ -990,9 +994,11 @@ exports[`Storyshots Blog BlogSummary 1`] = `
       className="c1"
     >
       <a
+        aria-label="Back to landingpage"
         href="/"
       >
         <img
+          alt="developer.equinor.com"
           className="c2"
           src="test-file-stub"
         />
@@ -1530,9 +1536,11 @@ exports[`Storyshots Categories default 1`] = `
         className="c2"
       >
         <a
+          aria-label="Back to landingpage"
           href="/"
         >
           <img
+            alt="developer.equinor.com"
             className="c3"
             src="test-file-stub"
           />
@@ -1866,9 +1874,11 @@ exports[`Storyshots Doc DocHeader api 1`] = `
       className="c1"
     >
       <a
+        aria-label="Back to landingpage"
         href="/"
       >
         <img
+          alt="developer.equinor.com"
           className="c2"
           src="test-file-stub"
         />
@@ -2080,9 +2090,11 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
       className="c1"
     >
       <a
+        aria-label="Back to landingpage"
         href="/"
       >
         <img
+          alt="developer.equinor.com"
           className="c2"
           src="test-file-stub"
         />
@@ -2294,9 +2306,11 @@ exports[`Storyshots Doc DocListing 1`] = `
       className="c1"
     >
       <a
+        aria-label="Back to landingpage"
         href="/"
       >
         <img
+          alt="developer.equinor.com"
           className="c2"
           src="test-file-stub"
         />
@@ -2582,9 +2596,11 @@ exports[`Storyshots HighlightedDocuments default 1`] = `
       className="c1"
     >
       <a
+        aria-label="Back to landingpage"
         href="/"
       >
         <img
+          alt="developer.equinor.com"
           className="c2"
           src="test-file-stub"
         />

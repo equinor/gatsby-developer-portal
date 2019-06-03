@@ -93,6 +93,7 @@ const SeachIconStyled = () => {
   return (
     <SeachIconRect to="/search">
       <SearchIcon
+        aria-label="search page"
         style={{
           margin: "auto",
           height: 23,
