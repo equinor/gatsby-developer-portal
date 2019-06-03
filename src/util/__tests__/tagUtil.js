@@ -10,9 +10,23 @@ describe("TagFilter", () => {
     });
 
     it("should not filter nodes by tag", () => {
-      const filterByTags = filterTags([{ name: "tech", selected: true }]);
+      const filterByTags = filterTags([{ name: "tech" }]);
       const nodes = [
-        { node: { frontmatter: { tags: ["test", "tech"] } } },
+        { node: { frontmatter: { tags: ["test"] } } },
+        { node: { frontmatter: { tags: ["tech"] } } },
+      ];
+      const filtered = nodes.filter(filterByTags);
+      expect(filtered).toHaveLength(2);
+    });
+
+    it("should filter untagged nodes by tag", () => {
+      const filterByTags = filterTags([
+        { name: "tech", selected: true },
+        { name: "api", selected: true },
+      ]);
+      const nodes = [
+        { node: { frontmatter: { tags: ["tech"] } } },
+        { node: { frontmatter: { tags: ["api"] } } },
         { node: { frontmatter: {} } },
       ];
       const filtered = nodes.filter(filterByTags);
