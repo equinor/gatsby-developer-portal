@@ -1,11 +1,7 @@
-import { useState } from "react";
 import styled from "styled-components";
 import React from "react";
 import { ListItem, TagWrapper } from "./TagListing";
-
-const FilterListItem = styled(ListItem)`
-  cursor: pointer;
-`;
+import { Actions } from "./TagFilterReducer";
 
 /**
  * SelectedTags should be available outside this component.
@@ -17,11 +13,10 @@ const FilterListItem = styled(ListItem)`
  * @returns {*} component
  * @constructor
  */
-export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
+export const TagFilter = ({ tags, state, dispatch }) => {
   if (!tags || tags.length === 0) {
     return null;
   }
-  const [selectAll, setSelectAll] = useState(false);
 
   const TagStatus = styled.span`
     font-size: 24px;
@@ -29,45 +24,30 @@ export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
     font-weight: 500;
   `;
 
-  const toggleTags = () => {
-    setSelectAll(!selectAll);
-    setSelectedTags(
-      selectedTags.map(tag => {
-        tag.selected = selectAll;
-        return tag;
-      })
-    );
-  };
+  const toggleTags = () => dispatch(Actions.toggleAll);
 
-  const toggleTag = (tags, name) => {
-    setSelectedTags(
-      tags.map(tag => {
-        //toggle single tag if name is provided.
-        if (tag.name === name) {
-          tag.selected = !tag.selected;
-        }
-        return tag;
-      })
-    );
-  };
+  const FilterListItem = styled(ListItem)`
+    cursor: pointer;
+  `;
+  const toggleTag = index => dispatch(Actions.toggleTag(index));
 
-  const SelectAll = ({ selectAll, onClick }) => (
+  const SelectAll = ({ onClick }) => (
     <span
       style={{ textDecoration: "underline", cursor: "pointer" }}
       onClick={onClick}
     >
-      {selectAll ? "Select all" : "Deselect all"}
+      {state.selectAll ? "Select all" : "Deselect all"}
     </span>
   );
   return (
     <TagWrapper>
       {tags.map((tag, index) => {
-        const isEnabled = selectedTags[index].selected;
+        const isEnabled = state.selectedTags[index].selected;
         return (
           <FilterListItem
             enabled={isEnabled}
             key={tag.fieldValue}
-            onClick={() => toggleTag(selectedTags, tag.fieldValue)}
+            onClick={() => toggleTag(index)}
           >
             <span>
               {tag.fieldValue}
@@ -76,7 +56,7 @@ export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
           </FilterListItem>
         );
       })}
-      <SelectAll onClick={toggleTags} selectAll={selectAll} />
+      <SelectAll onClick={toggleTags} />
     </TagWrapper>
   );
 };
