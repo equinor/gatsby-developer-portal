@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { getCircleIcon } from "../../util/iconUtil";
 import { FullWidth, Tag } from "../../components";
 import { PageLink } from "../../components/PageLink";
+import { CircleIcon } from "../../components/Icons";
 
 const ReadMoreCard = props => {
   const {
@@ -25,7 +25,9 @@ const ReadMoreCard = props => {
           <Tag tag={iconTag} to={`/docs-theme/${iconTag.toLowerCase()}/`} />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ display: "inline-flex" }}>{getCircleIcon(iconTag)}</div>
+          <div style={{ display: "inline-flex" }}>
+            <CircleIcon tag={iconTag} size={56} />
+          </div>
 
           <div style={{ display: "inline-flex", alignItems: "center" }}>
             <div style={{ marginLeft: 20 }}>{title}</div>

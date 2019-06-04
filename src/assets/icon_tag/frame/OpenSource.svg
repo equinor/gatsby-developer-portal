@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
     <title>6C7B4E3C-6C50-4E18-9478-9AABF8A9CDEC</title>
     <desc>Created with sketchtool.</desc>
     <g id="developer.equinor.com-V-4.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Style" transform="translate(-293.000000, -472.000000)">
-            <g id="Icon_tag/Frame/OpenSource" transform="translate(293.000000, 472.000000)">
+        <g id="Style" transform="translate(-293.000000, -644.000000)">
+            <g id="Icon_tag/Frame/OpenSource" transform="translate(293.000000, 644.000000)">
                 <circle id="Oval" stroke="#FF1243" fill="#FFFFFF" cx="36" cy="36" r="35.5"></circle>
                 <g id="Group" transform="translate(16.000000, 21.000000)" fill="#FF1243">
                     <path d="M3.27063291,1.26746831 C2.16514768,1.26746831 1.26582278,2.1679623 1.26582278,3.27488463 L1.26582278,27.261976 C1.26582278,28.3688138 2.16514768,29.2693923 3.27063291,29.2693923 L36.7140084,29.2693923 C37.8194093,29.2693923 38.7188186,28.3688138 38.7188186,27.261976 L38.7188186,3.27488463 C38.7188186,2.1679623 37.8194093,1.26746831 36.7140084,1.26746831 L3.27063291,1.26746831 Z M36.7140084,30.5368606 L3.27063291,30.5368606 C1.46725738,30.5368606 4.26325641e-14,29.0676958 4.26325641e-14,27.261976 L4.26325641e-14,3.27488463 C4.26325641e-14,1.46908027 1.46725738,0 3.27063291,0 L36.7140084,0 C38.517384,0 39.9846414,1.46908027 39.9846414,3.27488463 L39.9846414,27.261976 C39.9846414,29.0676958 38.517384,30.5368606 36.7140084,30.5368606 L36.7140084,30.5368606 Z" id="Fill-1"></path>
