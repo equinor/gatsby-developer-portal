@@ -34,14 +34,26 @@ describe("TagFilter", () => {
     });
   });
 
-  describe("initializeTags", () => {
-    it("should initialize tags", () => {
-      const tags = initializeSelectedTags([
-        { fieldValue: "api" },
-        { fieldValue: "tech" },
-      ]);
-      expect(tags).toHaveLength(2);
-      expect(tags[0].selected).toBe(true);
+  describe("InitializeTags", () => {
+    describe("initialize tags", () => {
+      let tags;
+
+      beforeAll(() => {
+        tags = initializeSelectedTags([
+          { fieldValue: "api" },
+          { fieldValue: "tech" },
+        ]);
+      });
+
+      it("should have 2 tags", () => {
+        expect(tags).toHaveLength(2);
+      });
+
+      it("should not have selected tags", () => {
+        tags.forEach(tag => {
+          expect(tag.selected).toBe(false);
+        });
+      });
     });
 
     it("should initialize tags when param has no hits", () => {
@@ -52,15 +64,33 @@ describe("TagFilter", () => {
       expect(tags).toHaveLength(2);
     });
 
-    it("should initialize tags based on param", () => {
-      const tags = initializeSelectedTags(
-        [{ fieldValue: "api" }, { fieldValue: "tech" }],
-        "tech"
-      );
-      expect(tags).toHaveLength(2);
-      expect(tags[0].name).toBe("api");
-      expect(tags[0].selected).toBe(false);
-      expect(tags[1].selected).toBe(true);
+    describe("Initialize tags based on param", () => {
+      let tags, apiTag, techTag;
+
+      beforeAll(() => {
+        tags = initializeSelectedTags(
+          [{ fieldValue: "api" }, { fieldValue: "tech" }],
+          "tech"
+        );
+        apiTag = tags[0];
+        techTag = tags[1];
+      });
+
+      it("should have 2 tags", () => {
+        expect(tags).toHaveLength(2);
+      });
+
+      it("should have tag api", () => {
+        expect(apiTag.name).toBe("api");
+      });
+
+      it("should have api tag selected", () => {
+        expect(apiTag.selected).toBe(false);
+      });
+
+      it("should have tech tag selected", () => {
+        expect(techTag.selected).toBe(true);
+      });
     });
   });
 });

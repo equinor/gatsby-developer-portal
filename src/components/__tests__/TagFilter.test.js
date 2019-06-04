@@ -21,7 +21,7 @@ describe("TagFilter", () => {
       />
     );
     fireEvent(
-      getByText("Deselect all"),
+      getByText("Select all"),
       new MouseEvent("click", {
         bubbles: true,
         cancelable: true,
