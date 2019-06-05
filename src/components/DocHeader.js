@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { FullWidth } from "./FullWidth";
 import { Tag } from "./Tags";
-import { getCircleIcon } from "../util/iconUtil";
 import { HeaderTitle } from "./Titles";
 import { colors } from "../ui";
+import { CircleIcon } from "./Icons";
 
 export const DocHeader = ({ title, tags }) => {
   const HeaderWrapper = styled.div`
@@ -14,14 +14,15 @@ export const DocHeader = ({ title, tags }) => {
   `;
 
   const IconWrapper = styled.div`
-    height: 72px;
     transform: translate(0, -50%);
   `;
   const iconTag = tags && tags.length > 0 ? tags[0] : "";
   return (
     <FullWidth backgroundColor="#f2f2f2">
       <HeaderWrapper>
-        <IconWrapper>{getCircleIcon(iconTag)}</IconWrapper>
+        <IconWrapper>
+          <CircleIcon tag={iconTag} />
+        </IconWrapper>
         <HeaderTitle
           title={title}
           color={colors.mossGreen}
