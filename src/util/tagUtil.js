@@ -26,7 +26,7 @@ export function filterTags(selectedTags) {
 
 export function initializeSelectedTags(tags, paramTag) {
   return tags.map(tag => {
-    const selected = paramTag ? paramTag === tag.fieldValue : true;
+    const selected = paramTag === tag.fieldValue;
     return { name: tag.fieldValue, selected };
   });
 }

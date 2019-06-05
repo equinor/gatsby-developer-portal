@@ -39,14 +39,10 @@ function getSearchResults(query, lng) {
     query = "**";
   }
 
-  const searchQuery = `${query.trim()}~1`;
+  //set fuzzy distance 1 for short terms, and 2 for longer terms.
+  const fuzzyDistance = query.length > 3 ? 2 : 1;
+  const searchQuery = `${query.trim()}~${fuzzyDistance}`;
   const results = lunrIndex.index.search(searchQuery);
-  return (
-    results
-      // .filter(result => {
-      //   console.log(result);
-      //   return result.score > 0.1;
-      // })
-      .map(({ ref }) => lunrIndex.store[ref])
-  );
+  const sortScore = (a, b) => a.score - b.score;
+  return results.sort(sortScore).map(({ ref }) => lunrIndex.store[ref]);
 }

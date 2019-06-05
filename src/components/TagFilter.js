@@ -21,7 +21,7 @@ export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
   if (!tags || tags.length === 0) {
     return null;
   }
-  const [selectAll, setSelectAll] = useState(false);
+  const [selectAll, setSelectAll] = useState(true);
 
   const TagStatus = styled.span`
     font-size: 24px;
