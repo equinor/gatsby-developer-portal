@@ -2853,9 +2853,49 @@ Array [
 ]
 `;
 
-exports[`Storyshots Titles HeaderTitle 1`] = `
-Array [
-  .c0 {
+exports[`Storyshots Main page MainPage Header 1`] = `
+.c5 {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.c6 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.c7 {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.c10 {
+  height: 4px;
+  width: 20%;
+  background-color: #ff1243;
+}
+
+.c9 {
   color: #333333;
   font-size: 52px;
   -webkit-letter-spacing: -0.1px;
@@ -2866,29 +2906,249 @@ Array [
   text-align: initial;
 }
 
+.c0 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+}
+
+.c1 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c3 {
+  margin-right: 60px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c11 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c8 {
+  padding-top: 50px;
+}
+
+@media only screen and (min-width:48em) {
+  .c5 {
+    width: 46rem;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c5 {
+    width: 61rem;
+  }
+}
+
+@media only screen and (min-width:75em) {
+  .c5 {
+    width: 76rem;
+  }
+}
+
+@media only screen and (min-width:0em) {
+  .c7 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width:64em) {
+  .c7 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    display: block;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c1 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c2 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c4 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width:1024px) {
+  .c8 {
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    width: 200%;
+    margin-left: 50%;
+  }
+}
+
 <div
-    className="c0"
-    title="Toolbox"
+  className="c0"
+>
+  <div
+    className="c1"
   >
-    Toolbox
-  </div>,
-  .c0 {
+    <div>
+      <div
+        className="c2"
+      >
+        <a
+          aria-label="Equinor.com"
+          href="https://www.equinor.com"
+          target="_black"
+        >
+          <img
+            alt="equinor.com"
+            className="c3"
+            src="test-file-stub"
+          />
+        </a>
+        <div
+          className="c4"
+        />
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "#EAEAEA",
+                "height": 400,
+              }
+            }
+          />
+        </div>
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            <div
+              className="c9"
+            >
+              For developers - by developers
+            </div>
+            <div
+              className="c10"
+              color="#ff1243"
+              style={
+                Object {
+                  "margin": "20px 0 40px",
+                  "minWidth": 200,
+                  "width": "30%",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "marginLeft": 30,
+              }
+            }
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut metus dolor, placerat eget vulputate rhoncus, aliquam ut velit. Duis gravida, leo quis varius iaculis, sapien orci aliquam sem, ac accumsan risus nunc et massa.
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      className="c11"
+    >
+      Copyright © 
+      2019
+       Equinor ASA
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Titles HeaderTitle 1`] = `
+.c6 {
   height: 4px;
   width: 20%;
   margin: 20px 0 0;
   background-color: #ff1243;
 }
 
-<div
-    className="c0"
-    color="#ff1243"
-  />,
-]
-`;
-
-exports[`Storyshots Titles HeaderTitle with custom color 1`] = `
-Array [
-  .c0 {
+.c5 {
   color: #333333;
   font-size: 52px;
   -webkit-letter-spacing: -0.1px;
@@ -2899,37 +3159,441 @@ Array [
   text-align: initial;
 }
 
+.c0 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+}
+
+.c1 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c3 {
+  margin-right: 60px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c7 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+@media (min-width:62em) {
+  .c1 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c1 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c2 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c4 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
 <div
-    className="c0"
-    color="blue"
-    title="Toolbox"
+  className="c0"
+>
+  <div
+    className="c1"
   >
-    Toolbox
-  </div>,
-  .c0 {
+    <div>
+      <div
+        className="c2"
+      >
+        <a
+          aria-label="Equinor.com"
+          href="https://www.equinor.com"
+          target="_black"
+        >
+          <img
+            alt="equinor.com"
+            className="c3"
+            src="test-file-stub"
+          />
+        </a>
+        <div
+          className="c4"
+        />
+      </div>
+    </div>
+    <div
+      className="c5"
+      title="Toolbox"
+    >
+      Toolbox
+    </div>
+    <div
+      className="c6"
+      color="#ff1243"
+    />
+    <footer
+      className="c7"
+    >
+      Copyright © 
+      2019
+       Equinor ASA
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Titles HeaderTitle with custom color 1`] = `
+.c6 {
   height: 4px;
   width: 20%;
   margin: 20px 0 0;
   background-color: blue;
 }
 
+.c5 {
+  color: #333333;
+  font-size: 52px;
+  -webkit-letter-spacing: -0.1px;
+  -moz-letter-spacing: -0.1px;
+  -ms-letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
+  line-height: 52px;
+  text-align: initial;
+}
+
+.c0 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+}
+
+.c1 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c3 {
+  margin-right: 60px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c7 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+@media (min-width:62em) {
+  .c1 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c1 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c2 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c4 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
 <div
-    className="c0"
-    color="blue"
-  />,
-]
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div>
+      <div
+        className="c2"
+      >
+        <a
+          aria-label="Equinor.com"
+          href="https://www.equinor.com"
+          target="_black"
+        >
+          <img
+            alt="equinor.com"
+            className="c3"
+            src="test-file-stub"
+          />
+        </a>
+        <div
+          className="c4"
+        />
+      </div>
+    </div>
+    <div
+      className="c5"
+      color="blue"
+      title="Toolbox"
+    >
+      Toolbox
+    </div>
+    <div
+      className="c6"
+      color="blue"
+    />
+    <footer
+      className="c7"
+    >
+      Copyright © 
+      2019
+       Equinor ASA
+    </footer>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Titles Separator 1`] = `
-.c0 {
+.c5 {
   height: 4px;
   width: 20%;
   background-color: #007079;
 }
 
+.c0 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+}
+
+.c1 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c3 {
+  margin-right: 60px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c6 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+@media (min-width:62em) {
+  .c1 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c1 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c2 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c4 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
 <div
   className="c0"
-/>
+>
+  <div
+    className="c1"
+  >
+    <div>
+      <div
+        className="c2"
+      >
+        <a
+          aria-label="Equinor.com"
+          href="https://www.equinor.com"
+          target="_black"
+        >
+          <img
+            alt="equinor.com"
+            className="c3"
+            src="test-file-stub"
+          />
+        </a>
+        <div
+          className="c4"
+        />
+      </div>
+    </div>
+    <div
+      className="c5"
+    />
+    <footer
+      className="c6"
+    >
+      Copyright © 
+      2019
+       Equinor ASA
+    </footer>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Welcome to Storybook 1`] = `
