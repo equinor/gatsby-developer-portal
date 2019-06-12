@@ -16,6 +16,13 @@ module.exports = ({ config }) => {
     require.resolve("@babel/plugin-proposal-class-properties"),
   ];
   
+  config.module.rules[0].use[0].options.plugins = [
+    // use @babel/plugin-proposal-class-properties for class arrow functions
+    require.resolve("@babel/plugin-proposal-class-properties"),
+    // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
+    require.resolve("babel-plugin-remove-graphql-queries"),
+  ];
+  
   //remove svg from current rule.
   config.module.rules.map(rule => {
     if (String(rule.test) === String(/\.(svg|ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/)) {

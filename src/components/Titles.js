@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Separator from "./Separator";
 import { colors } from "../ui";
 
-const Title = styled.div`
+export const Title = styled.div`
   color: #333333;
   font-size: ${props => props.fontSize || 52}px;
   letter-spacing: -0.1px;
