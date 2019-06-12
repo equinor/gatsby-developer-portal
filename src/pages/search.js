@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import { graphql } from "gatsby";
 
 import { TagFilter } from "../components";
-import { filterTags, initializeSelectedTags } from "../util/tagUtil";
+import { filterTags } from "../util/tagUtil";
 import { SearchInput } from "./search/_SearchInput";
 import { Results } from "./search/_Results";
 import Layout from "../components/layout/Layout";
+import {
+  initializeState,
+  tagFilterReducer,
+} from "../components/TagFilterReducer";
 
 export default props => {
   const { data, location } = props;
@@ -14,11 +18,12 @@ export default props => {
   const tags = data.allMarkdownRemark.group;
 
   const [query, setQuery] = useState("");
-  const [selectedTags, setSelectedTags] = useState(
-    initializeSelectedTags(tags)
+  const [filterState, dispatchFilterAction] = useReducer(
+    tagFilterReducer,
+    initializeState(tags)
   );
 
-  const postsFiltered = posts.filter(filterTags(selectedTags));
+  const postsFiltered = posts.filter(filterTags(filterState.selectedTags));
   return (
     <Layout
       location={location}
@@ -32,8 +37,8 @@ export default props => {
         </div>
         <TagFilter
           tags={tags}
-          selectedTags={selectedTags}
-          setSelectedTags={setSelectedTags}
+          dispatch={dispatchFilterAction}
+          state={filterState}
         />
         <Results query={query} posts={postsFiltered} />
       </div>

@@ -1,14 +1,9 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { render, fireEvent } from "react-testing-library";
 import { TagFilter } from "../TagFilter";
+import { initializeState } from "../TagFilterReducer";
 
-const tags = [{ fieldValue: "Api" }, { fieldValue: "Tech", selected: true }];
-
-//generate test data
-const selectedTags = tags.map(tag => ({
-  name: tag.fieldValue,
-  selected: tag.selected,
-}));
+const tags = [{ fieldValue: "Api" }, { fieldValue: "Tech" }];
 
 describe("TagFilter", () => {
   it("should deselect all tags", () => {
@@ -16,12 +11,12 @@ describe("TagFilter", () => {
     const { getByText } = render(
       <TagFilter
         tags={tags}
-        selectedTags={selectedTags}
-        setSelectedTags={mockClick}
+        dispatch={mockClick}
+        state={initializeState(tags)}
       />
     );
     fireEvent(
-      getByText("Deselect all"),
+      getByText("Select all"),
       new MouseEvent("click", {
         bubbles: true,
         cancelable: true,
@@ -35,8 +30,8 @@ describe("TagFilter", () => {
     const { getByText } = render(
       <TagFilter
         tags={tags}
-        selectedTags={selectedTags}
-        setSelectedTags={mockClick}
+        dispatch={mockClick}
+        state={initializeState(tags)}
       />
     );
     fireEvent(

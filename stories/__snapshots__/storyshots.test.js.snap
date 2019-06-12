@@ -3140,6 +3140,247 @@ exports[`Storyshots Main page MainPage Header 1`] = `
 </div>
 `;
 
+exports[`Storyshots TagFilter with multiple tags 1`] = `
+.c0 {
+  margin: 0 auto;
+  padding: 0 15px 50px;
+  width: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.c2 {
+  margin-right: 60px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c9 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 15px 40px;
+}
+
+.c6 {
+  margin-top: 10px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 21px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 15px;
+}
+
+.c5 {
+  list-style: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+
+.c8 {
+  font-size: 24px;
+  padding-left: 10px;
+  font-weight: 500;
+}
+
+.c7 {
+  background-color: #EAEAEA;
+  padding: 0 20px;
+  text-align: center;
+  border-radius: 20.5px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.c7 a,
+.c7 span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  color: #007079;
+  text-transform: uppercase;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:80em) {
+  .c0 {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width:36em) {
+  .c1 {
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      className="c1"
+    >
+      <a
+        aria-label="Equinor.com"
+        href="https://www.equinor.com"
+        target="_black"
+      >
+        <img
+          alt="equinor.com"
+          className="c2"
+          src="test-file-stub"
+        />
+      </a>
+      <div
+        className="c3"
+      />
+    </div>
+  </div>
+  <section
+    className="c4"
+  >
+    <ul
+      className="c5"
+    >
+      <span
+        className="c6"
+      >
+        Tags
+      </span>
+      <li
+        className="c7"
+        onClick={[Function]}
+      >
+        <span>
+          Api
+          <span
+            className="c8"
+          >
+            +
+          </span>
+        </span>
+      </li>
+      <li
+        className="c7"
+        onClick={[Function]}
+      >
+        <span>
+          Tech
+          <span
+            className="c8"
+          >
+            +
+          </span>
+        </span>
+      </li>
+      <li
+        className="c7"
+        onClick={[Function]}
+      >
+        <span>
+          Security
+          <span
+            className="c8"
+          >
+            +
+          </span>
+        </span>
+      </li>
+      <span
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "textDecoration": "underline",
+          }
+        }
+      >
+        Select all
+      </span>
+    </ul>
+  </section>
+  <footer
+    className="c9"
+  >
+    Copyright © 
+    2019
+     Equinor ASA
+  </footer>
+</div>
+`;
+
 exports[`Storyshots Titles HeaderTitle 1`] = `
 .c6 {
   height: 4px;
