@@ -118,7 +118,9 @@ module.exports = {
         siteId: "2",
         matomoUrl: "https://matomo.sdpaks.equinor.com",
         siteUrl: "https://developer.equinor.com",
-        disableCookies: true,
+        disableCookies: false,
+        requireConsent: true,
+        dev: process.env.ENVIRONMENT === 'development',
       },
     },
     {

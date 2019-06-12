@@ -5,16 +5,22 @@ import styled from "styled-components";
 import Container from "./Container";
 import Header from "./Header";
 import Navigation from "./Navigation";
+import { Consent } from "../Consent";
 
 const Footer = styled.footer`
   padding-top: 20px;
   text-align: center;
 `;
 
+const StickyWrapper = styled.div`
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
+`;
+
 class Layout extends React.Component {
   render() {
     const { location, title, subTitle, children, menuLinks } = this.props;
-
     return (
       <Container>
         <GlobalStyle />
@@ -25,6 +31,9 @@ class Layout extends React.Component {
         </Header>
         {children}
         <Footer>Copyright © {new Date().getFullYear()} Equinor ASA</Footer>
+        <StickyWrapper>
+          <Consent />
+        </StickyWrapper>
       </Container>
     );
   }

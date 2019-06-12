@@ -78,6 +78,15 @@ exports[`Storyshots Blog BlogListing 1`] = `
   line-height: 24px;
 }
 
+.c16 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
+}
+
 .c0 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -126,11 +135,30 @@ exports[`Storyshots Blog BlogListing 1`] = `
   text-align: center;
 }
 
+.c15 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c7 {
   font-size: 25px;
   color: black;
   font-weight: 200;
   padding: 0 2px 0 10px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (max-width:576px) {
@@ -363,6 +391,48 @@ exports[`Storyshots Blog BlogListing 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c15"
+  >
+    <div
+      className="c16"
+    >
+      <div
+        className="c17"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -430,6 +500,15 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
   text-align: initial;
 }
 
+.c16 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
+}
+
 .c4 {
   left: calc((100% - 100vw) / 2);
   position: relative;
@@ -487,6 +566,13 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
   text-align: center;
 }
 
+.c15 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c5 {
   padding-top: 20px;
   padding-bottom: 40px;
@@ -498,6 +584,18 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
   color: black;
   font-weight: 200;
   padding: 0 2px 0 10px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (max-width:576px) {
@@ -693,6 +791,48 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c15"
+  >
+    <div
+      className="c16"
+    >
+      <div
+        className="c17"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -801,6 +941,15 @@ exports[`Storyshots Blog BlogSummary 1`] = `
   text-align: center;
 }
 
+.c24 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
+}
+
 .c4 {
   left: calc((100% - 100vw) / 2);
   position: relative;
@@ -864,6 +1013,13 @@ exports[`Storyshots Blog BlogSummary 1`] = `
   text-align: center;
 }
 
+.c23 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c8 {
   background-color: white;
   margin: 50px 0;
@@ -888,6 +1044,18 @@ exports[`Storyshots Blog BlogSummary 1`] = `
   border: 1px solid #ff1243;
   border-radius: 3px;
   background-color: #ffffff;
+  padding: 10px;
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 10px;
 }
 
@@ -1332,6 +1500,48 @@ exports[`Storyshots Blog BlogSummary 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c23"
+  >
+    <div
+      className="c24"
+    >
+      <div
+        className="c25"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -1394,6 +1604,15 @@ exports[`Storyshots Categories default 1`] = `
   padding-left: 0.5rem;
 }
 
+.c11 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
+}
+
 .c0 {
   left: calc((100% - 100vw) / 2);
   position: relative;
@@ -1450,6 +1669,13 @@ exports[`Storyshots Categories default 1`] = `
   text-align: center;
 }
 
+.c10 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c8 {
   color: #333333;
   font-size: 30px;
@@ -1464,6 +1690,18 @@ exports[`Storyshots Categories default 1`] = `
 
 .c7 {
   margin: 0 auto;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media only screen and (min-width:0em) {
@@ -1724,6 +1962,48 @@ exports[`Storyshots Categories default 1`] = `
       2019
        Equinor ASA
     </footer>
+    <div
+      className="c10"
+    >
+      <div
+        className="c11"
+      >
+        <div
+          className="c12"
+        >
+          <div
+            style={
+              Object {
+                "display": "inline-flex",
+              }
+            }
+          >
+            We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "inline-flex",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <test-file-stub
+                style={
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1774,6 +2054,70 @@ Array [
 ]
 `;
 
+exports[`Storyshots Consent default 1`] = `
+.c0 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "inline-flex",
+          }
+        }
+      >
+        <div
+          onClick={[Function]}
+        >
+          <test-file-stub
+            style={
+              Object {
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Doc DocHeader api 1`] = `
 .c10 {
   font-size: 12px;
@@ -1800,6 +2144,15 @@ exports[`Storyshots Doc DocHeader api 1`] = `
   letter-spacing: -0.1px;
   line-height: 52px;
   text-align: center;
+}
+
+.c13 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
 }
 
 .c4 {
@@ -1859,6 +2212,13 @@ exports[`Storyshots Doc DocHeader api 1`] = `
   text-align: center;
 }
 
+.c12 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c5 {
   background-color: #f2f2f2;
   width: 100%;
@@ -1876,6 +2236,18 @@ exports[`Storyshots Doc DocHeader api 1`] = `
   color: black;
   font-weight: 200;
   padding: 0 2px 0 10px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (min-width:62em) {
@@ -1990,6 +2362,48 @@ exports[`Storyshots Doc DocHeader api 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c12"
+  >
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -2019,6 +2433,15 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
   letter-spacing: -0.1px;
   line-height: 52px;
   text-align: center;
+}
+
+.c13 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
 }
 
 .c4 {
@@ -2078,6 +2501,13 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
   text-align: center;
 }
 
+.c12 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c5 {
   background-color: #f2f2f2;
   width: 100%;
@@ -2095,6 +2525,18 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
   color: black;
   font-weight: 200;
   padding: 0 2px 0 10px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (min-width:62em) {
@@ -2209,6 +2651,48 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c12"
+  >
+    <div
+      className="c13"
+    >
+      <div
+        className="c14"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -2234,6 +2718,15 @@ exports[`Storyshots Doc DocListing 1`] = `
 .c7 {
   border-bottom: 1px solid #f2f2f2;
   margin: 20px 0;
+}
+
+.c10 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
 }
 
 .c0 {
@@ -2284,11 +2777,30 @@ exports[`Storyshots Doc DocListing 1`] = `
   text-align: center;
 }
 
+.c9 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c5 {
   font-size: 25px;
   color: black;
   font-weight: 200;
   padding: 0 2px 0 10px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media only screen and (min-width:0em) {
@@ -2422,6 +2934,48 @@ exports[`Storyshots Doc DocListing 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c9"
+  >
+    <div
+      className="c10"
+    >
+      <div
+        className="c11"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -2459,6 +3013,15 @@ exports[`Storyshots HighlightedDocuments default 1`] = `
   flex: 0 0 auto;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
+}
+
+.c17 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
 }
 
 .c0 {
@@ -2507,6 +3070,13 @@ exports[`Storyshots HighlightedDocuments default 1`] = `
 .c15 {
   padding-top: 20px;
   text-align: center;
+}
+
+.c16 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
 }
 
 .c7 {
@@ -2575,6 +3145,18 @@ exports[`Storyshots HighlightedDocuments default 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media only screen and (min-width:48em) {
@@ -2804,6 +3386,48 @@ exports[`Storyshots HighlightedDocuments default 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c16"
+  >
+    <div
+      className="c17"
+    >
+      <div
+        className="c18"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -2906,6 +3530,15 @@ exports[`Storyshots Main page MainPage Header 1`] = `
   text-align: initial;
 }
 
+.c13 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
+}
+
 .c0 {
   left: calc((100% - 100vw) / 2);
   position: relative;
@@ -2962,8 +3595,27 @@ exports[`Storyshots Main page MainPage Header 1`] = `
   text-align: center;
 }
 
+.c12 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
 .c8 {
   padding-top: 50px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media only screen and (min-width:48em) {
@@ -3136,11 +3788,62 @@ exports[`Storyshots Main page MainPage Header 1`] = `
       2019
        Equinor ASA
     </footer>
+    <div
+      className="c12"
+    >
+      <div
+        className="c13"
+      >
+        <div
+          className="c14"
+        >
+          <div
+            style={
+              Object {
+                "display": "inline-flex",
+              }
+            }
+          >
+            We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "inline-flex",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <test-file-stub
+                style={
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots TagFilter with multiple tags 1`] = `
+.c11 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
+}
+
 .c0 {
   margin: 0 auto;
   padding: 0 15px 50px;
@@ -3187,6 +3890,13 @@ exports[`Storyshots TagFilter with multiple tags 1`] = `
 .c9 {
   padding-top: 20px;
   text-align: center;
+}
+
+.c10 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
 }
 
 .c4 {
@@ -3247,6 +3957,18 @@ exports[`Storyshots TagFilter with multiple tags 1`] = `
   line-height: 14px;
   color: #007079;
   text-transform: uppercase;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (min-width:62em) {
@@ -3378,6 +4100,48 @@ exports[`Storyshots TagFilter with multiple tags 1`] = `
     2019
      Equinor ASA
   </footer>
+  <div
+    className="c10"
+  >
+    <div
+      className="c11"
+    >
+      <div
+        className="c12"
+      >
+        <div
+          style={
+            Object {
+              "display": "inline-flex",
+            }
+          }
+        >
+          We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "inline-flex",
+            }
+          }
+        >
+          <div
+            onClick={[Function]}
+          >
+            <test-file-stub
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -3398,6 +4162,15 @@ exports[`Storyshots Titles HeaderTitle 1`] = `
   letter-spacing: -0.1px;
   line-height: 52px;
   text-align: initial;
+}
+
+.c9 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
 }
 
 .c0 {
@@ -3454,6 +4227,25 @@ exports[`Storyshots Titles HeaderTitle 1`] = `
 .c7 {
   padding-top: 20px;
   text-align: center;
+}
+
+.c8 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (min-width:62em) {
@@ -3535,6 +4327,48 @@ exports[`Storyshots Titles HeaderTitle 1`] = `
       2019
        Equinor ASA
     </footer>
+    <div
+      className="c8"
+    >
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          <div
+            style={
+              Object {
+                "display": "inline-flex",
+              }
+            }
+          >
+            We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "inline-flex",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <test-file-stub
+                style={
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -3556,6 +4390,15 @@ exports[`Storyshots Titles HeaderTitle with custom color 1`] = `
   letter-spacing: -0.1px;
   line-height: 52px;
   text-align: initial;
+}
+
+.c9 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
 }
 
 .c0 {
@@ -3612,6 +4455,25 @@ exports[`Storyshots Titles HeaderTitle with custom color 1`] = `
 .c7 {
   padding-top: 20px;
   text-align: center;
+}
+
+.c8 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (min-width:62em) {
@@ -3694,6 +4556,48 @@ exports[`Storyshots Titles HeaderTitle with custom color 1`] = `
       2019
        Equinor ASA
     </footer>
+    <div
+      className="c8"
+    >
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          <div
+            style={
+              Object {
+                "display": "inline-flex",
+              }
+            }
+          >
+            We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "inline-flex",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <test-file-stub
+                style={
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -3703,6 +4607,15 @@ exports[`Storyshots Titles Separator 1`] = `
   height: 4px;
   width: 20%;
   background-color: #007079;
+}
+
+.c8 {
+  left: calc((100% - 100vw) / 2);
+  position: relative;
+  width: 100vw;
+  padding-left: calc((100vw - 100%) / 2);
+  padding-right: calc((100vw - 100%) / 2);
+  background-color: #EAEAEA;
 }
 
 .c0 {
@@ -3759,6 +4672,25 @@ exports[`Storyshots Titles Separator 1`] = `
 .c6 {
   padding-top: 20px;
   text-align: center;
+}
+
+.c7 {
+  position: -webkit-sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 @media (min-width:62em) {
@@ -3833,6 +4765,48 @@ exports[`Storyshots Titles Separator 1`] = `
       2019
        Equinor ASA
     </footer>
+    <div
+      className="c7"
+    >
+      <div
+        className="c8"
+      >
+        <div
+          className="c9"
+        >
+          <div
+            style={
+              Object {
+                "display": "inline-flex",
+              }
+            }
+          >
+            We use cookies to provide the best possible experience for you. By closing this message you agree to our use of cookies. You can learn more about cookies on our privacy and settings page.
+          </div>
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "inline-flex",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+            >
+              <test-file-stub
+                style={
+                  Object {
+                    "height": 30,
+                    "width": 30,
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
