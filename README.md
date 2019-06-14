@@ -34,6 +34,14 @@ This requires a Docker installation and population of two variables:
 
 Your site is now running at `http://localhost:8000`.
 
+# Running locally without tokens
+Tokens are required in production and development environments. For local environment, tokens are not required. Omitting the tokens results in fonts missing and authors mocked (by empty image and a placeholder name).  
+
+```
+1. Remove the @equinor-font dependency in package.json
+2. npm install
+3. npm run dev
+```
 
 ### Run production build
 

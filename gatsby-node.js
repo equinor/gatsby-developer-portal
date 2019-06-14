@@ -207,32 +207,46 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const authors = node.frontmatter.authors;
-    const config = {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_PERSONAL_TOKEN}`,
-      },
-    };
-    const data = [];
-    const getProfile = author =>
-      fetch("https://api.github.com/users/" + author, config);
+    if (process.env.GITHUB_PERSONAL_TOKEN) {
+      const config = {
+        headers: {
+          Authorization: `token ${process.env.GITHUB_PERSONAL_TOKEN}`,
+        },
+      };
+      const data = [];
+      const getProfile = author =>
+        fetch("https://api.github.com/users/" + author, config);
 
-    if (authors) {
-      for (let i = 0; i < authors.length; i++) {
-        const response = await getProfile(authors[i]);
-        const json = await response.json();
-        const image = await fetchBase64.remote(json.avatar_url);
-        console.log("downloaded avatar", authors[i]);
-        data.push({
-          image: image[1],
-          name: json.name,
-        });
+      if (authors) {
+        for (let i = 0; i < authors.length; i++) {
+          const response = await getProfile(authors[i]);
+          const json = await response.json();
+          const image = await fetchBase64.remote(json.avatar_url);
+          console.log("downloaded avatar", authors[i]);
+          data.push({
+            image: image[1],
+            name: json.name,
+          });
+        }
       }
+      createNodeField({
+        name: `authors`,
+        node,
+        value: data,
+      });
+    } else {
+      // Blank image
+      createNodeField({
+        name: `authors`,
+        node,
+        value: [
+          {
+            image:
+              "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+            name: "Ola Nordmann",
+          },
+        ],
+      });
     }
-
-    createNodeField({
-      name: `authors`,
-      node,
-      value: data,
-    });
   }
 };
