@@ -3090,6 +3090,7 @@ exports[`Storyshots Main page MainPage Header 1`] = `
               Object {
                 "backgroundColor": "#EAEAEA",
                 "height": 400,
+                "opacity": 0.5,
               }
             }
           />

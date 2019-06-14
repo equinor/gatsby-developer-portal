@@ -1,10 +1,11 @@
 import React from "react";
-import { graphql } from "gatsby";
-import { Col, Grid, Row } from "react-styled-flexboxgrid";
+import { graphql, useStaticQuery } from "gatsby";
+import { Grid, Col, Row } from "react-styled-flexboxgrid";
 import styled from "styled-components";
 import { colors } from "../ui";
 import { FullWidth, Categories, SearchEngineOptimization } from "../components";
 import Layout from "../components/layout/Layout";
+import { BlogSummary } from "../components/BlogSummary";
 import Separator from "../components/Separator";
 import { Title } from "../components/Titles";
 
@@ -24,7 +25,13 @@ export const Header = props => {
     <Grid>
       <Row>
         <Col xs={12} md={6}>
-          <div style={{ height: 400, backgroundColor: colors.lighterGray }} />
+          <div
+            style={{
+              height: 400,
+              backgroundColor: colors.lighterGray,
+              opacity: 0.5,
+            }}
+          />
         </Col>
         <Col xs={12} md={6}>
           <HeaderWrapper>
@@ -47,13 +54,16 @@ export default props => {
 
   const { title, subTitle, menuLinks } = data.site.siteMetadata;
 
-  const docs = data.allMarkdownRemark.edges;
-  const nodes = docs
+  const nodes = data.allMarkdownRemark.edges;
+  const docNodes = nodes
     .filter(({ node }) => node.fields.collection === "docs-theme")
     .sort((a, b) =>
       a.node.frontmatter.title.localeCompare(b.node.frontmatter.title)
     );
-
+  const blogNodes = nodes.filter(
+    ({ node }) => node.fields.collection === "blog"
+  );
+  //@todo sort on most recent blogpost.
   return (
     <Layout
       location={location}
@@ -65,9 +75,12 @@ export default props => {
       <FullWidth>
         <Header />
       </FullWidth>
-      <Grid style={{ width: "100%" }}>
-        <Categories nodes={nodes} />
+      <Grid style={{ width: "100%", marginBottom: 100 }}>
+        <Categories nodes={docNodes} />
       </Grid>
+      <div style={{ marginBottom: 50 }}>
+        <BlogSummary nodes={blogNodes} />
+      </div>
     </Layout>
   );
 };
@@ -86,7 +99,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: { collection: { in: ["docs", "docs-theme"] } } }
+      filter: { fields: { collection: { in: ["docs", "docs-theme", "blog"] } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       group(field: frontmatter___tags) {
@@ -99,11 +112,23 @@ export const pageQuery = graphql`
           fields {
             slug
             collection
+            authors {
+              name
+              image
+            }
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
             tags
             featuredDocument
+            featuredImage {
+              childImageSharp {
+                fixed(width: 200, height: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }
