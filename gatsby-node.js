@@ -3,7 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 const _ = require("lodash");
 const fetch = require("node-fetch");
 const fetchBase64 = require("fetch-base64");
-
+require('socket.io')({cookie: false});
 require("dotenv").config({
   path: ".env",
 });
