@@ -76,7 +76,7 @@ export default props => {
       node: {
         fields: {
           collection: "",
-          slug: "/misc-theme/",
+          slug: "misc-theme",
         },
         frontmatter: {
           title: "Miscellaneous",

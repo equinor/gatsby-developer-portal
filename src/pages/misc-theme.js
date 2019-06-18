@@ -17,9 +17,9 @@ export default props => {
       menuLinks={menuLinks}
     >
       <div>
-        {docs.map(({ node }) => {
+        {docs.map(({ node, index }) => {
           return (
-            <div style={{ margin: 20 }}>
+            <div key={`misc-${index}`} style={{ margin: 20 }}>
               <DocListing node={node} />
             </div>
           );
