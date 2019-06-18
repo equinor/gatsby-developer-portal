@@ -1,39 +1,7 @@
-import { useState } from "react";
 import styled from "styled-components";
 import React from "react";
 import { ListItem, TagWrapper } from "./TagListing";
-
-/**
- * @param selectedTags InitialSelectedTags
- * @returns {function({node: *}): boolean}
- */
-export function filterTags(selectedTags) {
-  const hasSelections = selectedTags.filter(tag => tag.selected).length;
-  return ({ node }) => {
-    if (!hasSelections || !node.frontmatter.tags) {
-      return true;
-    }
-
-    //returns true if one of post tag's is selected.
-    const tags = node.frontmatter.tags.filter(tagName => {
-      return selectedTags.filter(selectedTag => {
-        return selectedTag.selected && selectedTag.name === tagName;
-      }).length;
-    });
-    return tags.length;
-  };
-}
-
-export function initializeSelectedTags(tags, paramTag) {
-  return tags.map(tag => {
-    const selected = paramTag ? paramTag === tag.fieldValue : true;
-    return { name: tag.fieldValue, selected };
-  });
-}
-
-const FilterListItem = styled(ListItem)`
-  cursor: pointer;
-`;
+import { Actions } from "./TagFilterReducer";
 
 /**
  * SelectedTags should be available outside this component.
@@ -45,63 +13,50 @@ const FilterListItem = styled(ListItem)`
  * @returns {*} component
  * @constructor
  */
-export const TagFilter = ({ tags, selectedTags, setSelectedTags }) => {
-  const [selectAll, setSelectAll] = useState(false);
+export const TagFilter = ({ tags, state, dispatch }) => {
+  if (!tags || tags.length === 0) {
+    return null;
+  }
 
   const TagStatus = styled.span`
     font-size: 24px;
     padding-left: 10px;
-    fontweight: 500;
+    font-weight: 500;
   `;
 
-  const toggleTags = () => {
-    setSelectAll(!selectAll);
-    setSelectedTags(
-      selectedTags.map(tag => {
-        tag.selected = selectAll;
-        return tag;
-      })
-    );
-  };
+  const toggleTags = () => dispatch(Actions.toggleAll);
 
-  const toggleTag = (tags, name) => {
-    setSelectedTags(
-      tags.map(tag => {
-        //toggle single tag if name is provided.
-        if (tag.name === name) {
-          tag.selected = !tag.selected;
-        }
-        return tag;
-      })
-    );
-  };
+  const FilterListItem = styled(ListItem)`
+    cursor: pointer;
+  `;
+  const toggleTag = index => dispatch(Actions.toggleTag(index));
 
-  const SelectAll = ({ selectAll, onClick }) => (
+  const SelectAll = ({ onClick }) => (
     <span
       style={{ textDecoration: "underline", cursor: "pointer" }}
       onClick={onClick}
     >
-      {selectAll ? "Select all" : "Deelect all"}
+      {state.selectAll ? "Select all" : "Deselect all"}
     </span>
   );
   return (
     <TagWrapper>
       {tags.map((tag, index) => {
-        const enabled = selectedTags[index].selected;
+        const isEnabled = state.selectedTags[index].selected;
         return (
           <FilterListItem
-            enabled={selectedTags[index].selected}
+            enabled={isEnabled}
             key={tag.fieldValue}
-            onClick={() => toggleTag(selectedTags, tag.fieldValue)}
+            onClick={() => toggleTag(index)}
           >
             <span>
               {tag.fieldValue}
-              <TagStatus>{enabled ? "X" : "+"}</TagStatus>
+              <TagStatus>{isEnabled ? "X" : "+"}</TagStatus>
             </span>
           </FilterListItem>
         );
       })}
-      <SelectAll onClick={toggleTags} selectAll={selectAll} />
+      <SelectAll onClick={toggleTags} />
     </TagWrapper>
   );
 };

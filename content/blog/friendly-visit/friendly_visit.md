@@ -1,11 +1,6 @@
 ---
 title: To the other side and back again
 date: 2019-05-04
-tags:
-    - Software Innovation Bergen
-    - ERT
-    - FMU
-    - Exchange
 authors:
     - lars-petter-hauge
 featuredImage: ./Empty.png

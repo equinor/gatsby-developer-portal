@@ -1,12 +1,12 @@
 import React from "react";
-import Style from "./style";
+import { colors, typography } from "./style";
 import { createGlobalStyle } from "styled-components";
 
 // Global styles and resets
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
-    font-size: ${Style.typography.base};
+    font-size: ${typography.base};
   }
 
   *,
@@ -15,8 +15,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
-  body {        
-    color: ${Style.colors.black80};
+  body {
+    color: ${colors.black80};
     font-family: Equinor;
 	font-size: 18px;
 	font-weight: 400;
@@ -28,12 +28,12 @@ const GlobalStyle = createGlobalStyle`
   }
   
   ::selection {
-	background: ${Style.colors.mossGreen};
+	background: ${colors.mossGreen};
 	color: #fff;
   }
 
   ::-moz-selection {
-	background: ${Style.colors.mossGreen};
+	background: ${colors.mossGreen};
 	color: #fff;
   }
   
@@ -77,19 +77,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 50px auto;
     width: 100%;
   }
-    
-  svg {
-    margin: 0 auto;
-    width: 100%;
-  }
-    
+  
   a {
-    color: ${Style.colors.black80}
+    color: ${colors.black80}
     text-decoration: none;
   }
      
   a:hover {
-    color: ${Style.colors.hover}
+    color: ${colors.hover}
   }
    
   hr {

@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import { Authors } from "../components/Bio";
-import { Grid, Col, Row } from "react-styled-flexboxgrid";
-import Style from "../ui/style";
-import { BlogTag } from "../ui/components/Tags";
+import { Authors } from "./Bio";
+import { Col } from "react-styled-flexboxgrid";
+import { typography } from "../ui";
+import { BlogTag } from "./Tags";
 
 const Container = styled.div`
   margin-bottom: 20px;
@@ -14,7 +14,7 @@ const Container = styled.div`
 const Title = styled.h3`
   margin-bottom: 17px;
   a {
-    font-size: ${Style.typography.xxxl};
+    font-size: ${typography.xxxl};
     font-weight: 400;
     letter-spacing: -0.08px;
     line-height: 36px;
@@ -22,7 +22,7 @@ const Title = styled.h3`
 `;
 
 const Excerpt = styled.p`
-  font-size: ${Style.typography.lg};
+  font-size: ${typography.lg};
   line-height: 24px;
 `;
 
@@ -38,8 +38,12 @@ const BlogListing = ({ node, onTagClick }) => {
     node.frontmatter.featuredImage &&
     node.frontmatter.featuredImage.childImageSharp.fixed;
   const imgHeight = (imgFixed && imgFixed.height) || 0;
+
+  //remove this when we actually have a real picture in at least one blogpost.
+  const showImage = imgFixed && imgFixed.src.indexOf("Empty.png") === 0;
+
   return (
-    <Container key={node.fields.slug}>
+    <Container>
       <Col xs={12} md={10} mdOffset={1}>
         <BlogTag
           onTagClick={onTagClick}
@@ -54,9 +58,13 @@ const BlogListing = ({ node, onTagClick }) => {
 
         <div>
           <div
-            style={{ width: "100%", minHeight: imgHeight, marginBottom: 20 }}
+            style={{
+              width: "100%",
+              minHeight: showImage ? imgHeight : 0,
+              marginBottom: 20,
+            }}
           >
-            {imgFixed && (
+            {imgFixed && showImage && (
               <Img
                 style={{ marginRight: 30, width: 200, float: "left" }}
                 fixed={imgFixed}
@@ -72,9 +80,19 @@ const BlogListing = ({ node, onTagClick }) => {
           </div>
         </div>
       </Col>
-      <Divider />
     </Container>
   );
 };
 
-export default BlogListing;
+export default props => (
+  <Container>
+    <BlogListing {...props} />
+  </Container>
+);
+
+export const BlogListingDivider = props => (
+  <Container>
+    <BlogListing {...props} />
+    <Divider />
+  </Container>
+);

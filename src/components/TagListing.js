@@ -2,19 +2,17 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import kebabCase from "lodash/kebabCase";
-import Style from "../ui/style";
+import { colors, typography } from "../ui";
 
 const Wrapper = styled.section`
   display: flex;
-  margin-left: 15px;
-  margin-right: 15px;
   margin: 0 15px 40px;
 `;
 
 const Title = styled.span`
   margin-top: 10px;
   display: inline-flex;
-  font-size: ${Style.typography.base};
+  font-size: ${typography.base};
   font-weight: bold;
   line-height: 21px;
   flex-wrap: wrap;
@@ -22,7 +20,6 @@ const Title = styled.span`
 `;
 
 const List = styled.ul`
-  margin-top: 40px;
   list-style: none;
   display: inline-flex;
   flex-wrap: wrap;
@@ -31,7 +28,7 @@ const List = styled.ul`
 
 export const ListItem = styled.li`
   background-color: ${props =>
-    props.enabled ? Style.colors.lichenGreen : Style.colors.lighterGray};
+    props.enabled ? colors.lichenGreen : colors.lighterGray};
   padding: 0 20px;
   text-align: center;
   border-radius: 20.5px;
@@ -43,7 +40,7 @@ export const ListItem = styled.li`
     font-size: 12px;
     font-weight: 500;
     line-height: 14px;
-    color: ${Style.colors.mossGreen};
+    color: ${colors.mossGreen};
     text-transform: uppercase;
   }
 `;
@@ -63,7 +60,7 @@ export default ({ tags }) => {
   return (
     <TagWrapper>
       {tags.map(tag => (
-        <ListItem key={tag.fieldValue}>
+        <ListItem key={tag.fieldValue} enabled={tag.enabled}>
           <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
             {tag.fieldValue}
           </Link>

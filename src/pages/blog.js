@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import SearchEngineOptimization from "../components/SearchEngineOptimization";
-import {
-  filterTags,
-  initializeSelectedTags,
-  TagFilter,
-} from "../components/TagFilter";
 import { Col, Row } from "react-styled-flexboxgrid";
-import BlogListing from "../components/BlogListing";
+
+import Layout from "../components/layout/Layout";
+import { TagFilter, SearchEngineOptimization } from "../components";
+import { filterTags, initializeSelectedTags } from "../util/tagUtil";
+import { BlogListingDivider } from "../components/BlogListing";
 
 export default props => {
   const { data, location } = props;
@@ -35,6 +32,7 @@ export default props => {
     >
       <SearchEngineOptimization title="All blogs" keywords={["blog"]} />
 
+      <div style={{ marginTop: 40 }} />
       <TagFilter
         selectedTags={selectedTags}
         tags={tags}
@@ -44,7 +42,7 @@ export default props => {
       <Row>
         <Col xs={12} md={10} mdOffset={1}>
           {filteredPosts.map(({ node }) => (
-            <BlogListing
+            <BlogListingDivider
               key={node.fields.slug}
               node={node}
               onTagClick={value => {

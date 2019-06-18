@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   async function createBlogPages() {
-    const blogTemplate = path.resolve(`./src/templates/blog-template.js`);
+    const blogTemplate = path.resolve(`./src/templates/blog/blog-template.js`);
     const result = await graphql(`
       {
         allMarkdownRemark(
@@ -83,7 +83,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node.frontmatter.tags.forEach(tag => {
             createPage({
               path: `/tags/${_.kebabCase(tag)}/`,
-              component: path.resolve(`./src/templates/tag-template.js`),
+              component: path.resolve(`./src/templates/tag/tag-template.js`),
               context: {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
@@ -124,7 +124,7 @@ exports.createPages = async ({ graphql, actions }) => {
           //create subpages
           createPage({
             path: `${node.fields.collection}${node.fields.slug}`,
-            component: path.resolve("src/templates/doc-template.js"),
+            component: path.resolve("src/templates/doc/doc-template.js"),
             context: {
               slug: node.fields.slug,
             },
@@ -165,7 +165,9 @@ exports.createPages = async ({ graphql, actions }) => {
           //create subpages
           createPage({
             path: `${node.fields.collection}${node.fields.slug}`,
-            component: path.resolve("src/templates/doc-main-template.js"),
+            component: path.resolve(
+              "src/templates/doc-main/doc-main-template.js"
+            ),
             context: {
               slug: node.fields.slug,
             },
@@ -205,32 +207,46 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const authors = node.frontmatter.authors;
-    const config = {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_PERSONAL_TOKEN}`,
-      },
-    };
-    const data = [];
-    const getProfile = author =>
-      fetch("https://api.github.com/users/" + author, config);
+    if (process.env.GITHUB_PERSONAL_TOKEN) {
+      const config = {
+        headers: {
+          Authorization: `token ${process.env.GITHUB_PERSONAL_TOKEN}`,
+        },
+      };
+      const data = [];
+      const getProfile = author =>
+        fetch("https://api.github.com/users/" + author, config);
 
-    if (authors) {
-      for (let i = 0; i < authors.length; i++) {
-        const response = await getProfile(authors[i]);
-        const json = await response.json();
-        const image = await fetchBase64.remote(json.avatar_url);
-        console.log("downloaded avatar", authors[i]);
-        data.push({
-          image: image[1],
-          name: json.name,
-        });
+      if (authors) {
+        for (let i = 0; i < authors.length; i++) {
+          const response = await getProfile(authors[i]);
+          const json = await response.json();
+          const image = await fetchBase64.remote(json.avatar_url);
+          console.log("downloaded avatar", authors[i]);
+          data.push({
+            image: image[1],
+            name: json.name,
+          });
+        }
       }
+      createNodeField({
+        name: `authors`,
+        node,
+        value: data,
+      });
+    } else {
+      // Blank image
+      createNodeField({
+        name: `authors`,
+        node,
+        value: [
+          {
+            image:
+              "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+            name: "Ola Nordmann",
+          },
+        ],
+      });
     }
-
-    createNodeField({
-      name: `authors`,
-      node,
-      value: data,
-    });
   }
 };

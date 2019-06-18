@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-const sizes = {
+export const sizes = {
   sm: 576,
   md: 768,
   lg: 992,

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import kebabCase from "lodash/kebabCase";
 import styled from "styled-components";
-import Image from "gatsby-image";
 
 const Wrapper = styled.div`
   display: flex;
@@ -69,5 +67,3 @@ class Bio extends Component {
     );
   }
 }
-
-export default Bio;
