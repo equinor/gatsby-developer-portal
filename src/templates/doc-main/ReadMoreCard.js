@@ -61,13 +61,20 @@ export default props => {
     }
   `);
   const subPages = data.allMarkdownRemark.edges;
-
+  // remove forward slash from slug.
+  const tag = props.slug.replace(/\//g, "");
   return (
     <FullWidth>
       <div style={{ display: "flex" }}>
-        {subPages.map((data, index) => {
-          return <ReadMoreCard key={"readmore" + index} node={data.node} />;
-        })}
+        {subPages
+          .filter(
+            ({ node }) =>
+              node.frontmatter.tags &&
+              node.frontmatter.tags.includes(tag.toUpperCase())
+          )
+          .map((data, index) => {
+            return <ReadMoreCard key={"readmore" + index} node={data.node} />;
+          })}
       </div>
     </FullWidth>
   );

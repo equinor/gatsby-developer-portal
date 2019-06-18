@@ -74,3 +74,8 @@ Write your document content here...
 ```
 
 [locally]: https://github.com/equinor/developer/blob/develop/README.md#locally
+
+
+### Tags
+Tags on all content is optional. If no tag is set, the document will automatically be listed in a separate Miscellaneous theme page with a general icon. 
+Documents with multiple tags will be listed under multiple theme pages. We encourage writers to be selective in choosing tags. 
