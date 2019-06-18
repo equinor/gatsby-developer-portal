@@ -64,6 +64,27 @@ export default props => {
     ({ node }) => node.fields.collection === "blog"
   );
   //@todo sort on most recent blogpost.
+  
+  const hasGeneralContent =
+    nodes.filter(({ node }) => node.fields.collection === "docs" && node.frontmatter.tags === null).length > 0;
+  if (hasGeneralContent) {
+    // A hack to catch all uncategorized content.
+    // The slug needs to be manipulated since this card need to link to a separate page.
+    // A misc-theme page doesn't belong in content/docs-theme,
+    // also, a new folder for misc-theme seems unnecessary for now as there's no need for localisation yet.
+    docNodes.push({
+      node: {
+        fields: {
+          collection: "",
+          slug: "/misc-theme/",
+        },
+        frontmatter: {
+          title: "Miscellaneous",
+        },
+      },
+    });
+  }
+  
   return (
     <Layout
       location={location}
