@@ -2,7 +2,8 @@
 
 
 ## Pull request process
-1. Clone the git repo: `git clone git@github.com:equinor/developer.git`
+1. Fork the git repo in github
+1. Clone the forked repo. : `git clone git@github.com:<username>/developer.git`
 1. Write your blog post in a new branch, based on the `develop` branch: `git checkout -b my-blog-post-branch develop`
     - See [Blog post](#blog) for how to create a blog post.
     - The [Run Locally][locally] section in the README describes how you can run the site to see the looks of your post.
