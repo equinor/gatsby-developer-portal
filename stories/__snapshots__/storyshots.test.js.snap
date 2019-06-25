@@ -3088,7 +3088,7 @@ exports[`Storyshots Main page MainPage Header 1`] = `
           <div
             style={
               Object {
-                "backgroundColor": "#EAEAEA",
+                "backgroundColor": "#DEFAEB",
                 "height": 400,
                 "opacity": 0.5,
               }

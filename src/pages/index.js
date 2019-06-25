@@ -28,7 +28,7 @@ export const Header = props => {
           <div
             style={{
               height: 400,
-              backgroundColor: colors.lighterGray,
+              backgroundColor: colors.lichenGreen,
               opacity: 0.5,
             }}
           />
@@ -64,9 +64,12 @@ export default props => {
     ({ node }) => node.fields.collection === "blog"
   );
   //@todo sort on most recent blogpost.
-  
+
   const hasGeneralContent =
-    nodes.filter(({ node }) => node.fields.collection === "docs" && node.frontmatter.tags === null).length > 0;
+    nodes.filter(
+      ({ node }) =>
+        node.fields.collection === "docs" && node.frontmatter.tags === null
+    ).length > 0;
   if (hasGeneralContent) {
     // A hack to catch all uncategorized content.
     // The slug needs to be manipulated since this card need to link to a separate page.
@@ -84,7 +87,7 @@ export default props => {
       },
     });
   }
-  
+
   return (
     <Layout
       location={location}
@@ -94,7 +97,7 @@ export default props => {
     >
       <SearchEngineOptimization title="All docs" keywords={["docs"]} />
       <FullWidth>
-        <Header />
+        <Header description="developer.equinor.com aims to be a one-stop-shop for what you need while developing software for or in Equinor." />
       </FullWidth>
       <Grid style={{ width: "100%", marginBottom: 100 }}>
         <Categories nodes={docNodes} />
