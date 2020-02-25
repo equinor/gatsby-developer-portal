@@ -360,7 +360,7 @@ exports[`Storyshots Blog BlogListing 1`] = `
     className="c14"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -690,7 +690,7 @@ exports[`Storyshots Blog BlogPostHeader 1`] = `
     className="c14"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -1329,7 +1329,7 @@ exports[`Storyshots Blog BlogSummary 1`] = `
     className="c22"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -1721,7 +1721,7 @@ exports[`Storyshots Categories default 1`] = `
       className="c9"
     >
       Copyright © 
-      2020
+      2019
        Equinor ASA
     </footer>
   </div>
@@ -1987,7 +1987,7 @@ exports[`Storyshots Doc DocHeader api 1`] = `
     className="c11"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -2206,7 +2206,7 @@ exports[`Storyshots Doc DocHeader tech 1`] = `
     className="c11"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -2419,7 +2419,7 @@ exports[`Storyshots Doc DocListing 1`] = `
     className="c8"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -2801,7 +2801,7 @@ exports[`Storyshots HighlightedDocuments default 1`] = `
     className="c15"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -3134,7 +3134,7 @@ exports[`Storyshots Main page MainPage Header 1`] = `
       className="c11"
     >
       Copyright © 
-      2020
+      2019
        Equinor ASA
     </footer>
   </div>
@@ -3376,7 +3376,7 @@ exports[`Storyshots TagFilter with multiple tags 1`] = `
     className="c9"
   >
     Copyright © 
-    2020
+    2019
      Equinor ASA
   </footer>
 </div>
@@ -3533,7 +3533,7 @@ exports[`Storyshots Titles HeaderTitle 1`] = `
       className="c7"
     >
       Copyright © 
-      2020
+      2019
        Equinor ASA
     </footer>
   </div>
@@ -3692,7 +3692,7 @@ exports[`Storyshots Titles HeaderTitle with custom color 1`] = `
       className="c7"
     >
       Copyright © 
-      2020
+      2019
        Equinor ASA
     </footer>
   </div>
@@ -3831,7 +3831,7 @@ exports[`Storyshots Titles Separator 1`] = `
       className="c6"
     >
       Copyright © 
-      2020
+      2019
        Equinor ASA
     </footer>
   </div>
