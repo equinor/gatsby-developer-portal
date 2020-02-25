@@ -1,3 +1,4 @@
+// enable search route by removing the underscore prefix of the filename.
 import React, { useReducer, useState } from "react";
 import { graphql } from "gatsby";
 
