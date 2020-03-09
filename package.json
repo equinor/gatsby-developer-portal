@@ -8,7 +8,6 @@
     "url": "https://github.com/equinor/developer/issues"
   },
   "dependencies": {
-    "@equinor-internal/equinor-font": "1.0.0",
     "@reach/router": "^1.2.1",
     "@svgr/webpack": "^4.2.0",
     "babel-plugin-styled-components": "^1.10.0",
