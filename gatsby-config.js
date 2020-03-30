@@ -1,3 +1,5 @@
+const searchFeature = false;
+
 module.exports = {
   siteMetadata: {
     title: `For developers - by developers `,
@@ -29,7 +31,12 @@ module.exports = {
         name: "Search",
         url: "/search",
       },
-    ],
+    ].filter(menuLink => {
+      if (menuLink.name === "Search") {
+        return searchFeature;
+      }
+      return true;
+    }),
   },
   plugins: [
     `gatsby-plugin-styled-components`,
